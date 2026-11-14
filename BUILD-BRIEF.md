@@ -257,6 +257,94 @@ steps, mid-paragraph contextual links). Titles/metas UNCHANGED
   aftercare details [ADD STYLIST NOTE]. NO prices anywhere (G2
   still open).
 
+## Phase 2 — Batch 4 (reviews + contact + NEW gallery + NEW bridal mehndi, 2026-11-14)
+
+Rewrote 2 pages and built 2 new pages to the same standard as
+Batches 1–3 (1,200+ own-copy words, 7 FAQs each, Quick Facts box,
+H3 structure where it fits, direct-answer section leads, numbered
+process steps, mid-paragraph contextual links). QA **87/0 GREEN**
+(up from 78 — 9 new checks: 2 new titles/metas, 28 new FAQs,
+Review-schema byte-match, 17-page sitemap); mobile-check GREEN at
+360px (all 17 pages).
+
+- `/reviews/`: 129 → **1,592 own-copy words** (quotes excluded);
+  0 → 7 FAQs. Restructured with H2s per service (hair / makeup /
+  waxing / facials / visiting the salon) — the 12 verbatim Google
+  reviews are UNCHANGED, word for word, only grouped under
+  headings. Title/meta IMPROVED (audit P12): old title "Customer
+  Reviews | SanSha A Beauty Lounge" (41 chars, no keyword/location)
+  → new "Beauty Salon Reviews in Peshawar | SanSha A Beauty Lounge"
+  (57 chars); old meta (145 chars) → new "Beauty salon reviews in
+  Peshawar — SanSha A Beauty Lounge, 3.9 stars on Google from 92
+  reviews. Read what our clients in Hayatabad wrote, word for
+  word." (152 chars). "Reviews at a glance" Quick Facts box; honest
+  framing added (the 3.9★ is the average of all 92 — older reviews
+  are mixed, a few 1–2★; the 12 shown are recent). Review schema
+  ADDED for the 12 verbatim reviews (real + visible + byte-matching;
+  no reviewRating — the Google dump gives no per-review star count;
+  NO aggregateRating anywhere). QA §11 updated: Review schema is
+  allowed ONLY on /reviews/ and each item is verified against the
+  visible blockquotes.
+- `/contact/`: 169 → **1,286 own-copy words**; 0 → 7 FAQs.
+  "Visit at a glance" Quick Facts box; new sections (what to say
+  when you book, how to find us, what happens when you arrive,
+  walk in or book ahead, parking). Map is still a general location
+  search — [CONFIRM] slot for the exact GBP pin / geo (G11).
+  Walk-in wording kept (owner-confirmed walk-in salon); ladies-only
+  hours / Friday prayer break / appointment lead time are
+  [CONFIRM] (G16). Title/meta UNCHANGED.
+- NEW `/gallery/`: **1,395 own-copy words**; 7 FAQs; "Visit at a
+  glance" Quick Facts box. All 19 real photos grouped by area
+  (entrance 5, reception 2, styling chairs + hair 5, treatment
+  rooms 3, outside 4), each with a fresh caption written for this
+  page — describing only what the photo shows, never a treatment
+  it does not show. Captions differ from the registry captions on
+  the home page (uniqueness). Title "Salon Gallery | SanSha A
+  Beauty Lounge, Hayatabad" (49 chars) + meta (151 chars) DRAFTED
+  for this page (not a strategy brief — gallery had no brief).
+  [ADD REAL PHOTO] placeholder for a treatment-in-progress shot;
+  [CONFIRM] for photos during visits.
+- NEW `/bridal-mehndi-peshawar/` (B11): **2,283 own-copy words**;
+  7 FAQs; Quick Facts box; 4 H3s. Title/meta VERBATIM from
+  strategy B11 (50/143 chars); H1 verbatim. SERVICE page (henna
+  application for brides + guests) — explicitly NOT a design
+  gallery (the design-gallery cluster stays off this site). G12-
+  GATED: the offer itself is [CONFIRM] wherever it is unconfirmed
+  (application offered, designs, duration, guests, booked-with-
+  makeup, aftercare). Comparison table (mehndi vs bridal makeup).
+  No client review mentions mehndi application yet — [ADD CLIENT
+  REVIEW] placeholder left, none invented.
+- Sitewide: sitemap.xml now 17 URLs (gallery 0.6, bridal mehndi
+  0.8; gallery lists all 19 photos as image entries, same set as
+  home); image-sitemap.xml now 14 URL blocks / 54 image entries
+  (+ gallery block with all 19, + mehndi block with the arch
+  photo). QA script updated: expected FAQ total 69 → **97**;
+  EXPECTED_TITLES/METAS for the 2 new pages + new reviews
+  title/meta; §11 Review-schema rule (above). Header nav + footer
+  services/info nav now link both new pages; home links bridal
+  mehndi in the Bridal & wedding list and the gallery from the
+  "Inside the salon" section. Arch photo's heroPages gained
+  "/bridal-mehndi-peshawar/" (sitemap image entry).
+- Uniqueness fix rounds: first QA run failed 2 checks — 95 shared
+  shingles (mirrored hero/price/ask-first/CallCTA/Quick Facts
+  passages between the 4 new pages and facial/home/party/mani-
+  pedi) + the Review-schema check itself (author names live in
+  blockquote <footer> elements, which the visible-text helper
+  strips — the check now reads names from the tag-stripped page).
+  Second run: 21 shingles (Quick Facts Prices→Where runs +
+  CallCTA tail + RelatedLinks lead). Third run: 2 shingles
+  (appointment-step aftercare line + Quick Facts Where→Hours
+  run). All passages rewritten distinct per page. Re-run: 0 shared
+  shingles, QA 87/0 GREEN.
+- Placeholders left (owner questions): bridal mehndi offered +
+  designs + duration + guests + booked-with-makeup? [CONFIRM];
+  mehndi aftercare details [ADD STYLIST NOTE]; mehndi client
+  review [ADD CLIENT REVIEW]; treatment-in-progress photo [ADD
+  REAL PHOTO]; photos during visits [CONFIRM]; parking [CONFIRM];
+  GBP pin / geo [CONFIRM]; ladies-only hours / Friday prayer
+  break / appointment lead time [CONFIRM]; group bookings
+  [CONFIRM]. NO prices anywhere (G2 still open).
+
 ## Meta wording caveats (flag — owner to confirm)
 
 The strategy's verified metas carry wording the body copy repeats
@@ -272,19 +360,23 @@ includes); B8 meta lists whitening/organic/derma
 facials (Eid flyer + reviewer language, G12 — confirm current facial
 menu).
 
-## Pages (15)
+## Pages (17)
 
 Home `/`, bridal makeup, party makeup, hair salon, keratin treatment,
 hair colour & balayage, laser hair removal, facials, waxing &
-threading, mani-pedi, contact, reviews (12 verbatim Google reviews),
+threading, mani-pedi, bridal mehndi (B11, Phase 2 Batch 4), gallery
+(Phase 2 Batch 4), contact, reviews (12 verbatim Google reviews),
 privacy-policy, terms, cookies. Titles/metas verbatim from
-STRATEGY.md briefs B1–B10 (22/22 verified in the strategy);
-contact/reviews/legal titles/metas are short-but-clean builder
-versions (contact meta 135 chars, reviews 145, legal 95–119).
+STRATEGY.md briefs B1–B11 (22/22 verified in the strategy; B11
+built in Batch 4); gallery title/meta drafted in Batch 4 (49/151
+chars); reviews title/meta improved in Batch 4 (57/152 chars);
+contact/legal titles/metas are short-but-clean builder versions
+(contact meta 135 chars, legal 95–119).
 
-**HELD (not built):** B11 bridal mehndi application (wave 2,
-G12-gated), areas hub + area pages, massage page (G12),
-prices/deals page (G2/G13), bridal packages page (G2).
+**HELD (not built):** areas hub + area pages, massage page (G12),
+prices/deals page (G2/G13), bridal packages page (G2). B11 bridal
+mehndi application BUILT in Phase 2 Batch 4 (G12-gated, [CONFIRM]
+framing); gallery BUILT in Batch 4.
 
 ## Photos (19 real owner photos)
 

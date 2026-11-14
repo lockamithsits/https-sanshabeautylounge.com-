@@ -13,6 +13,8 @@ export const dynamic = "force-static";
  * /image-sitemap.xml (static file in public/).
  *
  * Wave 1 (Top 10 + contact + reviews + 3 legal = 15 pages).
+ * Wave 2 (Batch 4): + /gallery/ + /bridal-mehndi-peshawar/ (B11)
+ * = 17 pages.
  */
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1.0 },
@@ -25,8 +27,10 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/facial-peshawar/", priority: 0.8 },
   { path: "/waxing-peshawar/", priority: 0.8 },
   { path: "/mani-pedi-peshawar/", priority: 0.8 },
+  { path: "/bridal-mehndi-peshawar/", priority: 0.8 },
   { path: "/contact/", priority: 0.7 },
   { path: "/reviews/", priority: 0.6 },
+  { path: "/gallery/", priority: 0.6 },
   { path: "/privacy-policy/", priority: 0.3 },
   { path: "/terms/", priority: 0.3 },
   { path: "/cookies/", priority: 0.3 },
@@ -49,6 +53,8 @@ export async function GET() {
     }
   }
   pageImages.set("/", PHOTOS);
+  // The gallery page shows all 19 photos (same set as home).
+  pageImages.set("/gallery/", PHOTOS);
 
   const urls = ROUTES.map((r) => {
     const imgs = (pageImages.get(r.path) ?? [])

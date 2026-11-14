@@ -93,7 +93,7 @@ export const PHOTOS: Photo[] = [
     widths: [400, 680],
     alt: "Flower-decorated entrance arch with fairy lights at SanSha A Beauty Lounge at night",
     caption: "The flower-decorated entrance at night.",
-    heroPages: ["/"],
+    heroPages: ["/", "/bridal-mehndi-peshawar/"],
   },
   {
     slug: "sansha-beauty-lounge-hair-salon-chairs-peshawar",

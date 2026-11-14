@@ -364,6 +364,12 @@ export default function HomePage() {
                 — softer looks for the smaller functions
               </li>
               <li>
+                <Link href="/bridal-mehndi-peshawar/" className="inline-flex min-h-11 items-center font-medium text-brand-700 underline hover:text-brand-900">
+                  Bridal mehndi for the mehndi function
+                </Link>{" "}
+                — henna for the bride and her guests
+              </li>
+              <li>
                 <Link href="/party-makeup-peshawar/" className="inline-flex min-h-11 items-center font-medium text-brand-700 underline hover:text-brand-900">
                   Party makeup for engagements
                 </Link>{" "}
@@ -629,7 +635,11 @@ export default function HomePage() {
           </h2>
           <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
             Real photos of the salon — the reception, the salon floor, the
-            signboard and the entrance at night.
+            signboard and the entrance at night.{" "}
+            <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
+              See all 19 photos in the salon gallery
+            </Link>
+            .
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
             {GALLERY_SLUGS.map((slug) => {

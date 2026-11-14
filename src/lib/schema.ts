@@ -134,6 +134,27 @@ export function serviceJsonLd(opts: {
   };
 }
 
+/**
+ * Review schema — ONLY for reviews that are real, visible on the page,
+ * and byte-matching the visible quote text. No reviewRating (the Google
+ * dump gives no per-review star count) and NO aggregateRating anywhere
+ * (the 3.9★ / 92 figure stays visible text only).
+ */
+export function reviewJsonLd(reviews: { name: string; text: string }[]) {
+  return reviews.map((r) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: r.name,
+    },
+    reviewBody: r.text,
+    itemReviewed: {
+      "@id": `${SITE.url}/#organization`,
+    },
+  }));
+}
+
 export function imageObjectJsonLd(opts: {
   url: string;
   caption: string;

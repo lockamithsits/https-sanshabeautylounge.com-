@@ -3,6 +3,7 @@ import { SITE } from "@/data/siteConfig";
 
 const SERVICE_LINKS = [
   { href: "/bridal-makeup-peshawar/", label: "Bridal makeup" },
+  { href: "/bridal-mehndi-peshawar/", label: "Bridal mehndi" },
   { href: "/party-makeup-peshawar/", label: "Party makeup" },
   { href: "/hair-salon-peshawar/", label: "Hair salon" },
   { href: "/keratin-treatment-peshawar/", label: "Keratin treatment" },
@@ -64,6 +65,11 @@ export default function Footer() {
         <nav aria-label="Footer information">
           <p className="text-base font-semibold text-white">Information</p>
           <ul className="mt-3 space-y-2 text-sm">
+            <li>
+              <Link href="/gallery/" className="flex min-h-11 items-center px-2 underline hover:text-white">
+                Salon gallery — see inside the salon
+              </Link>
+            </li>
             <li>
               <Link href="/reviews/" className="flex min-h-11 items-center px-2 underline hover:text-white">
                 Customer reviews — {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews)

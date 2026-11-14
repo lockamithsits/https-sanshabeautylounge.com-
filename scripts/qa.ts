@@ -26,11 +26,13 @@
  *     sibling sites' built HTML (carkeyfobprogramming + the lost-key
  *     fob site's out/). Chrome (header/footer/nav/sticky bar) is
  *     stripped before shingling.
- * 11. No review/aggregateRating schema anywhere; no invented claims
- *     list scan (ratings, "years", response-time figures); no
- *     superlatives ("best"/"cheapest"/"#1"/"5-star") in site copy
- *     outside the reviews page; staff names appear ONLY inside
- *     verbatim review quotes (<blockquote>).
+ * 11. No aggregateRating schema anywhere; Review schema only on
+ *     /reviews/ and only for the 12 verbatim reviews (each item must
+ *     byte-match a visible <blockquote>); no invented claims list
+ *     scan (ratings, "years", response-time figures); no superlatives
+ *     ("best"/"cheapest"/"#1"/"5-star") in site copy outside the
+ *     reviews page; staff names appear ONLY inside verbatim review
+ *     quotes (<blockquote>).
  * 12. Images: every <img> has width/height + alt, src/srcset resolve,
  *     no upscaled renders; og:image (the single og canvas) + twitter:image
  *     on every page and resolving; sitemap image entries resolve.
@@ -166,7 +168,7 @@ if (briefTitles.length !== 11 || briefMetas.length !== 11) {
   pass("all brief title/meta claimed lengths match the quoted strings");
 }
 
-// Titles: B1–B10 verbatim (B11 held — not built) + contact/reviews/legal.
+// Titles: B1–B11 verbatim + contact/reviews/legal/gallery.
 const EXPECTED_TITLES: Record<string, string> = {
   "/": "Beauty Salon in Hayatabad Peshawar | SanSha A Beauty Lounge",
   "/bridal-makeup-peshawar/": "Bridal Makeup in Peshawar | SanSha A Beauty Lounge",
@@ -178,8 +180,10 @@ const EXPECTED_TITLES: Record<string, string> = {
   "/facial-peshawar/": "Facials in Hayatabad Peshawar | SanSha A Beauty Lounge",
   "/waxing-peshawar/": "Waxing & Threading Peshawar | SanSha A Beauty Lounge",
   "/mani-pedi-peshawar/": "Manicure & Pedicure Peshawar | SanSha A Beauty Lounge",
+  "/bridal-mehndi-peshawar/": "Bridal Mehndi in Peshawar | SanSha A Beauty Lounge",
+  "/gallery/": "Salon Gallery | SanSha A Beauty Lounge, Hayatabad",
   "/contact/": "Contact SanSha A Beauty Lounge | Hayatabad, Peshawar",
-  "/reviews/": "Customer Reviews | SanSha A Beauty Lounge",
+  "/reviews/": "Beauty Salon Reviews in Peshawar | SanSha A Beauty Lounge",
   "/privacy-policy/": "Privacy Policy | SanSha A Beauty Lounge",
   "/terms/": "Terms of Service | SanSha A Beauty Lounge",
   "/cookies/": "Cookie Policy | SanSha A Beauty Lounge",
@@ -200,7 +204,7 @@ for (const [route, expected] of Object.entries(EXPECTED_TITLES)) {
     );
   }
 }
-// Metas: B1–B10 verbatim from the brief order in the strategy file.
+// Metas: B1–B11 verbatim from the brief order in the strategy file.
 const BRIEF_ROUTES = [
   "/",
   "/bridal-makeup-peshawar/",
@@ -212,7 +216,7 @@ const BRIEF_ROUTES = [
   "/facial-peshawar/",
   "/waxing-peshawar/",
   "/mani-pedi-peshawar/",
-  "/bridal-mehndi-peshawar/", // B11 — held, not built
+  "/bridal-mehndi-peshawar/", // B11 — built in Phase 2 Batch 4
 ];
 const EXPECTED_METAS: Record<string, string> = {};
 BRIEF_ROUTES.forEach((r, i) => {
@@ -233,7 +237,7 @@ for (const [route, expected] of Object.entries(EXPECTED_METAS)) {
     );
   }
 }
-// Contact/reviews/legal metas: exact strings, length bounds.
+// Contact/reviews/legal/gallery metas: exact strings, length bounds.
 const EXPECTED_OTHER_METAS: Record<string, { text: string; min: number; max: number }> = {
   "/contact/": {
     text: "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377. Walk in, or book your slot.",
@@ -241,9 +245,14 @@ const EXPECTED_OTHER_METAS: Record<string, { text: string; min: number; max: num
     max: 160,
   },
   "/reviews/": {
-    text: "Customer reviews for SanSha A Beauty Lounge in Hayatabad, Peshawar — 3.9 stars on Google from 92 reviews. Read verbatim reviews from our clients.",
-    min: 130,
+    text: "Beauty salon reviews in Peshawar — SanSha A Beauty Lounge, 3.9 stars on Google from 92 reviews. Read what our clients in Hayatabad wrote, word for word.",
+    min: 140,
     max: 160,
+  },
+  "/gallery/": {
+    text: "See inside SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — the flower arch entrance, reception, styling chairs, wash area and treatment rooms.",
+    min: 140,
+    max: 155,
   },
   "/privacy-policy/": {
     text: "Privacy policy for SanSha A Beauty Lounge. What data this website collects, why, and how to contact us about your data.",
@@ -328,8 +337,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 69) fail(`expected 69 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6 + Batch 2: keratin 7, colour 7, hair salon 7 + Batch 3: facial 7, mani-pedi 7, waxing 7, party 7), got ${faqTotal}`);
-else pass("69 FAQ answers total (B1–B10 + Phase 2 Batches 1–3)");
+if (faqTotal !== 97) fail(`expected 97 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6 + Batch 2: keratin 7, colour 7, hair salon 7 + Batch 3: facial 7, mani-pedi 7, waxing 7, party 7 + Batch 4: reviews 7, contact 7, gallery 7, bridal mehndi 7), got ${faqTotal}`);
+else pass("97 FAQ answers total (B1–B11 + Phase 2 Batches 1–4)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");
@@ -603,8 +612,60 @@ for (const dir of siblingDirs) {
 section("11. Schema, claims, staff names");
 {
   const allHtml = [...htmlByPath.values()].join("\n");
-  if (/aggregateRating|"@type":"Review"|"@type": "Review"/.test(allHtml)) fail("review/aggregateRating schema present");
-  else pass("no review/aggregateRating schema");
+  if (/aggregateRating/.test(allHtml)) fail("aggregateRating schema present");
+  else pass("no aggregateRating schema");
+  // Review schema: allowed ONLY on /reviews/, and only for the 12
+  // verbatim reviews — each schema item's reviewBody + author name
+  // must appear in the page's visible text (the verbatim quotes).
+  {
+    const reviewItems: { route: string; name: string; body: string }[] = [];
+    for (const [route, html] of htmlByPath) {
+      for (const lm of html.matchAll(
+        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+      )) {
+        try {
+          const data = JSON.parse(lm[1]);
+          const items = Array.isArray(data) ? data : [data];
+          for (const it of items) {
+            if (it["@type"] === "Review") {
+              reviewItems.push({
+                route,
+                name: it.author?.name ?? "",
+                body: it.reviewBody ?? "",
+              });
+            }
+          }
+        } catch {
+          /* ignore non-JSON blocks */
+        }
+      }
+    }
+    const offPage = reviewItems.filter((r) => r.route !== "/reviews/");
+    if (offPage.length > 0) {
+      fail(`Review schema on pages other than /reviews/: ${[...new Set(offPage.map((r) => r.route))].join(", ")}`);
+    } else if (reviewItems.length !== 12) {
+      fail(`Review schema items: ${reviewItems.length} (expected 12 verbatim reviews on /reviews/)`);
+    } else {
+      const reviewsText = decodeEntities(
+        visibleText(htmlByPath.get("/reviews/") ?? ""),
+      );
+      // Author names live in <footer> elements inside the
+      // blockquotes, which visibleText strips — check them against
+      // the tag-stripped page text (scripts are stripped too, so
+      // the schema itself cannot satisfy this check).
+      const reviewsPlain = decodeEntities(
+        stripTags(htmlByPath.get("/reviews/") ?? ""),
+      );
+      const bad = reviewItems.filter(
+        (r) => !r.body || !reviewsText.includes(r.body) || !r.name || !reviewsPlain.includes(r.name),
+      );
+      if (bad.length > 0) {
+        fail(`${bad.length} Review schema item(s) do NOT match a visible verbatim review`);
+      } else {
+        pass("12 Review schema items on /reviews/, each byte-matching a visible verbatim review + author");
+      }
+    }
+  }
   // Superlatives in site copy (reviews page excluded — verbatim quotes).
   const nonReviewTexts = [...htmlByPath.entries()]
     .filter(([r]) => r !== "/reviews/")

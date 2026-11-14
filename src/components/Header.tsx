@@ -6,6 +6,7 @@ import { SITE } from "@/data/siteConfig";
 
 const NAV_LINKS = [
   { href: "/bridal-makeup-peshawar/", label: "Bridal Makeup" },
+  { href: "/bridal-mehndi-peshawar/", label: "Bridal Mehndi" },
   { href: "/party-makeup-peshawar/", label: "Party Makeup" },
   { href: "/hair-salon-peshawar/", label: "Hair Salon" },
   { href: "/keratin-treatment-peshawar/", label: "Keratin" },
@@ -14,6 +15,7 @@ const NAV_LINKS = [
   { href: "/facial-peshawar/", label: "Facials" },
   { href: "/waxing-peshawar/", label: "Waxing" },
   { href: "/mani-pedi-peshawar/", label: "Mani-Pedi" },
+  { href: "/gallery/", label: "Gallery" },
   { href: "/reviews/", label: "Reviews" },
   { href: "/contact/", label: "Contact" },
 ];
