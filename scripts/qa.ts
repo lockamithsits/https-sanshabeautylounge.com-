@@ -328,8 +328,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 42) fail(`expected 42 FAQ answers (B1–B10), got ${faqTotal}`);
-else pass("42 FAQ answers total (B1–B10)");
+if (faqTotal !== 49) fail(`expected 49 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6), got ${faqTotal}`);
+else pass("49 FAQ answers total (B1–B10 + Phase 2 Batch 1)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");

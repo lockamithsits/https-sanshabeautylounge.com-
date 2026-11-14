@@ -201,7 +201,7 @@ export const PHOTOS: Photo[] = [
     nativeW: 680,
     nativeH: 510,
     widths: [400, 680],
-    alt: "Hair styling chairs with a L'Oreal poster at SanSha A Beauty Lounge",
+    alt: "Hair styling chairs and mirrors with a poster on the wall at SanSha A Beauty Lounge",
     caption: "Hair styling chairs.",
     heroPages: ["/hair-salon-peshawar/"],
   },

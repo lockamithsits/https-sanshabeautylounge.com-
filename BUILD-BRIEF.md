@@ -90,6 +90,42 @@ live URL after deploying.**
   Business status, G16 booking policy) are owner-side follow-ups, not
   build blockers.
 
+## Phase 2 — Batch 1 (content expansion, 2026-11-14)
+
+Rewrote 3 pages to the strategist prompt's standard (1,200+ own-copy
+words, 6–10 FAQs, Quick Facts box, H3 structure, direct-answer
+section leads, comparison tables, numbered process steps,
+mid-paragraph contextual links). Titles/metas UNCHANGED (verified
+22/22). QA still **78/0 GREEN**; mobile-check GREEN at 360px.
+
+- `/bridal-makeup-peshawar/`: 645 → **2,310 own-copy words**; 5 → 7
+  FAQs (trial FAQ reworded to [CONFIRM] — trials + dupatta setting
+  are NOT confirmed standing offers; Service schema description
+  softened to match the body). Quick Facts box, H3s per function,
+  booking steps, day-of process, price-factor framework (no figures),
+  preparation checklist, mistakes + myths, bridal-vs-party table.
+- `/laser-hair-removal-peshawar/`: 572 → **2,159 own-copy words**;
+  4 → 7 FAQs. Compliance content added: results vary, skin + hair
+  type matter, contraindications to raise at consultation, patch
+  test, aftercare, consultation steps. "Book a consultation" varied
+  (hero + CallCTA reworded; FAQ question kept). NO "permanent", NO
+  guarantees, NO session counts. No laser reviews exist in the
+  Google dump (0 hits) — [ADD CLIENT REVIEW] placeholder left.
+- `/` (home): 938 → **1,813 own-copy words**; 4 → 6 FAQs. Quick
+  Facts box, visit-process steps, price-guidance framework (no
+  figures), who-it-is-for + honest limits, "Where we are" (only
+  confirmed areas named; other areas as [CONFIRM] slot).
+- Brand leak FIXED: "L'Oreal" removed from the hair-styling-chairs
+  photo alt (src/data/photos.ts) + 2 image-sitemap titles
+  (public/image-sitemap.xml). 0 brand names on the site now.
+- QA script updated: expected FAQ total 42 → **49** (site total now
+  49). FAQ answers all 40–60 words, byte-match FAQPage JSON-LD.
+- Placeholders left (owner questions): bridal trial/dupatta
+  availability [CONFIRM]; bridal duration [CONFIRM]; laser patch
+  test [CONFIRM]; laser session length/gap [ADD STYLIST NOTE];
+  laser client review [ADD CLIENT REVIEW]; home nearby areas
+  [CONFIRM]. NO prices anywhere (G2 still open).
+
 ## Meta wording caveats (flag — owner to confirm)
 
 The strategy's verified metas carry wording the body copy repeats
