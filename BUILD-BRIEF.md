@@ -178,6 +178,85 @@ mid-paragraph contextual links). Titles/metas UNCHANGED (verified
   treatment-vs-cut call [ADD STYLIST NOTE]. NO prices anywhere
   (G2 still open).
 
+## Phase 2 — Batch 3 (content expansion, 2026-11-14)
+
+Rewrote 4 skin + makeup pages to the same standard as Batches 1–2
+(1,200+ own-copy words, 7 FAQs each, Quick Facts box, H3 structure,
+direct-answer section leads, comparison tables, numbered process
+steps, mid-paragraph contextual links). Titles/metas UNCHANGED
+(verified 22/22). QA still **78/0 GREEN**; mobile-check GREEN at
+360px.
+
+- `/facial-peshawar/`: 535 → **2,497 own-copy words**; 4 → 7 FAQs
+  (new: facial before a wedding or Eid; what to tell the salon
+  about your skin; do facials include skin polish). Facial menu
+  (whitening / organic / derma) softened to [CONFIRM] wording —
+  the meta still lists those facials, so the meta/body tension
+  remains (see below, same pattern as bridal trial/dupatta and
+  hair spa). Skin-type guidance; who-it-suits / ask-first
+  (sensitive skin, skin conditions — "mention at your
+  appointment", not medical advice); 5-step appointment process
+  (duration [CONFIRM]); aftercare + maintenance; price-factor
+  framework (no figures); preparation checklist; mistakes +
+  myths; facial-vs-waxing / laser cross-links. Quick Facts box,
+  10 H3s.
+- `/mani-pedi-peshawar/`: 476 → **2,084 own-copy words**; 4 → 7
+  FAQs (new: how long it takes [CONFIRM]; manicure + pedicure in
+  one visit; polish colours). Thinnest service page and the ONLY
+  page with no service photo — fixed with a REAL photo from the
+  existing 19-photo set: the salon interior
+  (`sansha-beauty-lounge-hair-salon-interior`, salon floor with
+  styling chairs), captioned as the salon, never as a mani-pedi
+  treatment in progress; heroPages entry added in
+  `src/data/photos.ts`, ImageObject schema added, and a
+  mani-pedi `<url>` block added to `public/image-sitemap.xml`.
+  Nail-art wording → [CONFIRM] (nails are G12
+  directory-only). Manicure / pedicure / polish / care as H3
+  sections; who-it-suits / ask-first; 4-step appointment process
+  (duration [CONFIRM]); aftercare; price factors; mistakes +
+  myths. Quick Facts box, 5 H3s.
+- `/waxing-peshawar/`: 523 → **2,424 own-copy words**; 4 → 7 FAQs
+  (new: how to prepare for waxing; after waxing; waxing + facial
+  in one visit). Waxing areas as H3 sections (arms, legs, face,
+  underarms, full body — never separate pages); who-it-suits /
+  ask-first (sensitive skin, skin conditions — "mention at your
+  appointment", not medical advice); 4-step appointment process
+  (duration [CONFIRM]); preparation checklist; aftercare;
+  price-factor framework (no figures); waxing-vs-threading and
+  waxing-vs-laser comparisons; mistakes + myths. Quick Facts box,
+  10 H3s.
+- `/party-makeup-peshawar/`: 522 → **2,202 own-copy words**; 4 →
+  7 FAQs (new: what to bring; group bookings [CONFIRM]; will the
+  makeup last the evening). Party-vs-bridal comparison expanded
+  (lighter, shorter — no invented price gap); engagement / dinner
+  / family-event looks as H3 sections; who-it-suits / ask-first
+  (skin reactions, skin conditions); 4-step appointment process
+  (duration [CONFIRM]); preparation checklist; aftercare
+  (removing makeup after the event); price factors; mistakes +
+  myths. Quick Facts box, 5 H3s.
+- QA script updated: expected FAQ total 57 → **69** (site total
+  now 69). FAQ answers all 40–60 words, byte-match FAQPage
+  JSON-LD.
+- Uniqueness fix round: first QA run failed 1 check — 213 shared
+  15-word shingles (mirrored appointment intros copied from
+  keratin, identical "This is not medical advice" sentences,
+  shared aftercare intros, "ask for one price for the whole
+  booking" price closings, identical aftercare step items, laser
+  cross-link sentences, and identical Quick Facts
+  Prices→Where / Where→Hours runs). All passages rewritten
+  distinct per page (including keratin-mirrored intros, which
+  were reworded on the Batch 3 pages only — Batch 1–2 pages
+  untouched). Re-run: 0 shared shingles, QA 78/0 GREEN.
+- Placeholders left (owner questions): facial menu current?
+  [CONFIRM]; facial appointment duration? [CONFIRM]; facial
+  aftercare details [ADD STYLIST NOTE]; nail art offered?
+  [CONFIRM]; mani-pedi duration? [CONFIRM]; mani-pedi aftercare
+  details [ADD STYLIST NOTE]; waxing appointment duration?
+  [CONFIRM]; waxing aftercare details [ADD STYLIST NOTE]; party
+  makeup duration? [CONFIRM]; group bookings? [CONFIRM]; party
+  aftercare details [ADD STYLIST NOTE]. NO prices anywhere (G2
+  still open).
+
 ## Meta wording caveats (flag — owner to confirm)
 
 The strategy's verified metas carry wording the body copy repeats

@@ -328,8 +328,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 57) fail(`expected 57 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6 + Batch 2: keratin 7, colour 7, hair salon 7), got ${faqTotal}`);
-else pass("57 FAQ answers total (B1–B10 + Phase 2 Batches 1–2)");
+if (faqTotal !== 69) fail(`expected 69 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6 + Batch 2: keratin 7, colour 7, hair salon 7 + Batch 3: facial 7, mani-pedi 7, waxing 7, party 7), got ${faqTotal}`);
+else pass("69 FAQ answers total (B1–B10 + Phase 2 Batches 1–3)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");

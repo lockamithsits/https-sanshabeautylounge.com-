@@ -113,7 +113,7 @@ export const PHOTOS: Photo[] = [
     widths: [400, 680],
     alt: "Hair salon floor with styling chairs at SanSha A Beauty Lounge",
     caption: "The hair salon floor.",
-    heroPages: [],
+    heroPages: ["/mani-pedi-peshawar/"],
   },
   {
     slug: "sansha-beauty-lounge-hair-wash-area",
