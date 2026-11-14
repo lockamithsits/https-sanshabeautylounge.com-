@@ -432,7 +432,7 @@ export default function ManiPediPage() {
             <Link href="/facial-peshawar/">facial</Link> to the same
             visit — face, hands and feet, all looked after before an
             event. It also fits with{" "}
-            <Link href="/waxing-peshawar/">waxing and threading</Link>
+            <Link href="/waxing-peshawar/">waxing</Link>
             , so grooming is done in one appointment. And if your
             visit is for a function, a mani-pedi goes well with{" "}
             <Link href="/party-makeup-peshawar/">party makeup</Link>{" "}
@@ -473,10 +473,10 @@ export default function ManiPediPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/facial-peshawar/", label: "Facials in Hayatabad" },
-              { href: "/waxing-peshawar/", label: "Waxing and threading in Peshawar" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/facial-peshawar/", label: "Facials in Phase 2, Hayatabad" },
+              { href: "/waxing-peshawar/", label: "Waxing and threading in Hayatabad" },
+              { href: "/reviews/", label: "Read what clients say" },
+              { href: "/contact/", label: "Book a mani-pedi" },
             ]}
           />
         </div>

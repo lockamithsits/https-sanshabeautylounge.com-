@@ -418,7 +418,7 @@ export default function BridalMehndiPage() {
           <p>
             If you want both, read about{" "}
             <Link href="/bridal-makeup-peshawar/">
-              bridal makeup in Peshawar
+              bridal makeup
             </Link>{" "}
             and book the two together — the salon will plan the
             sittings around your wedding week. For lighter looks at
@@ -484,10 +484,10 @@ export default function BridalMehndiPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup in Peshawar" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup — book it with your mehndi" },
               { href: "/party-makeup-peshawar/", label: "Party makeup in Hayatabad" },
               { href: "/reviews/", label: "What our clients say" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/contact/", label: "Book bridal mehndi" },
             ]}
           />
         </div>

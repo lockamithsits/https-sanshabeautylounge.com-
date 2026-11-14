@@ -369,10 +369,10 @@ export default function GalleryPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/contact/", label: "Contact the salon" },
-              { href: "/reviews/", label: "What our clients say" },
-              { href: "/hair-salon-peshawar/", label: "Hair salon in Hayatabad" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup in Peshawar" },
+              { href: "/contact/", label: "Plan your visit" },
+              { href: "/reviews/", label: "Read our client reviews" },
+              { href: "/hair-salon-peshawar/", label: "Hair salon in Phase 2" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup for barat, walima and nikah" },
             ]}
           />
         </div>

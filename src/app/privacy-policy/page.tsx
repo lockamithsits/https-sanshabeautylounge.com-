@@ -82,7 +82,7 @@ export default function PrivacyPage() {
 
           <h2>Reviews</h2>
           <p>
-            The reviews page shows a selection of verbatim Google reviews
+            The <a href="/reviews/">reviews page</a> shows a selection of verbatim Google reviews
             that clients have already published on Google, with the
             reviewer&apos;s first name and &ldquo;via Google&rdquo;. If
             you would like a review of yours removed from this page,
@@ -94,6 +94,10 @@ export default function PrivacyPage() {
             If you have a question about your information, call{" "}
             <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a> or WhatsApp{" "}
             <a href={SITE.whatsappHref}>{SITE.whatsappDisplay}</a>.
+          </p>
+
+          <p>
+            See also our <a href="/terms/">terms of service</a>.
           </p>
 
           <p>

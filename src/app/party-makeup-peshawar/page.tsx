@@ -207,6 +207,13 @@ export default function PartyMakeupPage() {
             lighter in build. Tell the salon it is an engagement
             when you book, so it knows the evening matters.
           </p>
+          <p>
+            Some engagements come with a mehndi night — see{" "}
+            <Link href="/bridal-mehndi-peshawar/">
+              bridal mehndi for brides and guests
+            </Link>{" "}
+            for henna alongside the party look.
+          </p>
           <h3>Dinners</h3>
           <p>
             A dinner look is lighter — a fresh look for a dinner or
@@ -231,7 +238,7 @@ export default function PartyMakeupPage() {
             walima, nikah or mehndi. If your event is a wedding function,
             see{" "}
             <Link href="/bridal-makeup-peshawar/">
-              bridal makeup in Peshawar
+              bridal makeup for weddings
             </Link>
             .
           </p>
@@ -467,13 +474,13 @@ export default function PartyMakeupPage() {
             Party makeup goes well with the salon&apos;s other
             services. If your event is a wedding function, see{" "}
             <Link href="/bridal-makeup-peshawar/">
-              bridal makeup in Peshawar
+              bridal makeup for a wedding function
             </Link>{" "}
             — the fuller look for barat, walima, nikah and mehndi.
             If your hair needs more than a style before the event,
             the{" "}
             <Link href="/hair-salon-peshawar/">
-              hair salon
+              hair salon in Hayatabad
             </Link>{" "}
             does cuts and blow-dry, and a{" "}
             <Link href="/keratin-treatment-peshawar/">
@@ -483,7 +490,7 @@ export default function PartyMakeupPage() {
             event look, book a{" "}
             <Link href="/facial-peshawar/">facial</Link> and a{" "}
             <Link href="/mani-pedi-peshawar/">
-              manicure and pedicure
+              manicure and pedicure in Peshawar
             </Link>{" "}
             in the same visit — face, hands and feet, all ready for
             the night.
@@ -492,8 +499,8 @@ export default function PartyMakeupPage() {
           <h2>Real clients</h2>
           <p>
             Two of our clients wrote the words below on Google. You can
-            read the rest on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            read the rest of our{" "}
+            <Link href="/reviews/">makeup reviews</Link>.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -540,9 +547,9 @@ export default function PartyMakeupPage() {
           <RelatedLinks
             links={[
               { href: "/bridal-makeup-peshawar/", label: "Bridal makeup for barat and walima" },
-              { href: "/hair-salon-peshawar/", label: "Hair salon — cuts, blow-dry & styling" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/hair-salon-peshawar/", label: "Hair salon for event styling" },
+              { href: "/reviews/", label: "What clients say about party makeup" },
+              { href: "/contact/", label: "Book your party makeup" },
             ]}
           />
         </div>

@@ -506,8 +506,8 @@ export default function FacialsPage() {
           <h2>Real clients</h2>
           <p>
             One of our clients wrote the review below on Google after a
-            facial — word for word. The rest are on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            facial — word for word. You can read the rest in our{" "}
+            <Link href="/reviews/">facial reviews</Link>.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -539,10 +539,10 @@ export default function FacialsPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/waxing-peshawar/", label: "Waxing and threading in Peshawar" },
-              { href: "/laser-hair-removal-peshawar/", label: "Laser hair removal in Hayatabad" },
-              { href: "/mani-pedi-peshawar/", label: "Manicure and pedicure" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/waxing-peshawar/", label: "Waxing and threading for smooth skin" },
+              { href: "/laser-hair-removal-peshawar/", label: "Laser hair removal for face and body" },
+              { href: "/mani-pedi-peshawar/", label: "Manicure and pedicure in Peshawar" },
+              { href: "/contact/", label: "Book a facial" },
             ]}
           />
         </div>

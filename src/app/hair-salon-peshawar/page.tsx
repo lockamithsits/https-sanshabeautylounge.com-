@@ -176,15 +176,19 @@ export default function HairSalonPage() {
             visit.
           </p>
           <p>
+            You can see the styling chairs and wash area in the{" "}
+            <Link href="/gallery/">salon gallery</Link>.
+          </p>
+          <p>
             The salon also does keratin and protein treatments and hair
             colour, but those are their own visits with their own pages
             — a{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment for frizzy hair
+              keratin treatment for frizz
             </Link>{" "}
             when frizz is the problem, and{" "}
             <Link href="/hair-colour-peshawar/">
-              hair colour, balayage and dye
+              hair colour and balayage
             </Link>{" "}
             when you want a new shade. This page is about the everyday
             hair services: the cut, the wash, the blow-dry and the
@@ -230,7 +234,7 @@ export default function HairSalonPage() {
             And if your hair is frizzy as well as long, mention it: the
             salon may suggest a{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment
+              keratin treatment at the salon
             </Link>{" "}
             as a separate visit, so the cut and the smoothing are
             planned together.
@@ -299,7 +303,7 @@ export default function HairSalonPage() {
           <p>
             For frizzy, unmanageable hair, the salon does{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment for frizzy hair
+              keratin treatment
             </Link>{" "}
             and protein treatments — smooth, frizz-free hair that is
             easier to manage and style. A treatment is a separate visit
@@ -320,7 +324,7 @@ export default function HairSalonPage() {
           <p>
             The salon also does{" "}
             <Link href="/hair-colour-peshawar/">
-              hair colour, balayage and dye
+              hair colour in Peshawar
             </Link>{" "}
             — dye, balayage, streaks and highlights. Choose your shade
             first, then book: send a photo of the shade you want on
@@ -432,8 +436,8 @@ export default function HairSalonPage() {
           <h2>Real clients</h2>
           <p>
             The two reviews below are word-for-word from Google — written
-            by clients after a haircut. More are on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            by clients after a haircut. More{" "}
+            <Link href="/reviews/">haircut reviews</Link> are on the reviews page.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -478,11 +482,11 @@ export default function HairSalonPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/keratin-treatment-peshawar/", label: "Keratin treatment for frizzy hair" },
-              { href: "/hair-colour-peshawar/", label: "Hair colour, balayage and dye" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup with hairdo" },
-              { href: "/party-makeup-peshawar/", label: "Party makeup with hairdo" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/keratin-treatment-peshawar/", label: "Keratin treatment for smooth, frizz-free hair" },
+              { href: "/hair-colour-peshawar/", label: "Hair colour and balayage at the salon" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup and hairdo for weddings" },
+              { href: "/party-makeup-peshawar/", label: "Party makeup with a hairdo" },
+              { href: "/contact/", label: "Book a haircut or blow-dry" },
             ]}
           />
         </div>

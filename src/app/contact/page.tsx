@@ -270,6 +270,16 @@ export default function ContactPage() {
                 {SITE.email}
               </a>
             </p>
+            <p className="mt-3 leading-relaxed text-slate-700">
+              For how we handle your details, see our{" "}
+              <a
+                href="/privacy-policy/"
+                className="font-medium text-brand-700 underline hover:text-brand-900"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
 
             <h2 className="mt-10 text-2xl font-bold text-brand-900">
               Address
@@ -375,10 +385,10 @@ export default function ContactPage() {
         <div className="mx-auto mt-8 max-w-3xl">
           <RelatedLinks
             links={[
-              { href: "/reviews/", label: "What our clients say" },
+              { href: "/reviews/", label: "See what clients say" },
               { href: "/gallery/", label: "See inside the salon" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup in Peshawar" },
-              { href: "/hair-salon-peshawar/", label: "Hair salon in Hayatabad" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup for your wedding" },
+              { href: "/hair-salon-peshawar/", label: "Hair salon — cuts and blow-dry" },
             ]}
           />
         </div>

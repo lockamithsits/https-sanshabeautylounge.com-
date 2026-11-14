@@ -98,7 +98,7 @@ const SERVICES = [
   {
     href: "/keratin-treatment-peshawar/",
     label: "Keratin Treatment",
-    anchor: "keratin treatment for frizzy hair",
+    anchor: "keratin treatment for smooth hair",
     text: "Keratin and protein treatments for smooth, frizz-free hair.",
   },
   {
@@ -469,7 +469,7 @@ export default function HomePage() {
               <strong>The function, for makeup.</strong> A barat sitting
               is not priced like a nikah sitting — see{" "}
               <Link href="/bridal-makeup-peshawar/" className="inline-flex min-h-11 items-center font-medium text-brand-700 underline hover:text-brand-900">
-                bridal makeup in Peshawar
+                bridal makeup sittings
               </Link>{" "}
               for how that works.
             </li>

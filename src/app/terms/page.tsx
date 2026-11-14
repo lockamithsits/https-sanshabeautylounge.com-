@@ -94,7 +94,7 @@ export default function TermsPage() {
 
           <h2>Reviews on this website</h2>
           <p>
-            The reviews on this website are verbatim Google reviews from
+            The <a href="/reviews/">reviews</a> on this website are verbatim Google reviews from
             our clients, shown with the reviewer&apos;s first name and
             &ldquo;via Google&rdquo;. They are the reviewers&apos; own
             words and their own opinions.
@@ -105,6 +105,11 @@ export default function TermsPage() {
             The content of this website — text, photos and the logo —
             belongs to SanSha A Beauty Lounge. Please do not copy or
             reuse it without asking us first.
+          </p>
+
+          <p>
+            See also our <a href="/privacy-policy/">privacy policy</a>{" "}
+            and <a href="/cookies/">cookie policy</a>.
           </p>
 
           <p>

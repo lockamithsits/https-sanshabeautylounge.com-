@@ -458,7 +458,7 @@ export default function KeratinPage() {
             If you are thinking about a new shade as well as smoother
             hair, look at{" "}
             <Link href="/hair-colour-peshawar/">
-              hair colour, balayage and dye
+              hair colour services
             </Link>{" "}
             first, then message the salon with both services in mind.
             And if your hair is frizzy and you only want a cut, start
@@ -473,8 +473,8 @@ export default function KeratinPage() {
           <p>
             Below are two Google reviews from clients who had a keratin
             or protein treatment — their own words, exactly as written.
-            See the full set on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            See the full set of{" "}
+            <Link href="/reviews/">keratin reviews</Link>.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -521,11 +521,11 @@ export default function KeratinPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/hair-salon-peshawar/", label: "Hair salon — cuts, blow-dry & styling" },
-              { href: "/hair-colour-peshawar/", label: "Hair colour, balayage and dye" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup with hairdo" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/hair-salon-peshawar/", label: "Haircuts, blow-dry and styling at the salon" },
+              { href: "/hair-colour-peshawar/", label: "Hair colour after keratin — the right order" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup for the wedding week" },
+              { href: "/reviews/", label: "What clients say about keratin" },
+              { href: "/contact/", label: "Book a keratin appointment" },
             ]}
           />
         </div>

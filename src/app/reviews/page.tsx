@@ -423,10 +423,10 @@ export default function ReviewsPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/hair-salon-peshawar/", label: "Hair salon in Hayatabad" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup in Peshawar" },
-              { href: "/gallery/", label: "See inside the salon" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/hair-salon-peshawar/", label: "Haircuts and styling" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup in Hayatabad" },
+              { href: "/gallery/", label: "Photos of the salon" },
+              { href: "/contact/", label: "Call or WhatsApp the salon" },
             ]}
           />
         </div>

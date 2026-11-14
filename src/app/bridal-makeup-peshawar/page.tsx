@@ -192,7 +192,7 @@ export default function BridalMakeupPage() {
             If you are also thinking about your hair before the wedding
             week, a{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment for frizzy hair
+              keratin treatment to smooth frizz
             </Link>{" "}
             or{" "}
             <Link href="/hair-colour-peshawar/">
@@ -234,6 +234,13 @@ export default function BridalMakeupPage() {
             function of the week, and the makeup follows that — brighter
             colour, and a hairdo that holds up through a long evening of
             dancing and photos.
+          </p>
+          <p>
+            If henna is part of your mehndi night, see{" "}
+            <Link href="/bridal-mehndi-peshawar/">
+              bridal mehndi in Peshawar
+            </Link>{" "}
+            — henna for the bride and her guests.
           </p>
           <h3>Engagement</h3>
           <p>
@@ -390,6 +397,14 @@ export default function BridalMakeupPage() {
             hairdo will go on easier and last better through the
             function.
           </p>
+          <p>
+            If you are thinking about{" "}
+            <Link href="/laser-hair-removal-peshawar/">
+              laser hair removal before the wedding
+            </Link>{" "}
+            mention it when you book — the salon will tell you how far
+            ahead to plan.
+          </p>
           <ul>
             <li>
               Come with clean, dry hair unless the salon tells you
@@ -451,9 +466,9 @@ export default function BridalMakeupPage() {
             with a hairdo, for engagements, dinners and family events.
             If your event is a wedding function, book bridal. If it is a
             family event where you want to look finished but not bridal,
-            party makeup fits better — see{" "}
+            party makeup fits better — see our{" "}
             <Link href="/party-makeup-peshawar/">
-              party makeup with hairdo
+              party looks
             </Link>
             .
           </p>
@@ -508,8 +523,8 @@ export default function BridalMakeupPage() {
           <h2>Real brides</h2>
           <p>
             Our brides wrote the words below on Google — exactly as they
-            wrote them. There are more on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            wrote them. There are more{" "}
+            <Link href="/reviews/">bridal reviews</Link>.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -555,10 +570,10 @@ export default function BridalMakeupPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/party-makeup-peshawar/", label: "Party makeup with hairdo" },
-              { href: "/hair-salon-peshawar/", label: "Hair salon — cuts, blow-dry & styling" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/party-makeup-peshawar/", label: "Party makeup for engagements and dinners" },
+              { href: "/hair-salon-peshawar/", label: "Haircuts and blow-dry before the wedding" },
+              { href: "/reviews/", label: "What brides say" },
+              { href: "/contact/", label: "Book your bridal makeup" },
             ]}
           />
         </div>

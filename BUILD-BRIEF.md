@@ -345,6 +345,75 @@ Review-schema byte-match, 17-page sitemap); mobile-check GREEN at
   break / appointment lead time [CONFIRM]; group bookings
   [CONFIRM]. NO prices anywhere (G2 still open).
 
+## Phase 3 — site-wide cleanup + before/after report (2026-11-14)
+
+Full report: `../sansha-beauty-lounge/PHASE3.md`. No body copy
+rewritten, no titles/metas changed — links, anchors, and the two
+llms files only. QA still **87/0 GREEN**; mobile-check GREEN at
+360px (all 17 pages).
+
+- **Linking map:** every page now has ≥2 incoming in-main links
+  (was: privacy + terms 0, bridal mehndi 1, cookies 1). New
+  contextual links: bridal → bridal mehndi (Mehndi H3), party →
+  bridal mehndi (Engagements H3), bridal → laser ("How to
+  prepare"), hair salon → gallery (intro), privacy → reviews,
+  terms → reviews, contact → privacy (Email section), and a "See
+  also" closing line on each legal page cross-linking the other
+  two. Total in-main links 149 → **164**. Home remains the hub
+  (links all 13 content pages in-body).
+- **Anchor diversification (~70 edits):** every repeated anchor
+  now 0× — "keratin treatment for frizzy hair" 8×, "Contact the
+  salon" 12×, "Customer reviews" 6×, "reviews page" 8× (mehndi
+  kept its unique sentence), "Bridal makeup in Peshawar" 8×,
+  "Hair salon — cuts, blow-dry & styling" 4×, "Hair colour,
+  balayage and dye" 5×, "Facials in Hayatabad" / "Waxing and
+  threading in Peshawar" / "Laser hair removal in Hayatabad" /
+  "Hair salon in Hayatabad" / "Manicure and pedicure" as labels.
+  Mid-paragraph anchors rewritten to fit their sentences;
+  RelatedLinks labels unique per page (e.g. "Book your bridal
+  makeup" / "Book a facial" / "Book a laser consultation").
+  Residual >2× anchors are plain service/policy names only
+  ("home" breadcrumbs 16×; "hair colour and balayage",
+  "party makeup sitting", "privacy policy", "waxing and
+  threading", "hair salon", "facial" at 3× each, once per page).
+- **Cannibalisation: CLEAN.** Distinct primary keyword + H1 per
+  page; risky pairs checked (keratin vs colour order sections,
+  bridal vs party, facial vs laser, bridal mehndi vs bridal
+  makeup, hair-salon hub vs keratin/colour) — all complementary
+  cross-references, no changes needed. 0 shared shingles.
+- **Consistency: CLEAN, one drift fixed.** NAP/phone/WhatsApp/
+  email/address/hours/3.9★-92 identical on all 17 pages; 0 Rs/£
+  figures; 0 wrong flyer email. **Drift:** `public/llms.txt` +
+  `public/llms-full.txt` were stale (page lists ended at
+  /reviews/) — both now list gallery + bridal mehndi, and bridal
+  mehndi is in both services lists with [CONFIRM] framing.
+- **Schema: CLEAN.** BeautySalon identical on all 17 pages (no
+  geo G11, no priceRange G2 — correctly absent); Service on the
+  10 service pages; FAQPage byte-matching on 14 pages; Review
+  schema ONLY on /reviews/ (12 verbatim, no reviewRating); NO
+  aggregateRating anywhere; no staff bylines.
+- **NEW tension found in Phase 3:** bridal-mehndi meta + Service
+  schema say "booked with your bridal makeup" while the body
+  says [CONFIRM — mehndi and makeup booked together.] — fourth
+  meta/body tension, same handling as trial/dupatta, hair spa,
+  facial menu (owner decides; metas untouched).
+- **Before/after (audit rubric, same method):** site mean
+  **5.2 → 7.8/10** (all pages), content pages **5.5 → 8.2/10**;
+  **14 of 17 pages now 7+** (Phase 1: 0). Own-copy words
+  6,540 → **29,917**; FAQs 42 → **97**; Quick Facts 0/9 →
+  **14/14** content pages; H3s 0 → **61**. Ceiling at 8–8.4 is
+  honest: E-E-A-T caps at 7 (no bylines, G3), Local at 7 (no
+  area pages, no geo, G10/G11), Semantic at 8–9 (durations,
+  aftercare, prices all [CONFIRM], G2). Laser + bridal mehndi
+  score E-E-A-T 5 — zero client reviews, honest placeholders.
+- **GBP checklist** in PHASE3.md §6 (claim, website, hours,
+  services, pin → geo/hasMap follow-up).
+- **Deploy (owner-side, unchanged):** Pages deployment still
+  returns bare 404 on https-sanshabeautylounge-com.pages.dev;
+  repo verified good — check Deployments tab, connected repo
+  (lockamithsits, not the empty mrskey repo), preset, build,
+  output, branch. Domain still does not resolve (G6).
+
 ## Meta wording caveats (flag — owner to confirm)
 
 The strategy's verified metas carry wording the body copy repeats
@@ -359,6 +428,10 @@ so the owner must confirm whether hair spa is offered and what it
 includes); B8 meta lists whitening/organic/derma
 facials (Eid flyer + reviewer language, G12 — confirm current facial
 menu).
+- Bridal mehndi (B11, found in Phase 3): meta + Service schema
+  say "booked with your bridal makeup" (body: "[CONFIRM —
+  mehndi and makeup booked together.]" — confirm whether
+  mehndi + makeup can be booked together).
 
 ## Pages (17)
 

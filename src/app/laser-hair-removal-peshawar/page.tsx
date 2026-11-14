@@ -185,7 +185,7 @@ export default function LaserPage() {
           <p>
             If you are weighing laser against waxing, the{" "}
             <Link href="/waxing-peshawar/">
-              waxing and threading page
+              waxing page
             </Link>{" "}
             sets out the other option. The two methods suit different
             people, and the honest answer for you comes out of the
@@ -364,9 +364,9 @@ export default function LaserPage() {
             treatment you repeat when the hair grows back. Which suits
             you depends on the area, your hair and your budget — ask the
             salon when you book and it will explain both honestly. For
-            waxing, see{" "}
+            waxing, see our{" "}
             <Link href="/waxing-peshawar/">
-              waxing and threading in Peshawar
+              waxing and threading page
             </Link>
             .
           </p>
@@ -498,10 +498,10 @@ export default function LaserPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/waxing-peshawar/", label: "Waxing and threading in Peshawar" },
-              { href: "/facial-peshawar/", label: "Facials in Hayatabad" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/waxing-peshawar/", label: "Waxing and threading instead of laser" },
+              { href: "/facial-peshawar/", label: "Facials for your skin" },
+              { href: "/reviews/", label: "See all client reviews" },
+              { href: "/contact/", label: "Book a laser consultation" },
             ]}
           />
         </div>

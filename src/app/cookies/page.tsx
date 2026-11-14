@@ -85,6 +85,11 @@ export default function CookiesPage() {
           </p>
 
           <p>
+            See also our <a href="/privacy-policy/">privacy policy</a>{" "}
+            and <a href="/terms/">terms of service</a>.
+          </p>
+
+          <p>
             Last updated: {SITE.lastUpdated}.
           </p>
         </div>

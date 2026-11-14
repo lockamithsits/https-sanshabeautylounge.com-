@@ -221,7 +221,7 @@ export default function HairColourPage() {
             salon will tell you which service matches it. If your hair
             is frizzy as well as dull, a{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment for frizzy hair
+              keratin treatment in Peshawar
             </Link>{" "}
             can be planned around the colour — ask the salon about the
             order first.
@@ -253,7 +253,7 @@ export default function HairColourPage() {
             colour needs a day or two to settle, and you will want to
             see it in daylight before the function. A{" "}
             <Link href="/bridal-makeup-peshawar/">
-              bridal makeup sitting
+              bridal makeup appointment
             </Link>{" "}
             goes on easier when the hair colour is already done and
             settled.
@@ -437,7 +437,7 @@ export default function HairColourPage() {
           <p>
             If your hair is frizzy as well as dull, look at{" "}
             <Link href="/keratin-treatment-peshawar/">
-              keratin treatment for frizzy hair
+              keratin treatment for smooth, frizz-free hair
             </Link>{" "}
             first, then message the salon with both services in mind.
             And if you only want a fresh shape without a colour change,
@@ -452,8 +452,8 @@ export default function HairColourPage() {
           <h2>Real clients</h2>
           <p>
             The reviews below come straight from Google — two clients
-            writing about their hair colour. More are on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            writing about their hair colour. More{" "}
+            <Link href="/reviews/">reviews about hair colour</Link> are on the reviews page.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -495,11 +495,11 @@ export default function HairColourPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/hair-salon-peshawar/", label: "Hair salon — cuts, blow-dry & styling" },
-              { href: "/keratin-treatment-peshawar/", label: "Keratin treatment for frizzy hair" },
-              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup with hairdo" },
-              { href: "/reviews/", label: "Customer reviews" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/hair-salon-peshawar/", label: "Hair salon in Phase 2, Hayatabad" },
+              { href: "/keratin-treatment-peshawar/", label: "Keratin and protein treatments" },
+              { href: "/bridal-makeup-peshawar/", label: "Bridal makeup with a hairdo" },
+              { href: "/reviews/", label: "What clients say about hair colour" },
+              { href: "/contact/", label: "Book your colour appointment" },
             ]}
           />
         </div>

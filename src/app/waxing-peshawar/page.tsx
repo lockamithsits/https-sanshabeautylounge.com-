@@ -514,8 +514,8 @@ export default function WaxingPage() {
           <h2>Real clients</h2>
           <p>
             The two reviews below are from Google — clients writing
-            about their waxing, word for word. More are on the{" "}
-            <Link href="/reviews/">reviews page</Link>.
+            about their waxing, word for word. There are more{" "}
+            <Link href="/reviews/">waxing reviews</Link> to read.
           </p>
           <blockquote className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="leading-relaxed text-slate-700">
@@ -563,10 +563,10 @@ export default function WaxingPage() {
         <div className="mt-8">
           <RelatedLinks
             links={[
-              { href: "/facial-peshawar/", label: "Facials in Hayatabad" },
-              { href: "/laser-hair-removal-peshawar/", label: "Laser hair removal in Hayatabad" },
-              { href: "/mani-pedi-peshawar/", label: "Manicure and pedicure" },
-              { href: "/contact/", label: "Contact the salon" },
+              { href: "/facial-peshawar/", label: "Facials and skin polish" },
+              { href: "/laser-hair-removal-peshawar/", label: "Laser hair removal vs waxing" },
+              { href: "/mani-pedi-peshawar/", label: "Mani-pedi and nail care" },
+              { href: "/contact/", label: "Book a waxing appointment" },
             ]}
           />
         </div>
