@@ -126,6 +126,58 @@ mid-paragraph contextual links). Titles/metas UNCHANGED (verified
   laser client review [ADD CLIENT REVIEW]; home nearby areas
   [CONFIRM]. NO prices anywhere (G2 still open).
 
+## Phase 2 — Batch 2 (content expansion, 2026-11-14)
+
+Rewrote 3 hair pages to the same standard as Batch 1 (1,200+ own-copy
+words, 7 FAQs each, Quick Facts box, H3 structure, direct-answer
+section leads, comparison tables, numbered process steps,
+mid-paragraph contextual links). Titles/metas UNCHANGED (verified
+22/22). QA still **78/0 GREEN**; mobile-check GREEN at 360px.
+
+- `/keratin-treatment-peshawar/`: 718 → **2,262 own-copy words**;
+  5 → 7 FAQs (new: does keratin straighten hair; colour after
+  keratin). Keratin-vs-protein comparison table + H3s; who-it-suits /
+  ask-first; 5-step appointment process (duration [CONFIRM]);
+  hair-spa section added as [CONFIRM] wording so the body now
+  mentions what the meta + schema advertise — meta/body tension
+  remains (see below); price-factor framework (no figures);
+  aftercare + maintenance; mistakes + myths; keratin-vs-colour
+  order section. Quick Facts box, 4 H3s.
+- `/hair-colour-peshawar/`: 601 → **2,442 own-copy words**; 4 → 7
+  FAQs (new: how long colour lasts; dark-to-light in one visit;
+  patch test). Dye / balayage / streaks / highlights as H3 sections;
+  shade guidance; patch-test section ([CONFIRM] — ask when booking
+  whether one is needed); who-it-suits / ask-first (previously
+  coloured or damaged hair); 4-step appointment process (duration
+  [CONFIRM]); aftercare + maintenance; price factors; mistakes +
+  myths; colour-vs-keratin order section. Quick Facts box, 6 H3s.
+- `/hair-salon-peshawar/`: 600 → **2,197 own-copy words**; 4 → 7
+  FAQs (new: how long a haircut takes [CONFIRM]; cut + colour in
+  one visit; what to bring). Each section expanded with process +
+  duration [CONFIRM] + who-it-suits: haircuts (H3 what a haircut
+  looks like, who it is for), blow-dry & wash, event styling
+  (bridal/party links), treatments + colour as separate visits,
+  price factors, preparation checklist, mistakes + myths. Quick
+  Facts box, 4 H3s.
+- QA script updated: expected FAQ total 49 → **57** (site total now
+  57). FAQ answers all 40–60 words, byte-match FAQPage JSON-LD.
+- Uniqueness fix round: first QA run failed 6 checks — 4 new FAQ
+  answers were 61 words (trimmed to 57–59), "Best for:" in the
+  keratin Quick Facts tripped the superlative check (reworded to
+  "Good for:"), and 61 shared 15-word shingles (mirrored
+  appointment intros, keratin/colour order sections, "simplest way
+  to see what your hair needs" endings, price-factor closings, and
+  identical Quick Facts Where/Hours lines). All four passages
+  rewritten distinct per page; Quick Facts Where/Hours reworded
+  per page. Re-run: 0 shared shingles, QA 78/0 GREEN.
+- Placeholders left (owner questions): hair-spa offered + what it
+  includes [CONFIRM]; keratin appointment duration [CONFIRM];
+  keratin aftercare details [ADD STYLIST NOTE]; colour appointment
+  duration [CONFIRM]; patch test needed? [CONFIRM]; colour
+  aftercare details [ADD STYLIST NOTE]; haircut duration [CONFIRM];
+  treatment-vs-cut call [ADD STYLIST NOTE]. NO prices anywhere
+  (G2 still open).
+
 ## Meta wording caveats (flag — owner to confirm)
 
 The strategy's verified metas carry wording the body copy repeats
@@ -133,7 +185,11 @@ without claiming it as a standing offer (origin: strategy briefs, not
 owner confirmation): B2 meta "dupatta setting and trial on request"
 (body: "ask about dupatta setting and a trial when you book"); B7 meta
 "Book a consultation" (body: "book a consultation"); B5 meta "hair
-spa" (reviewer language, G12); B8 meta lists whitening/organic/derma
+spa" (reviewer language, G12 — Batch 2 added a [CONFIRM]-worded
+hair-spa body section + Quick Facts line, so the body now mentions
+what the meta advertises; the meta still presents it as an offer,
+so the owner must confirm whether hair spa is offered and what it
+includes); B8 meta lists whitening/organic/derma
 facials (Eid flyer + reviewer language, G12 — confirm current facial
 menu).
 
