@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  /* System font stacks only — zero webfont payload, fastest first
+     paint. Display serif (H1/H2 only) + clean sans body, per the
+     home UI/UX spec. A Google display face can be swapped in later;
+     the system serif keeps this build hermetic. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", "Nimbus Roman", serif;
+
+  /* SanSha brand — near-black, gold, leaf green, warm white, soft rose */
+  --color-brand-950: #0d0d0d;
+  --color-brand-900: #1a1a1a;
+  --color-brand-800: #2b2b2b;
+  --color-brand-700: #3d3d3d;
+
+  /* Gold CTA accent */
+  --color-accent-400: #c9a85c;
+  --color-accent-500: #b08d3e;
+  --color-accent-600: #96762f;
+  --color-accent-700: #7a5f26;
+
+  /* Leaf green (secondary accent) */
+  --color-leaf-500: #7cb342;
+  --color-leaf-600: #689f38;
+
+  /* Warm white + soft rose surfaces */
+  --color-cream-50: #faf7f2;
+  --color-rose-50: #f6e8e8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 font-sans text-base text-slate-900 antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-600;
+  }
+
+  /* Display serif for H1/H2 only — body stays clean sans. */
+  h1,
+  h2 {
+    font-family: var(--font-display);
+  }
+
+  /* Prose defaults for page content sections. */
+  .page-content h2 {
+    @apply mt-10 text-2xl font-bold text-brand-900 first:mt-0 sm:text-3xl;
+  }
+
+  .page-content h3 {
+    @apply mt-8 text-xl font-semibold text-brand-900;
+  }
+
+  .page-content p {
+    @apply mt-4 leading-relaxed text-slate-700;
+  }
+
+  .page-content ul {
+    @apply mt-4 list-disc space-y-2 pl-6 leading-relaxed text-slate-700;
+  }
+
+  .page-content ol {
+    @apply mt-4 list-decimal space-y-2 pl-6 leading-relaxed text-slate-700;
+  }
+
+  .page-content a {
+    @apply font-medium text-brand-700 underline hover:text-brand-900;
+  }
+
+  .page-content strong {
+    @apply font-semibold text-slate-900;
+  }
+}

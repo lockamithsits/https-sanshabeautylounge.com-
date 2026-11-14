@@ -1,0 +1,6 @@
+# pnpm 12 blocks postinstall scripts by default. Build approvals live here
+# (the `onlyBuiltDependencies` package.json field is a no-op on pnpm 12).
+allowBuilds:
+  esbuild: true
+  workerd: true
+  unrs-resolver: true
