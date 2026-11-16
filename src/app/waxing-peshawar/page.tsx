@@ -105,8 +105,7 @@ export default function WaxingPage() {
               Underarms
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Waxing and threading in Phase 2, Hayatabad — with gentle
-              care. Call or WhatsApp to book.
+              Waxing and threading with gentle care at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — arms, legs, face and underarms, plus eyebrow shaping. Call 091-5839119 or WhatsApp 0313 9333377 to book your visit. The salon will confirm your slot and today&apos;s price.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

@@ -104,9 +104,7 @@ export default function PartyMakeupPage() {
               Party Makeup in Peshawar — With Hairdo
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Party makeup with a hairdo for engagements, dinners and
-              family events — at SanSha A Beauty Lounge in Phase 2,
-              Hayatabad. Book your slot on call or WhatsApp.
+              Party makeup with a hairdo for engagements, dinners and family events at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Book your slot on call at 091-5839119 or WhatsApp at 0313 9333377, and the salon will confirm your time and today&apos;s price.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

@@ -103,9 +103,7 @@ export default function BridalMehndiPage() {
               Bridal Mehndi in Peshawar — Henna for Brides &amp; Guests
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Henna for the bride and her guests, done at the salon in
-              Phase 2, Hayatabad. Message us and we will hold your
-              sitting.
+              Bridal mehndi application — henna for the bride and her guests — done at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Message the salon on WhatsApp at 0313 9333377 or call 091-5839119 with your wedding date, and it will hold your sitting and confirm the price.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

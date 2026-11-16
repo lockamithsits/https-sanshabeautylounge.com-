@@ -6,14 +6,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | SanSha A Beauty Lounge",
+  title: "Cookie Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
   description:
-    "Cookie policy for SanSha A Beauty Lounge. What cookies this website uses, why, and how to control them in your browser.",
+    "Cookie policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What cookies this website uses, why it uses them, and how to control them in your browser.",
   alternates: { canonical: `${SITE.url}/cookies/` },
   openGraph: {
-    title: "Cookie Policy | SanSha A Beauty Lounge",
+    title: "Cookie Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
     description:
-      "Cookie policy for SanSha A Beauty Lounge. What cookies this website uses, why, and how to control them in your browser.",
+      "Cookie policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What cookies this website uses, why it uses them, and how to control them in your browser.",
     url: `${SITE.url}/cookies/`,
     siteName: SITE.fullName,
     locale: "en",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cookie Policy | SanSha A Beauty Lounge",
+    title: "Cookie Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
     description:
-      "Cookie policy for SanSha A Beauty Lounge. What cookies this website uses, why, and how to control them in your browser.",
+      "Cookie policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What cookies this website uses, why it uses them, and how to control them in your browser.",
     images: [`${SITE.url}${OG_IMAGE.url}`],
   },
 };

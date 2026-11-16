@@ -6,14 +6,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SanSha A Beauty Lounge",
+  title: "Privacy Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
   description:
-    "Privacy policy for SanSha A Beauty Lounge. What data this website collects, why, and how to contact us about your data.",
+    "Privacy policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What data this website collects, why, and how to contact us about your data.",
   alternates: { canonical: `${SITE.url}/privacy-policy/` },
   openGraph: {
-    title: "Privacy Policy | SanSha A Beauty Lounge",
+    title: "Privacy Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
     description:
-      "Privacy policy for SanSha A Beauty Lounge. What data this website collects, why, and how to contact us about your data.",
+      "Privacy policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What data this website collects, why, and how to contact us about your data.",
     url: `${SITE.url}/privacy-policy/`,
     siteName: SITE.fullName,
     locale: "en",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | SanSha A Beauty Lounge",
+    title: "Privacy Policy | SanSha A Beauty Lounge, Hayatabad Peshawar",
     description:
-      "Privacy policy for SanSha A Beauty Lounge. What data this website collects, why, and how to contact us about your data.",
+      "Privacy policy for SanSha A Beauty Lounge in Hayatabad, Peshawar. What data this website collects, why, and how to contact us about your data.",
     images: [`${SITE.url}${OG_IMAGE.url}`],
   },
 };

@@ -104,10 +104,7 @@ export default function BridalMakeupPage() {
               Bridal Makeup in Peshawar — Barat, Walima, Nikah &amp; Mehndi
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Bridal makeup with a hairdo for every function of your
-              wedding — at SanSha A Beauty Lounge in Phase 2, Hayatabad.
-              Send your event date on WhatsApp and we will confirm your
-              slot.
+              Bridal makeup with a hairdo for every function of your wedding — barat, walima, nikah, mehndi and engagement — at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Send your event date on WhatsApp at 0313 9333377, or call 091-5839119, and the salon will confirm your slot and your package.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

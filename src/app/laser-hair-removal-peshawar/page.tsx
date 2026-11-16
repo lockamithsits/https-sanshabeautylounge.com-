@@ -105,9 +105,7 @@ export default function LaserPage() {
               Body
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Laser hair removal in Phase 2, Hayatabad. Talk to the salon
-              first on call or WhatsApp and it will explain the treatment
-              for your skin and hair.
+              Laser hair removal for face, arms, legs and full body at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Talk to the salon first on call or WhatsApp and it will explain the treatment for your skin and hair, and give you the price after your consultation.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

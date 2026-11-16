@@ -104,8 +104,7 @@ export default function HairSalonPage() {
               Styling
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Haircuts, blow-dry, hair wash and styling in Phase 2,
-              Hayatabad. Walk in, or book your slot today on WhatsApp.
+              Haircuts, blow-dry, hair wash and styling at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — plus keratin, protein and hair colour. Walk in at any hour, or book your slot today on WhatsApp at 0313 9333377 or by calling 091-5839119.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

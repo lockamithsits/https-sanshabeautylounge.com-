@@ -15,12 +15,12 @@ import {
 import type { Faq } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: "Salon Gallery | SanSha A Beauty Lounge, Hayatabad",
+  title: "Beauty Salon Gallery in Hayatabad | SanSha A Beauty Lounge",
   description:
     "See inside SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — the flower arch entrance, reception, styling chairs, wash area and treatment rooms.",
   alternates: { canonical: `${SITE.url}/gallery/` },
   openGraph: {
-    title: "Salon Gallery | SanSha A Beauty Lounge, Hayatabad",
+    title: "Beauty Salon Gallery in Hayatabad | SanSha A Beauty Lounge",
     description:
       "See inside SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — the flower arch entrance, reception, styling chairs, wash area and treatment rooms.",
     url: `${SITE.url}/gallery/`,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salon Gallery | SanSha A Beauty Lounge, Hayatabad",
+    title: "Beauty Salon Gallery in Hayatabad | SanSha A Beauty Lounge",
     description:
       "See inside SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — the flower arch entrance, reception, styling chairs, wash area and treatment rooms.",
     images: [`${SITE.url}${OG_IMAGE.url}`],
@@ -221,9 +221,7 @@ export default function GalleryPage() {
               Salon Gallery in Hayatabad, Peshawar
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Nineteen photos of the real salon — the entrance, the
-              reception, the styling chairs and the treatment rooms —
-              taken at SanSha A Beauty Lounge in Phase 2, Hayatabad.
+              Nineteen photos of the real salon — the entrance, the reception, the styling chairs and the treatment rooms — taken at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. See the salon before you visit, then call or WhatsApp to book.
             </p>
           </div>
           <Photo

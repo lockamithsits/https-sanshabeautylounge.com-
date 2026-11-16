@@ -104,8 +104,7 @@ export default function FacialsPage() {
               Derma
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Facials with skin polish in Phase 2, Hayatabad — call or
-              WhatsApp to keep a time.
+              Facials with skin polish at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — whitening, organic and derma facials for your skin type. Call 091-5839119 or WhatsApp 0313 9333377 to keep a time, and the salon will confirm your slot and today&apos;s price.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

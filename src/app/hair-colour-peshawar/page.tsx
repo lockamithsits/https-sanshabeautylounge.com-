@@ -105,9 +105,7 @@ export default function HairColourPage() {
               Highlights
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Hair colour, balayage, dye and streaks in Phase 2,
-              Hayatabad. Choose your shade first, then book — call or
-              WhatsApp.
+              Hair colour, balayage, dye and streaks at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Choose your shade first with the salon, then book — call 091-5839119 or WhatsApp 0313 9333377, and the salon will confirm your slot and today&apos;s price.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

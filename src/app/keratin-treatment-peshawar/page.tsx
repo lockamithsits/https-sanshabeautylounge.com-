@@ -104,9 +104,7 @@ export default function KeratinPage() {
               Keratin Treatment in Peshawar — Smooth, Frizz-Free Hair
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Keratin and protein treatments for smooth, frizz-free hair —
-              at SanSha A Beauty Lounge in Phase 2, Hayatabad. Call or
-              WhatsApp to book.
+              Keratin and protein treatments for smooth, frizz-free hair, matched to your hair type, at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Call 091-5839119 or WhatsApp 0313 9333377 to book, and the salon will confirm your slot and today&apos;s price before you come.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

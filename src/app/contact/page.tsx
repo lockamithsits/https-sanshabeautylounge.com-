@@ -17,12 +17,12 @@ import type { Faq } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "Contact SanSha A Beauty Lounge | Hayatabad, Peshawar",
   description:
-    "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377. Walk in, or book your slot.",
+    "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377 to book. Open 24 hours, 7 days a week.",
   alternates: { canonical: `${SITE.url}/contact/` },
   openGraph: {
     title: "Contact SanSha A Beauty Lounge | Hayatabad, Peshawar",
     description:
-      "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377. Walk in, or book your slot.",
+      "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377 to book. Open 24 hours, 7 days a week.",
     url: `${SITE.url}/contact/`,
     siteName: SITE.fullName,
     locale: "en",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact SanSha A Beauty Lounge | Hayatabad, Peshawar",
     description:
-      "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377. Walk in, or book your slot.",
+      "Contact SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — call 091-5839119 or WhatsApp 0313 9333377 to book. Open 24 hours, 7 days a week.",
     images: [`${SITE.url}${OG_IMAGE.url}`],
   },
 };
@@ -99,9 +99,8 @@ export default function ContactPage() {
             Contact {SITE.fullName}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-200">
-            Walk in, or call or WhatsApp to book. The salon is in Phase
-            2, Hayatabad, Peshawar.
-          </p>
+              Walk in, or call 091-5839119 or WhatsApp 0313 9333377 to book. SanSha A Beauty Lounge is at Shop No. 4, Block A, Deans Hights, Phase 2, Hayatabad, Peshawar 25124 — open 24 hours, 7 days a week, and the salon will confirm your slot.
+            </p>
         </div>
       </section>
 

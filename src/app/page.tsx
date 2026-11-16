@@ -177,9 +177,7 @@ export default function HomePage() {
               Beauty Salon in Hayatabad, Peshawar — SanSha A Beauty Lounge
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Bridal &amp; party makeup, hair, keratin, facials, waxing and
-              laser — in Phase 2, Hayatabad. Walk in, or call or WhatsApp
-              to book your slot.
+              SanSha A Beauty Lounge is a beauty salon in Phase 2, Hayatabad, Peshawar, offering bridal and party makeup, haircuts, keratin, facials, waxing, laser hair removal and mani-pedi. Walk in at any hour — the salon is open 24 hours, 7 days a week — or call 091-5839119 or WhatsApp 0313 9333377 to book your slot.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a

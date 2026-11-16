@@ -257,10 +257,7 @@ export default function ReviewsPage() {
               Beauty Salon Reviews in Peshawar
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews).
-              The reviews below are a selection of verbatim Google
-              reviews from our clients — their own words, exactly as
-              they wrote them.
+              {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews). The reviews below are a selection of verbatim Google reviews from our clients — their own words, exactly as they wrote them, spelling mistakes included. Read them here, or see the full set on the salon&apos;s Google profile.
             </p>
             <p className="mt-4 text-sm text-slate-300">
               <a

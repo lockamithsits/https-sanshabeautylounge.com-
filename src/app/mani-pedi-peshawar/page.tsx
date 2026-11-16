@@ -105,8 +105,7 @@ export default function ManiPediPage() {
               &amp; Nail Care
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Manicure and pedicure with polish in Phase 2, Hayatabad —
-              message us on WhatsApp or call to book.
+              Manicure and pedicure with polish at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — whitening mani-pedi with nail care. Message us on WhatsApp at 0313 9333377 or call 091-5839119 to book, and the salon will confirm your slot.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
