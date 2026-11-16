@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
 import { RelatedLinks } from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -87,22 +88,25 @@ const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 const EXTERIOR = photo("sansha-beauty-lounge-building-exterior-hayatabad");
 const SIGN = photo("sansha-beauty-lounge-logo-sign-hayatabad");
 
+const HERO = PHOTOS.find((p) => p.slug === "sansha-beauty-lounge-entrance-floral-arch-night")!;
+
 export default function ContactPage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-          <Breadcrumbs
-            items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
-          />
-          <h1 className="mt-4 max-w-3xl text-4xl leading-tight font-bold sm:text-5xl">
-            Contact {SITE.fullName}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-200">
-              Walk in, or call 091-5839119 or WhatsApp 0313 9333377 to book. SanSha A Beauty Lounge is at Shop No. 4, Block A, Deans Hights, Phase 2, Hayatabad, Peshawar 25124 — open 24 hours, 7 days a week, and the salon will confirm your slot.
-            </p>
-        </div>
-      </section>
+      <HeroBackground
+        photo={HERO}
+        caption={HERO.caption}
+      >
+        <Breadcrumbs
+          items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
+        />
+        <h1 className="mt-4 max-w-3xl text-4xl leading-tight font-bold sm:text-5xl">
+          Contact {SITE.fullName}
+        </h1>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-200">
+            Walk in, or call 091-5839119 or WhatsApp 0313 9333377 to book. SanSha A Beauty Lounge is at Shop No. 4, Block A, Deans Hights, Phase 2, Hayatabad, Peshawar 25124 — open 24 hours, 7 days a week, and the salon will confirm your slot.
+          </p>
+      </HeroBackground>
 
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="mx-auto max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 p-6">

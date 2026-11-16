@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { SITE } from "@/data/siteConfig";
-import { OG_IMAGE } from "@/data/photos";
+import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import HeroBackground from "@/components/HeroBackground";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -36,19 +37,22 @@ export const metadata: Metadata = {
   },
 };
 
+const HERO = PHOTOS.find((p) => p.slug === "sansha-beauty-lounge-entrance-floral-arch-night")!;
+
 export default function PrivacyPage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-          <Breadcrumbs
-            items={[{ name: "Home", path: "/" }, { name: "Privacy Policy" }]}
-          />
-          <h1 className="mt-4 max-w-3xl text-4xl leading-tight font-bold sm:text-5xl">
-            Privacy Policy
-          </h1>
-        </div>
-      </section>
+      <HeroBackground
+        photo={HERO}
+        caption={HERO.caption}
+      >
+        <Breadcrumbs
+          items={[{ name: "Home", path: "/" }, { name: "Privacy Policy" }]}
+        />
+        <h1 className="mt-4 max-w-3xl text-4xl leading-tight font-bold sm:text-5xl">
+          Privacy Policy
+        </h1>
+      </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="page-content">

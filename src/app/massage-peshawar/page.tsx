@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
 import CallCTA, { RelatedLinks } from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -87,50 +88,41 @@ const HERO = SERVICE_GALLERY.find(
 export default function MassagePage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:py-16 md:grid-cols-2 md:items-center">
-          <div>
-            <Breadcrumbs
-              items={[
-                { name: "Home", path: "/" },
-                { name: "Massage" },
-              ]}
-            />
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              Massage in Hayatabad, Peshawar — Relax and Unwind
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Long days leave their mark on shoulders, back and neck —
-              a massage at SanSha A Beauty Lounge, Phase 2 Hayatabad,
-              is an hour set aside to rest them. Walk in any time, or
-              call 091-5839119 or WhatsApp 0313 9333377 and the salon
-              will keep a time for you.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={SITE.phoneHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
-              >
-                Call {SITE.phoneDisplay}
-              </a>
-              <a
-                href={SITE.whatsappHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
-              >
-                WhatsApp {SITE.whatsappDisplay}
-              </a>
-            </div>
-          </div>
-          <Photo
-            photo={HERO}
-            eager
-            sizes="(max-width: 640px) 100vw, 680px"
-            className="w-full rounded-2xl object-cover"
-            caption={`${HERO.caption} The photo is an illustration of the service, not a photo of the salon.`}
-            captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
+      <HeroBackground
+        photo={HERO}
+        caption={`${HERO.caption} The photo is an illustration of the service, not a photo of the salon.`}
+      >
+          <Breadcrumbs
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Massage" },
+            ]}
           />
-        </div>
-      </section>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            Massage in Hayatabad, Peshawar — Relax and Unwind
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
+            Long days leave their mark on shoulders, back and neck —
+            a massage at SanSha A Beauty Lounge, Phase 2 Hayatabad,
+            is an hour set aside to rest them. Walk in any time, or
+            call 091-5839119 or WhatsApp 0313 9333377 and the salon
+            will keep a time for you.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={SITE.phoneHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+            >
+              Call {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.whatsappHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+            >
+              WhatsApp {SITE.whatsappDisplay}
+            </a>
+          </div>
+      </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">

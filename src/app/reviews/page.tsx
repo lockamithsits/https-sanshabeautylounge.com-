@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
 import CallCTA, { RelatedLinks } from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -144,37 +145,28 @@ function ReviewCard({ r }: { r: (typeof REVIEWS)[number] }) {
 export default function ReviewsPage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:py-16 md:grid-cols-2 md:items-center">
-          <div>
-            <Breadcrumbs
-              items={[{ name: "Home", path: "/" }, { name: "Reviews" }]}
-            />
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              Beauty Salon Reviews in Peshawar
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews). The reviews below are a selection of verbatim Google reviews from our clients — their own words, exactly as they wrote them, spelling mistakes included. Read them here, or see the full set on the salon&apos;s Google profile.
-            </p>
-            <p className="mt-4 text-sm text-slate-300">
-              <a
-                href={SITE.googleMaps}
-                className="font-medium text-amber-300 underline"
-              >
-                Read all {SITE.reviewCount} reviews on Google
-              </a>
-            </p>
-          </div>
-          <Photo
-            photo={RECEPTION}
-            eager
-            sizes="(max-width: 640px) 100vw, 680px"
-            className="w-full rounded-2xl object-cover"
-            caption={RECEPTION.caption}
-            captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
+      <HeroBackground
+        photo={RECEPTION}
+        caption={RECEPTION.caption}
+      >
+          <Breadcrumbs
+            items={[{ name: "Home", path: "/" }, { name: "Reviews" }]}
           />
-        </div>
-      </section>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            Beauty Salon Reviews in Peshawar
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
+            {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews). The reviews below are a selection of verbatim Google reviews from our clients — their own words, exactly as they wrote them, spelling mistakes included. Read them here, or see the full set on the salon&apos;s Google profile.
+          </p>
+          <p className="mt-4 text-sm text-slate-300">
+            <a
+              href={SITE.googleMaps}
+              className="font-medium text-amber-300 underline"
+            >
+              Read all {SITE.reviewCount} reviews on Google
+            </a>
+          </p>
+      </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">

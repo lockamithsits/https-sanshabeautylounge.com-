@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
 import CallCTA, { RelatedLinks } from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -211,29 +212,20 @@ const GROUPS: {
 export default function GalleryPage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:py-16 md:grid-cols-2 md:items-center">
-          <div>
-            <Breadcrumbs
-              items={[{ name: "Home", path: "/" }, { name: "Gallery" }]}
-            />
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              Salon Gallery in Hayatabad, Peshawar
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Nineteen photos of the real salon — the entrance, the reception, the styling chairs and the treatment rooms — taken at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. See the salon before you visit, then call or WhatsApp to book.
-            </p>
-          </div>
-          <Photo
-            photo={ARCH}
-            eager
-            sizes="(max-width: 640px) 100vw, 680px"
-            className="w-full rounded-2xl object-cover"
-            caption="The flower arch at the entrance, lit up at night."
-            captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
+      <HeroBackground
+        photo={ARCH}
+        caption="The flower arch at the entrance, lit up at night."
+      >
+          <Breadcrumbs
+            items={[{ name: "Home", path: "/" }, { name: "Gallery" }]}
           />
-        </div>
-      </section>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            Salon Gallery in Hayatabad, Peshawar
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
+            Nineteen photos of the real salon — the entrance, the reception, the styling chairs and the treatment rooms — taken at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. See the salon before you visit, then call or WhatsApp to book.
+          </p>
+      </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">

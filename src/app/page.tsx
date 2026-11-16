@@ -8,6 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQ";
 import CallCTA from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import { breadcrumbJsonLd, faqJsonLd, imageObjectJsonLd } from "@/lib/schema";
 import type { Faq } from "@/lib/faq";
 
@@ -214,47 +215,38 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:py-16 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-amber-300 uppercase">
-              {SITE.tagline}
-            </p>
-            <h1 className="mt-3 text-4xl leading-tight font-bold sm:text-5xl">
-              Beauty Salon in Hayatabad, Peshawar — SanSha A Beauty Lounge
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              SanSha A Beauty Lounge is a beauty salon in Phase 2, Hayatabad, Peshawar, offering bridal and party makeup, haircuts, keratin, facials, waxing, laser hair removal and mani-pedi. Walk in at any hour — the salon is open 24 hours, 7 days a week — or call 091-5839119 or WhatsApp 0313 9333377 to book your slot.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={SITE.phoneHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
-              >
-                Call {SITE.phoneDisplay}
-              </a>
-              <a
-                href={SITE.whatsappHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
-              >
-                WhatsApp {SITE.whatsappDisplay}
-              </a>
-            </div>
-            <p className="mt-4 text-sm text-slate-300">
-              {SITE.streetAddress}, {SITE.addressLocality},{" "}
-              {SITE.addressRegion} {SITE.postalCode}, {SITE.country}
-            </p>
+      <HeroBackground
+        photo={HERO}
+        caption={HERO.caption}
+      >
+          <p className="text-sm font-semibold tracking-wide text-amber-300 uppercase">
+            {SITE.tagline}
+          </p>
+          <h1 className="mt-3 text-4xl leading-tight font-bold sm:text-5xl">
+            Beauty Salon in Hayatabad, Peshawar — SanSha A Beauty Lounge
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
+            SanSha A Beauty Lounge is a beauty salon in Phase 2, Hayatabad, Peshawar, offering bridal and party makeup, haircuts, keratin, facials, waxing, laser hair removal and mani-pedi. Walk in at any hour — the salon is open 24 hours, 7 days a week — or call 091-5839119 or WhatsApp 0313 9333377 to book your slot.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={SITE.phoneHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+            >
+              Call {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.whatsappHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+            >
+              WhatsApp {SITE.whatsappDisplay}
+            </a>
           </div>
-          <Photo
-            photo={HERO}
-            eager
-            sizes="(max-width: 640px) 100vw, 680px"
-            className="w-full rounded-2xl object-cover"
-            caption={HERO.caption}
-            captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
-          />
-        </div>
-      </section>
+          <p className="mt-4 text-sm text-slate-300">
+            {SITE.streetAddress}, {SITE.addressLocality},{" "}
+            {SITE.addressRegion} {SITE.postalCode}, {SITE.country}
+          </p>
+      </HeroBackground>
 
       {/* Our services in pictures — 40 owner-supplied service
           illustrations, directly below the hero. Each image card:

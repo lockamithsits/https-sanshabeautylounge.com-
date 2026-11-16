@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
 import CallCTA, { RelatedLinks } from "@/components/CallCTA";
 import Photo from "@/components/Photo";
+import HeroBackground from "@/components/HeroBackground";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -91,47 +92,38 @@ const PHOTO = PHOTOS.find(
 export default function LaserPage() {
   return (
     <div>
-      <section className="bg-brand-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:py-16 md:grid-cols-2 md:items-center">
-          <div>
-            <Breadcrumbs
-              items={[
-                { name: "Home", path: "/" },
-                { name: "Laser Hair Removal" },
-              ]}
-            />
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              Laser Hair Removal in Peshawar — Face, Arms, Legs &amp; Full
-              Body
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Laser hair removal for face, arms, legs and full body at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Talk to the salon first on call or WhatsApp and it will explain the treatment for your skin and hair, and give you the price after your consultation.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={SITE.phoneHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
-              >
-                Call {SITE.phoneDisplay}
-              </a>
-              <a
-                href={SITE.whatsappHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
-              >
-                WhatsApp {SITE.whatsappDisplay}
-              </a>
-            </div>
-          </div>
-          <Photo
-            photo={PHOTO}
-            eager
-            sizes="(max-width: 640px) 100vw, 680px"
-            className="w-full rounded-2xl object-cover"
-            caption={PHOTO.caption}
-            captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
+      <HeroBackground
+        photo={PHOTO}
+        caption={PHOTO.caption}
+      >
+          <Breadcrumbs
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Laser Hair Removal" },
+            ]}
           />
-        </div>
-      </section>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            Laser Hair Removal in Peshawar — Face, Arms, Legs &amp; Full
+            Body
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
+            Laser hair removal for face, arms, legs and full body at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. Talk to the salon first on call or WhatsApp and it will explain the treatment for your skin and hair, and give you the price after your consultation.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={SITE.phoneHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+            >
+              Call {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.whatsappHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+            >
+              WhatsApp {SITE.whatsappDisplay}
+            </a>
+          </div>
+      </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
