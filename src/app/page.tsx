@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { REVIEWS } from "@/data/reviews";
+import { SERVICE_GALLERY } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQ";
 import CallCTA from "@/components/CallCTA";
@@ -74,7 +75,9 @@ const FAQS: Faq[] = [
   },
 ];
 
-const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
+const photo = (slug: string) =>
+  PHOTOS.find((p) => p.slug === slug) ??
+  SERVICE_GALLERY.find((g) => g.slug === slug)!;
 const HERO = photo("sansha-beauty-lounge-entrance-floral-arch-night");
 
 /**
@@ -85,11 +88,14 @@ const HERO = photo("sansha-beauty-lounge-entrance-floral-arch-night");
  * room or the products for it. The bridal / party / mehndi cards
  * use the flower-arch entrance photos: those are the bridal, party
  * and mehndi pages' own hero photos, showing the salon dressed for
- * the occasion. No photo on this site shows makeup being applied
- * (see the gallery FAQ), so no card pretends otherwise.
+ * the occasion. The service gallery below the hero (owner-supplied
+ * illustrations, src/data/serviceGallery.ts) does show makeup and
+ * treatments in progress — those are pictures of the service, not
+ * of this salon's work.
  * `photo: null` = no matching photo exists — the card is shown
- * without an image rather than with a wrong one (manicure &
- * pedicure: no mani-pedi photo was supplied).
+ * without an image rather than with a wrong one. The mani-pedi
+ * card now uses the pedicure illustration from the service
+ * gallery, which filled the earlier gap.
  *
  * `options` lists only services already stated on the site.
  */
@@ -171,7 +177,7 @@ const SERVICES = [
     label: "Manicure & Pedicure",
     anchor: "manicure and pedicure",
     text: "Whitening mani-pedi with polish and nail care.",
-    photo: null,
+    photo: "pedicure-sansha-hayatabad",
     options: ["Whitening mani-pedi", "Polish", "Nail care"],
   },
 ];
@@ -247,6 +253,68 @@ export default function HomePage() {
             caption={HERO.caption}
             captionClassName="mt-2 text-sm leading-relaxed text-slate-300"
           />
+        </div>
+      </section>
+
+      {/* Our services in pictures — 20 owner-supplied service
+          illustrations, directly below the hero. Each card: image +
+          accurate service name + a short description of the service
+          + a link to the service page where one exists (massage and
+          body spa have no page yet, so their cards are not links).
+          The intro says plainly that these are pictures of the
+          service, not photos of this salon's work — the salon's real
+          photos are in "Our Collections" further down the page. */}
+      <section className="mx-auto max-w-6xl px-4 pt-12">
+        <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
+          Our services in pictures
+        </h2>
+        <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
+          See what each service looks like before you book. The photos
+          below show the service itself — a bridal look, a keratin
+          treatment, a facial — so you can choose what you want. They
+          are not photos of our salon or our clients; real photos of
+          the salon are in{" "}
+          <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
+            Our Collections
+          </Link>{" "}
+          further down this page.
+        </p>
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {SERVICE_GALLERY.map((g) => {
+            const card = (
+              <>
+                <Photo
+                  photo={g}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <span className="flex flex-col p-4">
+                  <span className="text-base font-bold text-brand-900">
+                    {g.service}
+                  </span>
+                  <span className="mt-1 text-sm leading-relaxed text-slate-700">
+                    {g.text}
+                  </span>
+                  {g.href && (
+                    <span className="mt-2 text-sm font-semibold text-accent-600">
+                      Learn more →
+                    </span>
+                  )}
+                </span>
+              </>
+            );
+            const cardClass =
+              "flex min-h-11 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-accent-500";
+            return g.href ? (
+              <Link key={g.slug} href={g.href} className={cardClass}>
+                {card}
+              </Link>
+            ) : (
+              <article key={g.slug} className={cardClass}>
+                {card}
+              </article>
+            );
+          })}
         </div>
       </section>
 
