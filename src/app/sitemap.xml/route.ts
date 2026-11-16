@@ -17,6 +17,10 @@ export const dynamic = "force-static";
  * = 17 pages.
  * Content optimization: + /massage-peshawar/ + /body-spa-peshawar/
  * = 19 pages.
+ * 7 new service pages: + /lashes-peshawar/ + /tinting-peshawar/
+ * + /hijama-cupping-peshawar/ + /electrolysis-peshawar/
+ * + /piercing-peshawar/ + /tag-wart-removal-peshawar/
+ * + /nails-peshawar/ = 26 pages.
  */
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1.0 },
@@ -32,6 +36,13 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/bridal-mehndi-peshawar/", priority: 0.8 },
   { path: "/massage-peshawar/", priority: 0.8 },
   { path: "/body-spa-peshawar/", priority: 0.8 },
+  { path: "/lashes-peshawar/", priority: 0.8 },
+  { path: "/tinting-peshawar/", priority: 0.8 },
+  { path: "/hijama-cupping-peshawar/", priority: 0.8 },
+  { path: "/electrolysis-peshawar/", priority: 0.8 },
+  { path: "/piercing-peshawar/", priority: 0.8 },
+  { path: "/tag-wart-removal-peshawar/", priority: 0.8 },
+  { path: "/nails-peshawar/", priority: 0.8 },
   { path: "/contact/", priority: 0.7 },
   { path: "/reviews/", priority: 0.6 },
   { path: "/gallery/", priority: 0.6 },

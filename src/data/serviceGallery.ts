@@ -505,7 +505,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Piercing",
     text: "Ear piercing, done at the salon — ask on call or WhatsApp.",
-    href: null,
+    href: "/piercing-peshawar/",
   },
   {
     slug: "hijama-cupping-sansha-hayatabad",
@@ -518,7 +518,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Hijama Cupping",
     text: "Hijama cupping with fire cups — ask on call or WhatsApp.",
-    href: null,
+    href: "/hijama-cupping-peshawar/",
   },
   {
     slug: "lash-extensions-sansha-hayatabad",
@@ -531,7 +531,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Lashes",
     text: "Lash extensions for fuller-looking lashes — ask on call or WhatsApp.",
-    href: null,
+    href: "/lashes-peshawar/",
   },
   {
     slug: "eyebrow-tinting-sansha-hayatabad",
@@ -544,7 +544,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Tinting",
     text: "Eyebrow tinting for darker, defined brows — ask on call or WhatsApp.",
-    href: null,
+    href: "/tinting-peshawar/",
   },
   {
     slug: "acrylic-gel-nails-sansha-hayatabad",
@@ -557,7 +557,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Acrylic & Gel Nails",
     text: "Acrylic and gel nails, shaped and finished — ask on call or WhatsApp.",
-    href: null,
+    href: "/nails-peshawar/",
   },
   {
     slug: "tag-wart-removal-sansha-hayatabad",
@@ -570,7 +570,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Tag/Wart Removal",
     text: "Tag and wart removal — ask on call or WhatsApp for details.",
-    href: null,
+    href: "/tag-wart-removal-peshawar/",
   },
   {
     slug: "electrolysis-sansha-hayatabad",
@@ -583,7 +583,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Electrolysis",
     text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
-    href: null,
+    href: "/electrolysis-peshawar/",
   },
 ];
 

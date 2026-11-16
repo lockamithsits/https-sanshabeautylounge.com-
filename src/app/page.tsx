@@ -256,14 +256,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Our services in pictures — 38 owner-supplied service
-          illustrations + 2 text-only cards (Electrolysis, Tag/Wart
-          Removal — confirmed services with no image supplied),
-          directly below the hero. Each image card: image +
-          accurate service name + a short description of the service
-          + a link to the service page where one exists (piercing,
-          hijama cupping, lashes, tinting and acrylic & gel nails
-          have no page yet, so their cards are not links).
+      {/* Our services in pictures — 40 owner-supplied service
+          illustrations, directly below the hero. Each image card:
+          image + accurate service name + a short description of the
+          service + a link to the service page. Every service on the
+          owner's list now has its own page, so every card links.
           The intro says plainly that these are pictures of the
           service, not photos of this salon's work — the salon's real
           photos are in "Our Collections" further down the page. */}

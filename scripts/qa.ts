@@ -181,6 +181,13 @@ const EXPECTED_TITLES: Record<string, string> = {
   "/waxing-peshawar/": "Waxing & Threading Peshawar | SanSha A Beauty Lounge",
   "/mani-pedi-peshawar/": "Manicure & Pedicure Peshawar | SanSha A Beauty Lounge",
   "/bridal-mehndi-peshawar/": "Bridal Mehndi in Peshawar | SanSha A Beauty Lounge",
+  "/lashes-peshawar/": "Lash Extensions in Peshawar | SanSha A Beauty Lounge",
+  "/tinting-peshawar/": "Eyebrow Tinting in Peshawar | SanSha A Beauty Lounge",
+  "/hijama-cupping-peshawar/": "Hijama Cupping in Peshawar | SanSha A Beauty Lounge",
+  "/electrolysis-peshawar/": "Electrolysis in Hayatabad Peshawar | SanSha A Beauty Lounge",
+  "/piercing-peshawar/": "Ear Piercing in Hayatabad Peshawar | SanSha A Beauty Lounge",
+  "/tag-wart-removal-peshawar/": "Tag & Wart Removal in Peshawar | SanSha A Beauty Lounge",
+  "/nails-peshawar/": "Acrylic & Gel Nails in Peshawar | SanSha A Beauty Lounge",
   "/gallery/": "Salon Gallery | SanSha A Beauty Lounge, Hayatabad",
   "/contact/": "Contact SanSha A Beauty Lounge | Hayatabad, Peshawar",
   "/reviews/": "Beauty Salon Reviews in Peshawar | SanSha A Beauty Lounge",
@@ -269,6 +276,41 @@ const EXPECTED_OTHER_METAS: Record<string, { text: string; min: number; max: num
     min: 0,
     max: 155,
   },
+  "/lashes-peshawar/": {
+    text: "Lash extensions in Hayatabad, Peshawar — fuller-looking lashes applied at the salon. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot.",
+    min: 140,
+    max: 155,
+  },
+  "/tinting-peshawar/": {
+    text: "Eyebrow tinting in Hayatabad, Peshawar — darker, defined brows done at the salon. Call 091-5839119 or WhatsApp 0313 9333377 to book your slot today.",
+    min: 140,
+    max: 155,
+  },
+  "/hijama-cupping-peshawar/": {
+    text: "Hijama cupping in Hayatabad, Peshawar — fire cupping done at the salon in Phase 2. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot.",
+    min: 140,
+    max: 155,
+  },
+  "/electrolysis-peshawar/": {
+    text: "Electrolysis in Hayatabad, Peshawar — hair removal done hair by hair at the salon. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot.",
+    min: 140,
+    max: 155,
+  },
+  "/piercing-peshawar/": {
+    text: "Ear piercing in Hayatabad, Peshawar — done at the salon in Phase 2, Hayatabad. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot today.",
+    min: 140,
+    max: 155,
+  },
+  "/tag-wart-removal-peshawar/": {
+    text: "Tag and wart removal in Hayatabad, Peshawar — done at the salon in Phase 2, Hayatabad. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot today.",
+    min: 140,
+    max: 155,
+  },
+  "/nails-peshawar/": {
+    text: "Acrylic and gel nails in Hayatabad, Peshawar — shaped and finished at the salon. Call 091-5839119 or WhatsApp 0313 9333377 to book your slot today.",
+    min: 140,
+    max: 155,
+  },
 };
 for (const [route, exp] of Object.entries(EXPECTED_OTHER_METAS)) {
   const html = htmlByPath.get(route);
@@ -337,8 +379,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 109) fail(`expected 109 FAQ answers (97 + content optimization: massage 6, body spa 6), got ${faqTotal}`);
-else pass("109 FAQ answers total (97 + massage 6 + body spa 6)");
+if (faqTotal !== 151) fail(`expected 151 FAQ answers (109 + 7 new pages × 6), got ${faqTotal}`);
+else pass("151 FAQ answers total (109 + 7 new pages × 6)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");
