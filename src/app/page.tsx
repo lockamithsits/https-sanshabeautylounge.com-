@@ -280,9 +280,8 @@ export default function HomePage() {
           <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
             Our Collections
           </Link>{" "}
-          further down this page. One service at the end of the list
-          has no photo — no picture was supplied for it — so it is
-          listed by name instead.
+          further down this page. Every service on our list has a
+          photo below.
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {SERVICE_GALLERY.map((g) => {

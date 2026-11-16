@@ -572,16 +572,31 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     text: "Tag and wart removal — ask on call or WhatsApp for details.",
     href: null,
   },
+  {
+    slug: "electrolysis-sansha-hayatabad",
+    source: "download.jpg",
+    nativeW: 204,
+    nativeH: 192,
+    widths: [204],
+    alt: "A fine probe held near a woman's upper lip during an electrolysis treatment",
+    caption: "A probe near the upper lip.",
+    heroPages: ["/"],
+    service: "Electrolysis",
+    text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
+    href: null,
+  },
 ];
 
 /**
  * Text-only gallery cards — confirmed services with no image supplied.
  * Shown in the same "Our services in pictures" grid, styled like the
  * image cards but without a photo. No wrong image is used for them.
- * Electrolysis is on the owner's confirmed list of 20 services
- * (2026-11-16). No page exists for it yet, so it is shown without
- * a link. Tag/Wart Removal was a text-only card until 2026-11-16,
- * when the owner sent a photo — it is now an image card above.
+ * As of 2026-11-16 every confirmed service has a photo, so this list
+ * is empty. Tag/Wart Removal was a text-only card until the owner
+ * sent a photo (images.jpg, 199x185 native) — it is now an image
+ * card above. Electrolysis was the last text-only card until the
+ * owner sent a photo (download.jpg, 204x192 native) — it is now an
+ * image card above.
  */
 export interface TextCard {
   service: string;
@@ -589,10 +604,4 @@ export interface TextCard {
   href: string | null;
 }
 
-export const SERVICE_TEXT_CARDS: TextCard[] = [
-  {
-    service: "Electrolysis",
-    text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
-    href: null,
-  },
-];
+export const SERVICE_TEXT_CARDS: TextCard[] = [];
