@@ -50,12 +50,12 @@ const FAQS: Faq[] = [
   {
     question: "Do you apply bridal mehndi at the salon?",
     answer:
-      "The salon offers bridal mehndi application for brides — henna on the hands and feet for the mehndi function. [CONFIRM — bridal mehndi application is offered at the salon.] Ask when you book whether mehndi is available for your date, and the salon will confirm what it can do for you.",
+      "The salon offers bridal mehndi application for brides — henna on the hands and feet for the mehndi function. Ask when you book whether mehndi is available for your date, and the salon will confirm what it can do for you.",
   },
   {
     question: "Can you do mehndi for guests as well as the bride?",
     answer:
-      "Guests at the mehndi function can have henna too — family and friends, not only the bride. [CONFIRM — mehndi for guests.] Tell the salon how many guests want mehndi when you book, so it can plan the time and tell you the price for the whole group.",
+      "Guests at the mehndi function can have henna too — family and friends, not only the bride. Tell the salon how many guests want mehndi when you book, so it can plan the time and tell you the price for the whole group.",
   },
   {
     question: "Should I book mehndi with my bridal makeup?",
@@ -137,8 +137,7 @@ export default function BridalMehndiPage() {
           <ul className="mt-3 space-y-2 leading-relaxed text-slate-700">
             <li>
               <strong>What:</strong> henna application for the bride
-              and her guests, done at the salon. [CONFIRM — bridal
-              mehndi application is offered.]
+              and her guests, done at the salon.
             </li>
             <li>
               <strong>For:</strong> the mehndi function — the bride,
@@ -186,8 +185,6 @@ export default function BridalMehndiPage() {
             henna too, usually simpler than the bride&apos;s. The
             salon&apos;s mehndi service covers both: the bride, and
             the guests who want henna at the same function.
-            [CONFIRM — bridal mehndi application, and mehndi for
-            guests, are offered at the salon.]
           </p>
 
           <h2>Bridal mehndi for the bride</h2>
@@ -224,8 +221,7 @@ export default function BridalMehndiPage() {
           <p>
             Guests at the mehndi function can have henna too —
             sisters, cousins and friends, usually a simpler design
-            than the bride&apos;s. [CONFIRM — mehndi for guests.]
-            If several guests want henna, tell the salon how many
+            than the bride&apos;s. If several guests want henna, tell the salon how many
             when you book, so it can plan the time: one guest takes
             a short while, a group takes the evening. The salon will
             tell you the price for the whole group before the day,

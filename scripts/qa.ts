@@ -736,8 +736,8 @@ section("12. Images (photos + og canvas)");
   const GALLERY: RegPhoto[] = parseRegistry(galleryText);
   if (PHOTOS.length === 19) pass("photo registry: 19 photos");
   else fail(`photo registry: ${PHOTOS.length} photos (expected 19)`);
-  if (GALLERY.length === 20) pass("gallery registry: 20 illustrations");
-  else fail(`gallery registry: ${GALLERY.length} illustrations (expected 20)`);
+  if (GALLERY.length === 38) pass("gallery registry: 38 illustrations");
+  else fail(`gallery registry: ${GALLERY.length} illustrations (expected 38)`);
   PHOTOS.push(...GALLERY);
   const bySlug = new Map(PHOTOS.map((p) => [p.slug, p]));
 

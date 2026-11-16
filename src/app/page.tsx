@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { REVIEWS } from "@/data/reviews";
-import { SERVICE_GALLERY } from "@/data/serviceGallery";
+import { SERVICE_GALLERY, SERVICE_TEXT_CARDS } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQ";
 import CallCTA from "@/components/CallCTA";
@@ -256,11 +256,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Our services in pictures — 20 owner-supplied service
-          illustrations, directly below the hero. Each card: image +
+      {/* Our services in pictures — 38 owner-supplied service
+          illustrations + 2 text-only cards (Electrolysis, Tag/Wart
+          Removal — confirmed services with no image supplied),
+          directly below the hero. Each image card: image +
           accurate service name + a short description of the service
-          + a link to the service page where one exists (massage and
-          body spa have no page yet, so their cards are not links).
+          + a link to the service page where one exists (piercing,
+          hijama cupping, lashes, tinting and acrylic & gel nails
+          have no page yet, so their cards are not links).
           The intro says plainly that these are pictures of the
           service, not photos of this salon's work — the salon's real
           photos are in "Our Collections" further down the page. */}
@@ -277,7 +280,9 @@ export default function HomePage() {
           <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
             Our Collections
           </Link>{" "}
-          further down this page.
+          further down this page. Two services at the end of the list
+          have no photo — no picture was supplied for them — so they
+          are listed by name instead.
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {SERVICE_GALLERY.map((g) => {
@@ -315,6 +320,19 @@ export default function HomePage() {
               </article>
             );
           })}
+          {SERVICE_TEXT_CARDS.map((t) => (
+            <article
+              key={t.service}
+              className="flex min-h-11 flex-col justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+            >
+              <span className="text-base font-bold text-brand-900">
+                {t.service}
+              </span>
+              <span className="mt-1 text-sm leading-relaxed text-slate-700">
+                {t.text}
+              </span>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -1,9 +1,16 @@
 import type { Photo } from "@/data/photos";
 
 /**
- * Service gallery — 20 owner-supplied service illustrations, shown in
+ * Service gallery — 38 owner-supplied service illustrations, shown in
  * the "Our services in pictures" gallery directly below the hero on
- * the home page.
+ * the home page. Batch 1: 20 illustrations. Batch 2 (2026-11-16):
+ * +18 — 13 confirmed services plus 5 more the owner confirmed the
+ * same day (Piercing, Hijama Cupping, Lashes, Tinting, Acrylic & Gel
+ * Nails). Two more owner-supplied images (HydraFacial, skin peel) are
+ * NOT in the owner's confirmed list: processed and staged in
+ * ~/workspace/sansha-beauty-lounge/images-batch2-held/, no cards.
+ * Two confirmed services with no image (Electrolysis, Tag/Wart
+ * Removal) get text-only cards in SERVICE_TEXT_CARDS below.
  *
  * These are NOT the salon's real photos: they are pictures the owner
  * supplied showing what each service looks like, so a customer can
@@ -12,14 +19,22 @@ import type { Photo } from "@/data/photos";
  * describe the SERVICE only. The salon's real photos live in
  * `src/data/photos.ts` and are shown in "Our Collections".
  *
- * One of the 21 files the owner sent is a duplicate:
+ * One of the 21 files the owner sent in batch 1 is a duplicate:
  * pyyosuw5wxcoffmcrtdl.jpg is byte-identical (same md5) to
  * bc2o3swy1xrjrg4yfilw.jpg, so it was processed once and shown once.
+ * No batch-2 file is byte-identical to a batch-1 file (md5 check
+ * 2026-11-16, 0 overlap).
  *
  * Processing (same pipeline as the real photos): capped at 800px
- * wide, never upscaled (hair-updo-styling is 395px native and stays
- * 395px), AVIF -> WebP -> JPG, WebP/JPG q78, AVIF crf 32, EXIF
- * stripped. Widths: capped native + 400w (only when capped > 450).
+ * wide, never upscaled (the 330x220 batch-2 files stay 330px),
+ * AVIF -> WebP -> JPG, WebP/JPG q78, AVIF crf 32, EXIF stripped.
+ * Widths: capped native + 400w (only when capped > 450).
+ * HD note (2026-11-16): seven batch-1 images had sources wider
+ * than 800px, so their true native widths were restored
+ * (1024/1200/819/1000/1408) — the 800px cap is gone for them, the
+ * 400w variant stays for small screens. The 330x220 batch-2 images
+ * are small and will look soft on large desktop screens, but are
+ * sharp on mobile where gallery cards are ~170px wide.
  *
  * One image shows branded tools (a straightener and a styling
  * spray). No brand name from that photo appears anywhere on the
@@ -27,8 +42,6 @@ import type { Photo } from "@/data/photos";
  *
  * `href: null` = no page for that service exists yet — the card is
  * shown without a link rather than linked to the wrong page.
- * (All 20 items now have pages: massage and body spa pages were
- * added in the content-optimization branch, so no href is null.)
  */
 export interface GalleryItem extends Photo {
   /** Accurate service name for the card heading. */
@@ -82,9 +95,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "keratin-treatment-sansha-hayatabad",
     source: "z3by23hhn2vzlrdq0tua.jpg",
-    nativeW: 800,
-    nativeH: 800,
-    widths: [400, 800],
+    nativeW: 1024,
+    nativeH: 1024,
+    widths: [400, 1024],
     alt: "Two views of long dark hair — wavy on one side, straight and smooth on the other",
     caption: "Wavy hair, straight and smooth after treatment.",
     heroPages: ["/"],
@@ -108,9 +121,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "hair-treatment-application-sansha-hayatabad",
     source: "gbgxmodph3iuia4vnk26.jpg",
-    nativeW: 800,
-    nativeH: 1000,
-    widths: [400, 800],
+    nativeW: 819,
+    nativeH: 1024,
+    widths: [400, 819],
     alt: "Hair treatment cream being brushed onto long dark hair",
     caption: "Treatment cream brushed onto the hair.",
     heroPages: ["/"],
@@ -147,9 +160,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "hair-styling-tools-sansha-hayatabad",
     source: "eko5p7r1ebvhwwusj6sl.jpg",
-    nativeW: 800,
-    nativeH: 1199,
-    widths: [400, 800],
+    nativeW: 1200,
+    nativeH: 1799,
+    widths: [400, 1200],
     alt: "Hair styling tools — straightener, scissors, comb, hairpins and brush on white silk",
     caption: "The tools of a hair styling sitting.",
     heroPages: ["/"],
@@ -186,9 +199,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "spa-facial-treatment-sansha-hayatabad",
     source: "vw7yqrqg6nsyhvclqdac.jpg",
-    nativeW: 800,
-    nativeH: 436,
-    widths: [400, 800],
+    nativeW: 1408,
+    nativeH: 768,
+    widths: [400, 1408],
     alt: "Facial treatment with a steamer in a spa room",
     caption: "A facial with a steamer.",
     heroPages: ["/"],
@@ -225,9 +238,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "leg-waxing-sansha-hayatabad",
     source: "unnamed__2.jpg",
-    nativeW: 800,
-    nativeH: 800,
-    widths: [400, 800],
+    nativeW: 1024,
+    nativeH: 1024,
+    widths: [400, 1024],
     alt: "Waxing strip being pulled from a leg during a leg wax",
     caption: "A leg wax in progress.",
     heroPages: ["/"],
@@ -238,9 +251,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "honey-wax-leg-sansha-hayatabad",
     source: "bwwimvz2xdubkenadh3i.jpg",
-    nativeW: 800,
-    nativeH: 800,
-    widths: [400, 800],
+    nativeW: 1000,
+    nativeH: 1000,
+    widths: [400, 1000],
     alt: "Honey wax being spread on a leg",
     caption: "Honey wax spread on the leg.",
     heroPages: ["/"],
@@ -251,9 +264,9 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   {
     slug: "pedicure-sansha-hayatabad",
     source: "o5vmjl0oijhnrfzhfgrn.jpg",
-    nativeW: 800,
-    nativeH: 800,
-    widths: [400, 800],
+    nativeW: 1024,
+    nativeH: 1024,
+    widths: [400, 1024],
     alt: "Cream being massaged onto feet during a pedicure",
     caption: "Cream massaged onto the feet.",
     heroPages: ["/"],
@@ -299,5 +312,267 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     service: "Body Spa",
     text: "A body scrub and massage for soft, refreshed skin.",
     href: "/body-spa-peshawar/",
+  },
+  // ---- Batch 2 (2026-11-16): 13 confirmed services ----
+  {
+    slug: "laser-face-sansha-hayatabad",
+    source: "glabella.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Laser device held against the forehead during a face laser treatment",
+    caption: "A laser device on the forehead.",
+    heroPages: ["/"],
+    service: "Face Laser",
+    text: "Laser hair removal for the face — ask on call or WhatsApp.",
+    href: "/laser-hair-removal-peshawar/",
+  },
+  {
+    slug: "body-laser-ipl-sansha-hayatabad",
+    source: "WhatsApp-Image-2025-07-12-at-00.37.39_e79c0453-3.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "IPL laser device held against the underarm during a body laser treatment",
+    caption: "An IPL device on the underarm.",
+    heroPages: ["/"],
+    service: "Body Laser",
+    text: "Laser hair removal for the body — ask on call or WhatsApp.",
+    href: "/laser-hair-removal-peshawar/",
+  },
+  {
+    slug: "bridal-mehndi-hand-sansha-hayatabad",
+    source: "Untitled-4.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Henna mehndi design on a hand with long nails",
+    caption: "Henna on a hand.",
+    heroPages: ["/"],
+    service: "Bridal Mehndi",
+    text: "Bridal mehndi — henna for the bride and her guests at the mehndi function.",
+    href: "/bridal-mehndi-peshawar/",
+  },
+  {
+    slug: "party-makeup-application-sansha-hayatabad",
+    source: "makeup-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Makeup being applied with a brush to a woman with her hair pinned up",
+    caption: "Makeup being applied with a brush.",
+    heroPages: ["/"],
+    service: "Party Makeup",
+    text: "Party makeup with a hairdo — for engagements, dinners and family events.",
+    href: "/party-makeup-peshawar/",
+  },
+  {
+    slug: "hair-colour-rinse-sansha-hayatabad",
+    source: "hair-color-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Long blonde hair being rinsed at the salon wash basin",
+    caption: "Hair rinsed at the wash basin.",
+    heroPages: ["/"],
+    service: "Hair Colour",
+    text: "Hair colour, rinsed and finished at the wash basin — colour, highlights and streaks.",
+    href: "/hair-colour-peshawar/",
+  },
+  {
+    slug: "hair-treatment-cream-sansha-hayatabad",
+    source: "hair-treatment-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Hair treatment cream worked into dark hair, section by section",
+    caption: "Treatment cream worked into the hair.",
+    heroPages: ["/"],
+    service: "Hair Treatment",
+    text: "Hair treatment cream, worked through the hair section by section.",
+    href: "/keratin-treatment-peshawar/",
+  },
+  {
+    slug: "haircut-short-style-sansha-hayatabad",
+    source: "haircut-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Woman with a fresh short haircut, styled with a side fringe",
+    caption: "A fresh short cut.",
+    heroPages: ["/"],
+    service: "Hair Cutting",
+    text: "A short cut, shaped and finished — neat and easy to wear.",
+    href: "/hair-salon-peshawar/",
+  },
+  {
+    slug: "pedicure-foot-care-sansha-hayatabad",
+    source: "pedicure-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "A foot being held during a pedicure at the salon",
+    caption: "A foot held during a pedicure.",
+    heroPages: ["/"],
+    service: "Pedicure",
+    text: "A pedicure sitting — nails shaped and feet cared for.",
+    href: "/mani-pedi-peshawar/",
+  },
+  {
+    slug: "manicure-hands-sansha-hayatabad",
+    source: "manicure-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Manicured hands with polished nails resting on a towel",
+    caption: "Manicured hands resting on a towel.",
+    heroPages: ["/"],
+    service: "Manicure",
+    text: "A manicure sitting — nails filed, shaped and polished.",
+    href: "/mani-pedi-peshawar/",
+  },
+  {
+    slug: "massage-shoulder-sansha-hayatabad",
+    source: "massage-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Hands massaging the shoulder during a massage",
+    caption: "Hands massaging the shoulder.",
+    heroPages: ["/"],
+    service: "Massage",
+    text: "A shoulder and back massage to ease tired muscles and unwind.",
+    href: "/massage-peshawar/",
+  },
+  {
+    slug: "facial-cream-application-sansha-hayatabad",
+    source: "facial-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Facial cream being brushed onto the skin",
+    caption: "Facial cream brushed onto the skin.",
+    heroPages: ["/"],
+    service: "Facial",
+    text: "Facial cream applied by hand — the first step of a facial sitting.",
+    href: "/facial-peshawar/",
+  },
+  {
+    slug: "face-threading-sansha-hayatabad",
+    source: "threading-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Threading being done on the chin during a face threading",
+    caption: "Threading on the chin.",
+    heroPages: ["/"],
+    service: "Threading",
+    text: "Threading for the face — a precise way to remove fine hair.",
+    href: "/waxing-peshawar/",
+  },
+  {
+    slug: "waxing-spatula-leg-sansha-hayatabad",
+    source: "waxing-serv-card-330x220-02.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Wax being spread on a leg with a spatula",
+    caption: "Wax spread on the leg with a spatula.",
+    heroPages: ["/"],
+    service: "Waxing",
+    text: "Wax spread on the skin, then lifted — for smooth arms and legs.",
+    href: "/waxing-peshawar/",
+  },
+  // ---- Batch 2, newly confirmed 2026-11-16 (owner's list of 20) ----
+  {
+    slug: "ear-piercing-sansha-hayatabad",
+    source: "ear-piercing-3.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "An ear piercing being done with a piercing gun",
+    caption: "An ear piercing in progress.",
+    heroPages: ["/"],
+    service: "Piercing",
+    text: "Ear piercing, done at the salon — ask on call or WhatsApp.",
+    href: null,
+  },
+  {
+    slug: "hijama-cupping-sansha-hayatabad",
+    source: "cupping-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "A fire cupping glass held over the back during hijama cupping",
+    caption: "A fire cupping glass held over the back.",
+    heroPages: ["/"],
+    service: "Hijama Cupping",
+    text: "Hijama cupping with fire cups — ask on call or WhatsApp.",
+    href: null,
+  },
+  {
+    slug: "lash-extensions-sansha-hayatabad",
+    source: "lashes-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Lash extensions being applied with tweezers",
+    caption: "Lash extensions being applied.",
+    heroPages: ["/"],
+    service: "Lashes",
+    text: "Lash extensions for fuller-looking lashes — ask on call or WhatsApp.",
+    href: null,
+  },
+  {
+    slug: "eyebrow-tinting-sansha-hayatabad",
+    source: "tint-serv-card-330x220-01.webp",
+    nativeW: 330,
+    nativeH: 220,
+    widths: [330],
+    alt: "Eyebrow tint being brushed onto the brow",
+    caption: "Eyebrow tint being brushed on.",
+    heroPages: ["/"],
+    service: "Tinting",
+    text: "Eyebrow tinting for darker, defined brows — ask on call or WhatsApp.",
+    href: null,
+  },
+  {
+    slug: "acrylic-gel-nails-sansha-hayatabad",
+    source: "full-set-acrylic-gel-color.webp",
+    nativeW: 800,
+    nativeH: 533,
+    widths: [400, 800],
+    alt: "Acrylic and gel nails with a French finish",
+    caption: "Acrylic and gel nails with a French finish.",
+    heroPages: ["/"],
+    service: "Acrylic & Gel Nails",
+    text: "Acrylic and gel nails, shaped and finished — ask on call or WhatsApp.",
+    href: null,
+  },
+];
+
+/**
+ * Text-only gallery cards — confirmed services with no image supplied.
+ * Shown in the same "Our services in pictures" grid, styled like the
+ * image cards but without a photo. No wrong image is used for them.
+ * Both are on the owner's confirmed list of 20 services (2026-11-16).
+ * No page exists for either yet, so they are shown without a link.
+ */
+export interface TextCard {
+  service: string;
+  text: string;
+  href: string | null;
+}
+
+export const SERVICE_TEXT_CARDS: TextCard[] = [
+  {
+    service: "Electrolysis",
+    text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
+    href: null,
+  },
+  {
+    service: "Tag/Wart Removal",
+    text: "Tag and wart removal — ask on call or WhatsApp for details.",
+    href: null,
   },
 ];
