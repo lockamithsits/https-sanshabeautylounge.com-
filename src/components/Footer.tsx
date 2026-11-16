@@ -12,6 +12,8 @@ const SERVICE_LINKS = [
   { href: "/facial-peshawar/", label: "Facials" },
   { href: "/waxing-peshawar/", label: "Waxing & threading" },
   { href: "/mani-pedi-peshawar/", label: "Manicure & pedicure" },
+  { href: "/massage-peshawar/", label: "Massage" },
+  { href: "/body-spa-peshawar/", label: "Body spa" },
 ];
 
 export default function Footer() {

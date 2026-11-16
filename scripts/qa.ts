@@ -337,8 +337,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 97) fail(`expected 97 FAQ answers (B1–B10 + Phase 2 Batch 1: bridal 7, laser 7, home 6 + Batch 2: keratin 7, colour 7, hair salon 7 + Batch 3: facial 7, mani-pedi 7, waxing 7, party 7 + Batch 4: reviews 7, contact 7, gallery 7, bridal mehndi 7), got ${faqTotal}`);
-else pass("97 FAQ answers total (B1–B11 + Phase 2 Batches 1–4)");
+if (faqTotal !== 109) fail(`expected 109 FAQ answers (97 + content optimization: massage 6, body spa 6), got ${faqTotal}`);
+else pass("109 FAQ answers total (97 + massage 6 + body spa 6)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");
@@ -712,21 +712,33 @@ section("11. Schema, claims, staff names");
 section("12. Images (photos + og canvas)");
 {
   const regText = read(path.join(ROOT, "src", "data", "photos.ts"));
+  // Gallery illustrations (src/data/serviceGallery.ts) are a second
+  // registry with the same Photo shape — the QA image check must know
+  // both, or every gallery image is flagged as an unknown slug.
+  const galleryText = read(path.join(ROOT, "src", "data", "serviceGallery.ts"));
   interface RegPhoto { slug: string; nativeW: number; nativeH: number; heroPages: string[] }
-  const PHOTOS: RegPhoto[] = [];
-  for (const m of regText.matchAll(/\{\s*slug: "([^"]+)",[\s\S]*?\n  \},/g)) {
-    const block = m[0];
-    const num = (re: RegExp) => Number(block.match(re)?.[1] ?? 0);
-    const list = (re: RegExp) => [...(block.match(re)?.[1] ?? "").matchAll(/"([^"]+)"/g)].map((x) => x[1]);
-    PHOTOS.push({
-      slug: m[1],
-      nativeW: num(/nativeW: (\d+)/),
-      nativeH: num(/nativeH: (\d+)/),
-      heroPages: list(/heroPages: \[([^\]]*)\]/),
-    });
-  }
+  const parseRegistry = (text: string): RegPhoto[] => {
+    const out: RegPhoto[] = [];
+    for (const m of text.matchAll(/\{\s*slug: "([^"]+)",[\s\S]*?\n  \},/g)) {
+      const block = m[0];
+      const num = (re: RegExp) => Number(block.match(re)?.[1] ?? 0);
+      const list = (re: RegExp) => [...(block.match(re)?.[1] ?? "").matchAll(/"([^"]+)"/g)].map((x) => x[1]);
+      out.push({
+        slug: m[1],
+        nativeW: num(/nativeW: (\d+)/),
+        nativeH: num(/nativeH: (\d+)/),
+        heroPages: list(/heroPages: \[([^\]]*)\]/),
+      });
+    }
+    return out;
+  };
+  const PHOTOS: RegPhoto[] = parseRegistry(regText);
+  const GALLERY: RegPhoto[] = parseRegistry(galleryText);
   if (PHOTOS.length === 19) pass("photo registry: 19 photos");
   else fail(`photo registry: ${PHOTOS.length} photos (expected 19)`);
+  if (GALLERY.length === 20) pass("gallery registry: 20 illustrations");
+  else fail(`gallery registry: ${GALLERY.length} illustrations (expected 20)`);
+  PHOTOS.push(...GALLERY);
   const bySlug = new Map(PHOTOS.map((p) => [p.slug, p]));
 
   const imgRe = /<img\b([^>]*)>/gi;

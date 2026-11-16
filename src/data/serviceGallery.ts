@@ -25,9 +25,10 @@ import type { Photo } from "@/data/photos";
  * spray). No brand name from that photo appears anywhere on the
  * site — the image shows the type of tools used, that is all.
  *
- * `href: null` = no page for that service exists yet (massage, body
- * spa) — the card is shown without a link rather than linked to the
- * wrong page.
+ * `href: null` = no page for that service exists yet — the card is
+ * shown without a link rather than linked to the wrong page.
+ * (All 20 items now have pages: massage and body spa pages were
+ * added in the content-optimization branch, so no href is null.)
  */
 export interface GalleryItem extends Photo {
   /** Accurate service name for the card heading. */
@@ -284,7 +285,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Massage",
     text: "A relaxing back massage to ease tired muscles and unwind.",
-    href: null,
+    href: "/massage-peshawar/",
   },
   {
     slug: "body-scrub-spa-sansha-hayatabad",
@@ -297,6 +298,6 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     heroPages: ["/"],
     service: "Body Spa",
     text: "A body scrub and massage for soft, refreshed skin.",
-    href: null,
+    href: "/body-spa-peshawar/",
   },
 ];

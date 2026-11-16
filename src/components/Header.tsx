@@ -15,6 +15,8 @@ const NAV_LINKS = [
   { href: "/facial-peshawar/", label: "Facials" },
   { href: "/waxing-peshawar/", label: "Waxing" },
   { href: "/mani-pedi-peshawar/", label: "Mani-Pedi" },
+  { href: "/massage-peshawar/", label: "Massage" },
+  { href: "/body-spa-peshawar/", label: "Body Spa" },
   { href: "/gallery/", label: "Gallery" },
   { href: "/reviews/", label: "Reviews" },
   { href: "/contact/", label: "Contact" },
