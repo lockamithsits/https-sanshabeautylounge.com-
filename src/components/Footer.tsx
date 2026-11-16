@@ -1,21 +1,7 @@
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
+import { SERVICE_NAV_LINKS } from "@/data/services";
 import { FooterSocialButtons } from "@/components/SocialLinks";
-
-const SERVICE_LINKS = [
-  { href: "/bridal-makeup-peshawar/", label: "Bridal makeup" },
-  { href: "/bridal-mehndi-peshawar/", label: "Bridal mehndi" },
-  { href: "/party-makeup-peshawar/", label: "Party makeup" },
-  { href: "/hair-salon-peshawar/", label: "Hair salon" },
-  { href: "/keratin-treatment-peshawar/", label: "Keratin treatment" },
-  { href: "/hair-colour-peshawar/", label: "Hair colour & balayage" },
-  { href: "/laser-hair-removal-peshawar/", label: "Laser hair removal" },
-  { href: "/facial-peshawar/", label: "Facials" },
-  { href: "/waxing-peshawar/", label: "Waxing & threading" },
-  { href: "/mani-pedi-peshawar/", label: "Manicure & pedicure" },
-  { href: "/massage-peshawar/", label: "Massage" },
-  { href: "/body-spa-peshawar/", label: "Body spa" },
-];
 
 export default function Footer() {
   return (
@@ -55,8 +41,8 @@ export default function Footer() {
         <nav aria-label="Footer services">
           <p className="text-base font-semibold text-white">Services</p>
           <ul className="mt-3 space-y-2 text-sm">
-            {SERVICE_LINKS.map((link) => (
-              <li key={link.href}>
+            {SERVICE_NAV_LINKS.map((link) => (
+              <li key={link.label}>
                 <Link href={link.href} className="flex min-h-11 items-center px-2 underline hover:text-white">
                   {link.label}
                 </Link>
