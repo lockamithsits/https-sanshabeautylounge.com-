@@ -9,8 +9,11 @@ import type { Photo } from "@/data/photos";
  * Nails). Two more owner-supplied images (HydraFacial, skin peel) are
  * NOT in the owner's confirmed list: processed and staged in
  * ~/workspace/sansha-beauty-lounge/images-batch2-held/, no cards.
- * Two confirmed services with no image (Electrolysis, Tag/Wart
- * Removal) get text-only cards in SERVICE_TEXT_CARDS below.
+ * One confirmed service with no image (Electrolysis) gets a
+ * text-only card in SERVICE_TEXT_CARDS below. Tag/Wart Removal
+ * had a text-only card until 2026-11-16, when the owner sent a
+ * photo (images.jpg, 199x185 native — never upscaled); it is now
+ * a full image card in SERVICE_GALLERY.
  *
  * These are NOT the salon's real photos: they are pictures the owner
  * supplied showing what each service looks like, so a customer can
@@ -38,6 +41,10 @@ import type { Photo } from "@/data/photos";
  * Face Laser swap (2026-11-16): the 330px glabella image was replaced
  * by the owner's HD photo pexels-photo-5069498.jpg (800x1200, widths
  * [400, 800]); the glabella files stay in public/images, unreferenced.
+ * Tag/Wart Removal photo (2026-11-16): the owner's images.jpg is
+ * 199x185 native — kept at native size, never upscaled, widths [199].
+ * It is small and will look soft on large desktop screens, but is
+ * sharp on mobile where gallery cards are ~170px wide.
  *
  * One image shows branded tools (a straightener and a styling
  * spray). No brand name from that photo appears anywhere on the
@@ -552,14 +559,29 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     text: "Acrylic and gel nails, shaped and finished — ask on call or WhatsApp.",
     href: null,
   },
+  {
+    slug: "tag-wart-removal-sansha-hayatabad",
+    source: "images.jpg",
+    nativeW: 199,
+    nativeH: 185,
+    widths: [199],
+    alt: "A pen-like device held against a small brown mole on a woman's cheek during a tag removal treatment",
+    caption: "A device on a small mole on the cheek.",
+    heroPages: ["/"],
+    service: "Tag/Wart Removal",
+    text: "Tag and wart removal — ask on call or WhatsApp for details.",
+    href: null,
+  },
 ];
 
 /**
  * Text-only gallery cards — confirmed services with no image supplied.
  * Shown in the same "Our services in pictures" grid, styled like the
  * image cards but without a photo. No wrong image is used for them.
- * Both are on the owner's confirmed list of 20 services (2026-11-16).
- * No page exists for either yet, so they are shown without a link.
+ * Electrolysis is on the owner's confirmed list of 20 services
+ * (2026-11-16). No page exists for it yet, so it is shown without
+ * a link. Tag/Wart Removal was a text-only card until 2026-11-16,
+ * when the owner sent a photo — it is now an image card above.
  */
 export interface TextCard {
   service: string;
@@ -571,11 +593,6 @@ export const SERVICE_TEXT_CARDS: TextCard[] = [
   {
     service: "Electrolysis",
     text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
-    href: null,
-  },
-  {
-    service: "Tag/Wart Removal",
-    text: "Tag and wart removal — ask on call or WhatsApp for details.",
     href: null,
   },
 ];
