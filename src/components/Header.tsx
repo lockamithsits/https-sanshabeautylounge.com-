@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
+import { HeaderSocialButtons } from "@/components/SocialLinks";
 
 const NAV_LINKS = [
   { href: "/bridal-makeup-peshawar/", label: "Bridal Makeup" },
@@ -42,6 +43,9 @@ export default function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-2">
+          {/* Socials live in the top bar on desktop only — hidden below
+              md so the sticky header stays compact at phone widths. */}
+          <HeaderSocialButtons className="hidden md:flex" />
           <a
             href={SITE.phoneHref}
             className="hidden min-h-11 items-center rounded-lg bg-accent-500 px-4 py-2.5 text-sm font-bold text-brand-950 hover:bg-accent-400 sm:flex"
@@ -100,6 +104,12 @@ export default function Header() {
               >
                 WhatsApp
               </a>
+            </li>
+            <li className="border-t border-white/10 pt-3">
+              <p className="text-sm font-semibold text-white/80">Follow us</p>
+              <div className="mt-2">
+                <HeaderSocialButtons />
+              </div>
             </li>
           </ul>
         </nav>

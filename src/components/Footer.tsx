@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
+import { FooterSocialButtons } from "@/components/SocialLinks";
 
 const SERVICE_LINKS = [
   { href: "/bridal-makeup-peshawar/", label: "Bridal makeup" },
@@ -44,13 +45,12 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-1 text-sm">{SITE.hoursLong}.</p>
-          <p className="mt-3 flex flex-wrap items-center gap-x-1 text-sm">
-            <a href={SITE.instagram} className="flex min-h-11 items-center font-semibold text-amber-300 underline" rel="me">Instagram ({SITE.instagramFollowers})</a>
-            <span aria-hidden="true"> · </span>
-            <a href={SITE.facebook} className="flex min-h-11 items-center font-semibold text-amber-300 underline" rel="me">Facebook ({SITE.facebookFollowers})</a>
-            <span aria-hidden="true"> · </span>
-            <a href={SITE.tiktok} className="flex min-h-11 items-center font-semibold text-amber-300 underline" rel="me">TikTok ({SITE.tiktokFollowers})</a>
-          </p>
+          <div className="mt-4">
+            <p className="text-sm font-semibold text-white">Follow us</p>
+            <div className="mt-2">
+              <FooterSocialButtons />
+            </div>
+          </div>
         </div>
         <nav aria-label="Footer services">
           <p className="text-base font-semibold text-white">Services</p>
