@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import { REVIEWS } from "@/data/reviews";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQ";
 import CallCTA from "@/components/CallCTA";
@@ -76,91 +77,131 @@ const FAQS: Faq[] = [
 const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 const HERO = photo("sansha-beauty-lounge-entrance-floral-arch-night");
 
+/**
+ * Service cards (Queens-reference pattern: one image + category +
+ * the specific services under it, each card linking to its page).
+ *
+ * `photo` is the registry photo that shows that type of work — the
+ * room or the products for it. The bridal / party / mehndi cards
+ * use the flower-arch entrance photos: those are the bridal, party
+ * and mehndi pages' own hero photos, showing the salon dressed for
+ * the occasion. No photo on this site shows makeup being applied
+ * (see the gallery FAQ), so no card pretends otherwise.
+ * `photo: null` = no matching photo exists — the card is shown
+ * without an image rather than with a wrong one (manicure &
+ * pedicure: no mani-pedi photo was supplied).
+ *
+ * `options` lists only services already stated on the site.
+ */
 const SERVICES = [
   {
     href: "/bridal-makeup-peshawar/",
     label: "Bridal Makeup",
     anchor: "bridal makeup for barat and walima",
     text: "Makeup with hairdo for barat, walima, nikah, mehndi and engagement.",
+    photo: "sansha-beauty-lounge-flower-arch-entrance-night",
+    options: ["Barat", "Walima", "Nikah", "Mehndi", "Engagement"],
   },
   {
     href: "/party-makeup-peshawar/",
     label: "Party Makeup",
     anchor: "party makeup with hairdo",
     text: "Lighter looks for engagements, dinners and family events.",
+    photo: "sansha-beauty-lounge-floral-entrance-night",
+    options: ["Engagements", "Dinners", "Family events"],
+  },
+  {
+    href: "/bridal-mehndi-peshawar/",
+    label: "Bridal Mehndi",
+    anchor: "bridal mehndi in Hayatabad",
+    text: "Henna for the bride and her guests, for the mehndi function.",
+    photo: "sansha-beauty-lounge-entrance-floral-arch-night",
+    options: ["Bridal mehndi", "Mehndi for guests"],
   },
   {
     href: "/hair-salon-peshawar/",
     label: "Hair Salon",
     anchor: "haircuts and blow-dry in Hayatabad",
     text: "Haircuts, blow-dry, hair wash and styling for events.",
+    photo: "sansha-beauty-lounge-hair-salon-chairs-peshawar",
+    options: ["Haircuts", "Blow-dry", "Hair wash", "Styling"],
   },
   {
     href: "/keratin-treatment-peshawar/",
     label: "Keratin Treatment",
     anchor: "keratin treatment for smooth hair",
     text: "Keratin and protein treatments for smooth, frizz-free hair.",
+    photo: "sansha-beauty-lounge-hair-wash-area",
+    options: ["Keratin treatment", "Protein treatment"],
   },
   {
     href: "/hair-colour-peshawar/",
     label: "Hair Colour & Balayage",
     anchor: "hair colour, balayage and dye",
     text: "Hair dye, balayage, streaks and highlights — choose your shade first.",
+    photo: "sansha-beauty-lounge-hair-colour-products",
+    options: ["Hair dye", "Balayage", "Streaks", "Highlights"],
   },
   {
     href: "/laser-hair-removal-peshawar/",
     label: "Laser Hair Removal",
     anchor: "laser hair removal in Hayatabad",
     text: "Laser hair removal for face, arms, legs and full body.",
+    photo: "sansha-beauty-lounge-laser-hair-removal-room",
+    options: ["Face", "Arms", "Legs", "Full body"],
   },
   {
     href: "/facial-peshawar/",
     label: "Facials",
     anchor: "facials in Hayatabad",
     text: "Whitening, organic and derma facials with skin polish.",
+    photo: "sansha-beauty-lounge-facial-room-hayatabad",
+    options: ["Whitening", "Organic", "Derma facials", "Skin polish"],
   },
   {
     href: "/waxing-peshawar/",
     label: "Waxing & Threading",
     anchor: "waxing and threading",
     text: "Waxing for arms, legs, face and underarms, plus threading.",
+    photo: "sansha-beauty-lounge-facial-treatment-room",
+    options: ["Arms", "Legs", "Face", "Underarms", "Threading"],
   },
   {
     href: "/mani-pedi-peshawar/",
     label: "Manicure & Pedicure",
     anchor: "manicure and pedicure",
     text: "Whitening mani-pedi with polish and nail care.",
+    photo: null,
+    options: ["Whitening mani-pedi", "Polish", "Nail care"],
   },
 ];
 
-const HOME_REVIEWS = [
-  {
-    name: "sana jehangir",
-    text: "I did my Meni pedi and waxing from seher and I just love her services",
-  },
-  {
-    name: "Hania Abid",
-    text: "Lubna did my wax and this is my 8 wax session with her and she's so kind polite and well behaved. Am so satisfied with her.",
-  },
-  {
-    name: "Kiran Yousaf",
-    text: "My review for eman I am very well satisfied and extremely happy with my makeup look..she very nice and do my makeup as i wanted",
-  },
-  {
-    name: "farah n05",
-    text: "Today I got keratin treatment from Sansha beauty lounge. The girl Eeman did a wonderful job. She was very polite and professional. She was very patient and gave me absolute good time and care. I would highly recommend Eeman for hair treatments.",
-  },
-];
+const HOME_REVIEWS = REVIEWS;
 
-const GALLERY_SLUGS = [
-  "sansha-beauty-lounge-reception-shelves-hayatabad",
-  "sansha-beauty-lounge-hair-salon-interior",
-  "sansha-beauty-lounge-salon-sign-hayatabad-peshawar",
-  "sansha-beauty-lounge-salon-signboard-hayatabad",
-  "sansha-beauty-lounge-entrance-arch-night",
-  "sansha-beauty-lounge-floral-entrance-night",
-  "sansha-beauty-lounge-salon-entrance-night",
-  "sansha-beauty-lounge-reception-desk-peshawar",
+/** Our Collections: all 19 real photos, each tagged with the service
+ * its room or products belong to. The tag follows the photo's own
+ * hero-page assignment in the photo registry — entrance, signboard,
+ * reception and building photos are "The salon". */
+const COLLECTIONS: { slug: string; service: string }[] = [
+  { slug: "sansha-beauty-lounge-entrance-floral-arch-night", service: "Bridal Mehndi" },
+  { slug: "sansha-beauty-lounge-flower-arch-entrance-night", service: "Bridal Makeup" },
+  { slug: "sansha-beauty-lounge-floral-entrance-night", service: "Party Makeup" },
+  { slug: "sansha-beauty-lounge-hair-salon-chairs-peshawar", service: "Hair Salon" },
+  { slug: "sansha-beauty-lounge-hair-styling-chairs", service: "Hair Salon" },
+  { slug: "sansha-beauty-lounge-hair-salon-interior", service: "Hair Salon" },
+  { slug: "sansha-beauty-lounge-hair-wash-area", service: "Keratin Treatment" },
+  { slug: "sansha-beauty-lounge-hair-colour-products", service: "Hair Colour & Balayage" },
+  { slug: "sansha-beauty-lounge-facial-room-hayatabad", service: "Facials" },
+  { slug: "sansha-beauty-lounge-facial-treatment-room", service: "Facials" },
+  { slug: "sansha-beauty-lounge-laser-hair-removal-room", service: "Laser Hair Removal" },
+  { slug: "sansha-beauty-lounge-reception-desk-peshawar", service: "The salon" },
+  { slug: "sansha-beauty-lounge-reception-shelves-hayatabad", service: "The salon" },
+  { slug: "sansha-beauty-lounge-salon-sign-hayatabad-peshawar", service: "The salon" },
+  { slug: "sansha-beauty-lounge-salon-signboard-hayatabad", service: "The salon" },
+  { slug: "sansha-beauty-lounge-logo-sign-hayatabad", service: "The salon" },
+  { slug: "sansha-beauty-lounge-building-exterior-hayatabad", service: "The salon" },
+  { slug: "sansha-beauty-lounge-entrance-arch-night", service: "The salon" },
+  { slug: "sansha-beauty-lounge-salon-entrance-night", service: "The salon" },
 ];
 
 export default function HomePage() {
@@ -213,6 +254,7 @@ export default function HomePage() {
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-4 text-center text-sm font-semibold text-brand-900">
           <span>{SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews)</span>
+          <span>Walk-in salon</span>
           <span>Call or WhatsApp to book</span>
           <span>Phase 2, Hayatabad</span>
           <span>{SITE.hours}</span>
@@ -251,31 +293,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services grid — links to all 9 service pages */}
+      {/* Services — image cards: one photo + category + the specific
+          services under it, each card linking to its service page */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
           Our services
         </h2>
         <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
-          SanSha A Beauty Lounge stands for beauty, wellness, &amp;
-          confidence. We want our customers to be able to fully express
-          themselves with their new look.
+          Every service below is done at the salon in Phase 2, Hayatabad
+          — walk in at any hour, or call or WhatsApp to book your slot.
+          Prices depend on the service, so call or WhatsApp for
+          today&apos;s price.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
             <Link
               key={s.href}
               href={s.href}
-              className="flex min-h-11 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-accent-500"
+              className="flex min-h-11 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-accent-500"
             >
-              <span className="text-lg font-bold text-brand-900">
-                {s.label}
-              </span>
-              <span className="mt-1 text-sm leading-relaxed text-slate-700">
-                {s.text}
-              </span>
-              <span className="mt-3 text-sm font-semibold text-accent-600">
-                {s.anchor} →
+              {s.photo && (
+                <Photo
+                  photo={photo(s.photo)}
+                  sizes="(max-width: 640px) 100vw, 400px"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              )}
+              <span className="flex flex-col p-5">
+                <span className="text-lg font-bold text-brand-900">
+                  {s.label}
+                </span>
+                <span className="mt-1 text-sm leading-relaxed text-slate-700">
+                  {s.text}
+                </span>
+                <span className="mt-3 flex flex-wrap gap-2">
+                  {s.options.map((o) => (
+                    <span
+                      key={o}
+                      className="rounded-full bg-cream-50 px-3 py-1 text-xs font-semibold text-brand-900"
+                    >
+                      {o}
+                    </span>
+                  ))}
+                </span>
+                <span className="mt-3 text-sm font-semibold text-accent-600">
+                  {s.anchor} →
+                </span>
               </span>
             </Link>
           ))}
@@ -598,25 +661,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What our clients say */}
+      {/* Our Happy Customers — all 12 verbatim Google reviews already
+          on the site (same texts as /reviews/, which carries the
+          Review schema). Honest figure, plain text: 3.9★ / 92. */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
-          What our clients say
+          Our happy customers
         </h2>
         <p className="mt-3 leading-relaxed text-slate-700">
           {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews) — the
-          four reviews below are word-for-word from Google.{" "}
+          twelve reviews below are word-for-word from Google, exactly as
+          our clients wrote them.{" "}
           <Link href="/reviews/" className="font-medium text-brand-700 underline hover:text-brand-900">
-            Read more reviews
+            Read more about our reviews
           </Link>
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {HOME_REVIEWS.map((r) => (
             <blockquote
               key={r.name}
               className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
             >
-              <p className="leading-relaxed text-slate-700">“{r.text}”</p>
+              <p className="text-sm font-semibold text-accent-600">
+                {r.service} · {r.when}
+              </p>
+              <p className="mt-2 leading-relaxed text-slate-700">“{r.text}”</p>
               <footer className="mt-3 text-sm font-semibold text-brand-900">
                 {r.name} <span className="font-normal text-slate-500">— via Google</span>
               </footer>
@@ -625,32 +694,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Inside the salon */}
+      {/* Questions? Call or WhatsApp */}
+      <section className="bg-brand-950 text-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 text-center">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Questions? Call or WhatsApp
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-slate-200">
+            Not sure which service to book, or what it costs? Call{" "}
+            {SITE.phoneDisplay} or WhatsApp {SITE.whatsappDisplay} — tell
+            us the service and the day you want to come, and we will
+            confirm your slot and your price.
+          </p>
+          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <a
+              href={SITE.phoneHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+            >
+              Call {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.whatsappHref}
+              className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+            >
+              WhatsApp {SITE.whatsappDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Collections — all 19 real photos of the salon, each tagged
+          with the service its room or products belong to (the tag
+          follows the photo's own hero-page assignment in the photo
+          registry; entrance and signboard photos are tagged
+          "The salon"). No photo shows a treatment in progress. */}
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
-            Inside the salon
+            Our collections
           </h2>
           <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
-            Real photos of the salon — the reception, the salon floor, the
-            signboard and the entrance at night.{" "}
+            Real photos of the salon — the rooms where the work happens,
+            the products on the shelves, the signboard and the entrance
+            at night.{" "}
             <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
               See all 19 photos in the salon gallery
             </Link>
             .
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {GALLERY_SLUGS.map((slug) => {
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {COLLECTIONS.map(({ slug, service }) => {
               const p = photo(slug);
               return (
-                <Photo
-                  key={slug}
-                  photo={p}
-                  sizes="(max-width: 640px) 50vw, 320px"
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                  caption={p.caption}
-                  captionClassName="mt-2 text-xs leading-relaxed text-slate-600"
-                />
+                <figure key={slug}>
+                  <Photo
+                    photo={p}
+                    sizes="(max-width: 640px) 50vw, 320px"
+                    className="aspect-[4/3] w-full rounded-xl object-cover"
+                  />
+                  <figcaption className="mt-2 text-xs leading-relaxed text-slate-600">
+                    <span className="font-semibold text-brand-900">{service}</span>
+                    {" — "}
+                    {p.caption}
+                  </figcaption>
+                </figure>
               );
             })}
           </div>
@@ -670,6 +777,18 @@ export default function HomePage() {
             </address>
             <p className="mt-4 leading-relaxed text-slate-700">
               Walk in, or call or WhatsApp to book. Hours: {SITE.hoursLong}.
+              Email:{" "}
+              <a href={SITE.emailHref} className="font-medium text-brand-700 underline">
+                {SITE.email}
+              </a>
+            </p>
+            <p className="mt-3 flex flex-wrap items-center gap-x-1 text-sm leading-relaxed text-slate-700">
+              Follow us:{" "}
+              <a href={SITE.instagram} className="font-medium text-brand-700 underline" rel="me">Instagram ({SITE.instagramFollowers})</a>
+              <span aria-hidden="true"> · </span>
+              <a href={SITE.facebook} className="font-medium text-brand-700 underline" rel="me">Facebook ({SITE.facebookFollowers})</a>
+              <span aria-hidden="true"> · </span>
+              <a href={SITE.tiktok} className="font-medium text-brand-700 underline" rel="me">TikTok ({SITE.tiktokFollowers})</a>
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
