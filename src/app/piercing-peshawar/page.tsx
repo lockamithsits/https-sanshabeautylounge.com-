@@ -207,8 +207,7 @@ export default function PiercingPage() {
             </li>
           </ol>
           <p>
-            How long does a piercing visit take? [CONFIRM — ask the salon how long a piercing visit usually takes when you book.] Come as you are
-            — there is nothing to bring.
+            How long does a piercing visit take? [CONFIRM — ask the salon how long a piercing visit usually takes when you book.] Come as you are — bring nothing with you.
           </p>
 
           <h2>What piercing costs</h2>

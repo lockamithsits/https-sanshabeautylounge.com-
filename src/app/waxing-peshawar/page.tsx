@@ -407,10 +407,7 @@ export default function WaxingPage() {
               waxing are different services, priced on their own.
             </li>
             <li>
-              <strong>What else you book.</strong> Waxing with a
-              facial or a manicure in the same visit changes the
-              total — ask the salon to quote the full visit in one
-              price.
+              <strong>What else you book.</strong> Booking waxing with something else in the same visit changes what you pay — ask the salon to work out the whole visit in one price.
             </li>
           </ul>
           <p>

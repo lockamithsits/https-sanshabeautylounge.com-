@@ -245,9 +245,7 @@ export default function MassagePage() {
             <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a> or
             WhatsApp{" "}
             <a href={SITE.whatsappHref}>{SITE.whatsappDisplay}</a>{" "}
-            and ask for the price of the massage you want. Ask before
-            you come in, so the cost is settled before you arrive —
-            nothing is added at the salon.
+            and ask what the massage you want costs. Get the price before you book, so you know what you are paying before you come in — nothing is added at the salon.
           </p>
 
           <h2>Before you book</h2>

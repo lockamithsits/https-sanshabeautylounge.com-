@@ -319,8 +319,7 @@ export default function KeratinPage() {
               hair, section by section.
             </li>
             <li>
-              <strong>It is left in.</strong> The treatment stays in
-              your hair for a time the salon will confirm when you book.
+              <strong>It is left in.</strong> The treatment stays in your hair — the salon tells you how long when you book.
             </li>
             <li>
               <strong>Finished with a blow-dry.</strong> Your hair is
