@@ -335,7 +335,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Videos — seven TikTok embeds supplied by the owner
+      {/* Videos — eight TikTok embeds supplied by the owner
           (2026-11-16), directly below the service gallery.
           Player URLs, video IDs, titles and parameters are
           exactly as supplied, including autoplay=1&muted=1.
@@ -436,6 +436,19 @@ export default function HomePage() {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
               title="mehndi #peshawarbestsaloon #sanshabeautylounge"
+              allowFullScreen
+              loading="lazy"
+              className="aspect-[9/16] h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+            />
+          </div>
+          <div className="mx-auto w-full max-w-[325px]">
+            <iframe
+              height="578"
+              width="325"
+              src="https://www.tiktok.com/player/v1/7330146677644479750?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+              title="acrylic nails #partymakeup #hairstyles #peshawarbestsaloon #acrylicnails #sanshabeautylounge"
               allowFullScreen
               loading="lazy"
               className="aspect-[9/16] h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
