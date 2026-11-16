@@ -35,6 +35,9 @@ import type { Photo } from "@/data/photos";
  * 400w variant stays for small screens. The 330x220 batch-2 images
  * are small and will look soft on large desktop screens, but are
  * sharp on mobile where gallery cards are ~170px wide.
+ * Face Laser swap (2026-11-16): the 330px glabella image was replaced
+ * by the owner's HD photo pexels-photo-5069498.jpg (800x1200, widths
+ * [400, 800]); the glabella files stay in public/images, unreferenced.
  *
  * One image shows branded tools (a straightener and a styling
  * spray). No brand name from that photo appears anywhere on the
@@ -315,13 +318,13 @@ export const SERVICE_GALLERY: GalleryItem[] = [
   },
   // ---- Batch 2 (2026-11-16): 13 confirmed services ----
   {
-    slug: "laser-face-sansha-hayatabad",
-    source: "glabella.webp",
-    nativeW: 330,
-    nativeH: 220,
-    widths: [330],
-    alt: "Laser device held against the forehead during a face laser treatment",
-    caption: "A laser device on the forehead.",
+    slug: "face-laser-sansha-hayatabad",
+    source: "pexels-photo-5069498.jpg",
+    nativeW: 800,
+    nativeH: 1200,
+    widths: [400, 800],
+    alt: "Laser device held against the upper lip during a face laser treatment",
+    caption: "A laser device on the upper lip.",
     heroPages: ["/"],
     service: "Face Laser",
     text: "Laser hair removal for the face — ask on call or WhatsApp.",
