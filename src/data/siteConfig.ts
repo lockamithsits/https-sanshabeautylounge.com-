@@ -94,7 +94,7 @@ export const SITE = {
     "https://www.google.com/maps/search/SanSha+A+Beauty+Lounge+Hayatabad+Peshawar",
 
   /** Real content date — drives sitemap lastmod. */
-  lastUpdated: "2026-11-14",
+  lastUpdated: "2026-11-18",
 
   /** Search-console verification (owner-supplied 2026-11-14, both ways:
    *  meta tag + public/googleb7d79ba7b0fa42b4.html). */
