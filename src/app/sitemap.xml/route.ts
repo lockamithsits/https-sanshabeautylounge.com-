@@ -18,9 +18,9 @@ export const dynamic = "force-static";
  * Content optimization: + /massage-peshawar/ + /body-spa-peshawar/
  * = 19 pages.
  * 7 new service pages: + /lashes-peshawar/ + /tinting-peshawar/
- * + /hijama-cupping-peshawar/ + /electrolysis-peshawar/
  * + /piercing-peshawar/ + /tag-wart-removal-peshawar/
- * + /nails-peshawar/ = 26 pages.
+ * + /nails-peshawar/ = 26 pages, minus 2 removed 2026-11-18
+ * = 24 pages.
  */
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1.0 },
@@ -38,8 +38,6 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/body-spa-peshawar/", priority: 0.8 },
   { path: "/lashes-peshawar/", priority: 0.8 },
   { path: "/tinting-peshawar/", priority: 0.8 },
-  { path: "/hijama-cupping-peshawar/", priority: 0.8 },
-  { path: "/electrolysis-peshawar/", priority: 0.8 },
   { path: "/piercing-peshawar/", priority: 0.8 },
   { path: "/tag-wart-removal-peshawar/", priority: 0.8 },
   { path: "/nails-peshawar/", priority: 0.8 },

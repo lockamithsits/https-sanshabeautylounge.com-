@@ -71,8 +71,8 @@ export default function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-2">
-          {/* Socials live in the top bar on desktop only — hidden below
-              md so the sticky header stays compact at phone widths. */}
+          {/* Socials in the top bar on desktop. On phones they live
+              in the row below so the header stays compact. */}
           <HeaderSocialButtons className="hidden md:flex" />
           <a
             href={SITE.phoneHref}
@@ -90,6 +90,12 @@ export default function Header() {
             {open ? "✕ Close" : "☰ Menu"}
           </button>
         </div>
+      </div>
+      {/* Mobile social row — all three profiles visible in the header
+          on phones, without opening the menu. */}
+      <div className="flex items-center gap-3 border-t border-white/10 px-4 py-2 md:hidden">
+        <span className="text-xs font-semibold text-white/80">Follow us</span>
+        <HeaderSocialButtons />
       </div>
       <nav aria-label="Main navigation" className="hidden border-t border-white/10 md:block">
         <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-1 px-4">
@@ -218,12 +224,6 @@ export default function Header() {
               >
                 WhatsApp
               </a>
-            </li>
-            <li className="border-t border-white/10 pt-3">
-              <p className="text-sm font-semibold text-white/80">Follow us</p>
-              <div className="mt-2">
-                <HeaderSocialButtons />
-              </div>
             </li>
           </ul>
         </nav>

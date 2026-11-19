@@ -5,15 +5,15 @@ import type { Photo } from "@/data/photos";
  * the "Our services in pictures" gallery directly below the hero on
  * the home page. Batch 1: 20 illustrations. Batch 2 (2026-11-16):
  * +18 — 13 confirmed services plus 5 more the owner confirmed the
- * same day (Piercing, Hijama Cupping, Lashes, Tinting, Acrylic & Gel
- * Nails). Two more owner-supplied images (HydraFacial, skin peel) are
- * NOT in the owner's confirmed list: processed and staged in
+ * same day (Piercing, Lashes, Tinting, Acrylic & Gel Nails).
+ * Two services were removed 2026-11-18 at the owner's request —
+ * their cards and pages are gone. Two more owner-supplied images
+ * (HydraFacial, skin peel) are NOT in the owner's confirmed list:
+ * processed and staged in
  * ~/workspace/sansha-beauty-lounge/images-batch2-held/, no cards.
- * One confirmed service with no image (Electrolysis) gets a
- * text-only card in SERVICE_TEXT_CARDS below. Tag/Wart Removal
- * had a text-only card until 2026-11-16, when the owner sent a
- * photo (images.jpg, 199x185 native — never upscaled); it is now
- * a full image card in SERVICE_GALLERY.
+ * Tag/Wart Removal had a text-only card until 2026-11-16, when
+ * the owner sent a photo (images.jpg, 199x185 native — never
+ * upscaled); it is now a full image card in SERVICE_GALLERY.
  *
  * These are NOT the salon's real photos: they are pictures the owner
  * supplied showing what each service looks like, so a customer can
@@ -508,19 +508,6 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     href: "/piercing-peshawar/",
   },
   {
-    slug: "hijama-cupping-sansha-hayatabad",
-    source: "cupping-serv-card-330x220-01.webp",
-    nativeW: 330,
-    nativeH: 220,
-    widths: [330],
-    alt: "A fire cupping glass held over the back during hijama cupping",
-    caption: "A fire cupping glass held over the back.",
-    heroPages: ["/"],
-    service: "Hijama Cupping",
-    text: "Hijama cupping with fire cups — ask on call or WhatsApp.",
-    href: "/hijama-cupping-peshawar/",
-  },
-  {
     slug: "lash-extensions-sansha-hayatabad",
     source: "lashes-serv-card-330x220-01.webp",
     nativeW: 330,
@@ -572,19 +559,6 @@ export const SERVICE_GALLERY: GalleryItem[] = [
     text: "Tag and wart removal — ask on call or WhatsApp for details.",
     href: "/tag-wart-removal-peshawar/",
   },
-  {
-    slug: "electrolysis-sansha-hayatabad",
-    source: "download.jpg",
-    nativeW: 204,
-    nativeH: 192,
-    widths: [204],
-    alt: "A fine probe held near a woman's upper lip during an electrolysis treatment",
-    caption: "A probe near the upper lip.",
-    heroPages: ["/"],
-    service: "Electrolysis",
-    text: "Electrolysis — hair removal done hair by hair. Ask on call or WhatsApp.",
-    href: "/electrolysis-peshawar/",
-  },
 ];
 
 /**
@@ -594,9 +568,7 @@ export const SERVICE_GALLERY: GalleryItem[] = [
  * As of 2026-11-16 every confirmed service has a photo, so this list
  * is empty. Tag/Wart Removal was a text-only card until the owner
  * sent a photo (images.jpg, 199x185 native) — it is now an image
- * card above. Electrolysis was the last text-only card until the
- * owner sent a photo (download.jpg, 204x192 native) — it is now an
- * image card above.
+ * card above.
  */
 export interface TextCard {
   service: string;

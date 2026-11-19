@@ -1,11 +1,12 @@
 /**
- * The 20 confirmed services — the owner's list, 2026-11-16.
+ * The 18 confirmed services — the owner's list, 2026-11-16,
+ * minus two removed 2026-11-18 at the owner's request.
  *
  * SINGLE SOURCE OF TRUTH for the service links in the header menu
  * (Services dropdown + mobile accordion) and the footer Services
  * column, so the two never drift apart.
  *
- * Only 12 service pages exist. Each service links to its own page
+ * 17 service pages exist. Each service links to its own page
  * where one exists; the other 7 link to the CLOSEST existing page
  * (marked below) — never to a page that does not exist. Those 7
  * need dedicated pages if the owner wants them; this file only
@@ -36,12 +37,10 @@ export const SERVICE_NAV_LINKS: ServiceNavLink[] = [
   { label: "Nails", href: "/nails-peshawar/", closestPage: false },
   { label: "Lashes", href: "/lashes-peshawar/", closestPage: false },
   { label: "Tinting", href: "/tinting-peshawar/", closestPage: false },
-  { label: "Hijama Cupping", href: "/hijama-cupping-peshawar/", closestPage: false },
   { label: "Haircut & Styling", href: "/hair-salon-peshawar/", closestPage: false },
   { label: "Hair Treatment", href: "/keratin-treatment-peshawar/", closestPage: false },
   { label: "Hair Colour", href: "/hair-colour-peshawar/", closestPage: false },
   { label: "Makeup", href: "/party-makeup-peshawar/", closestPage: false },
-  { label: "Electrolysis", href: "/electrolysis-peshawar/", closestPage: false },
   { label: "Face Laser", href: "/laser-hair-removal-peshawar/", closestPage: false },
   { label: "Body Laser", href: "/laser-hair-removal-peshawar/", closestPage: false },
   { label: "Piercing", href: "/piercing-peshawar/", closestPage: false },

@@ -183,8 +183,6 @@ const EXPECTED_TITLES: Record<string, string> = {
   "/bridal-mehndi-peshawar/": "Bridal Mehndi in Peshawar | SanSha A Beauty Lounge",
   "/lashes-peshawar/": "Lash Extensions in Peshawar | SanSha A Beauty Lounge",
   "/tinting-peshawar/": "Eyebrow Tinting in Peshawar | SanSha A Beauty Lounge",
-  "/hijama-cupping-peshawar/": "Hijama Cupping in Peshawar | SanSha A Beauty Lounge",
-  "/electrolysis-peshawar/": "Electrolysis in Hayatabad Peshawar | SanSha A Beauty Lounge",
   "/piercing-peshawar/": "Ear Piercing in Hayatabad Peshawar | SanSha A Beauty Lounge",
   "/tag-wart-removal-peshawar/": "Tag & Wart Removal in Peshawar | SanSha A Beauty Lounge",
   "/nails-peshawar/": "Acrylic & Gel Nails in Peshawar | SanSha A Beauty Lounge",
@@ -286,16 +284,6 @@ const EXPECTED_OTHER_METAS: Record<string, { text: string; min: number; max: num
     min: 140,
     max: 155,
   },
-  "/hijama-cupping-peshawar/": {
-    text: "Hijama cupping in Hayatabad, Peshawar — fire cupping done at the salon in Phase 2. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot.",
-    min: 140,
-    max: 155,
-  },
-  "/electrolysis-peshawar/": {
-    text: "Electrolysis in Hayatabad, Peshawar — hair removal done hair by hair at the salon. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot.",
-    min: 140,
-    max: 155,
-  },
   "/piercing-peshawar/": {
     text: "Ear piercing in Hayatabad, Peshawar — done at the salon in Phase 2, Hayatabad. Call 091-5839119 or WhatsApp 0313 9333377 to book a slot today.",
     min: 140,
@@ -379,8 +367,8 @@ for (const [route, html] of htmlByPath) {
   }
 }
 console.log(`FAQ pages: ${faqPages}, total FAQ answers: ${faqTotal}`);
-if (faqTotal !== 151) fail(`expected 151 FAQ answers (109 + 7 new pages × 6), got ${faqTotal}`);
-else pass("151 FAQ answers total (109 + 7 new pages × 6)");
+if (faqTotal !== 139) fail(`expected 139 FAQ answers (109 + 5 new pages × 6), got ${faqTotal}`);
+else pass("139 FAQ answers total (109 + 5 new pages × 6)");
 
 // ---------- 3. broken internal links ----------
 section("3. Broken internal links");
@@ -778,8 +766,8 @@ section("12. Images (photos + og canvas)");
   const GALLERY: RegPhoto[] = parseRegistry(galleryText);
   if (PHOTOS.length === 19) pass("photo registry: 19 photos");
   else fail(`photo registry: ${PHOTOS.length} photos (expected 19)`);
-  if (GALLERY.length === 40) pass("gallery registry: 40 illustrations");
-  else fail(`gallery registry: ${GALLERY.length} illustrations (expected 40)`);
+  if (GALLERY.length === 38) pass("gallery registry: 38 illustrations");
+  else fail(`gallery registry: ${GALLERY.length} illustrations (expected 38)`);
   PHOTOS.push(...GALLERY);
   const bySlug = new Map(PHOTOS.map((p) => [p.slug, p]));
 
