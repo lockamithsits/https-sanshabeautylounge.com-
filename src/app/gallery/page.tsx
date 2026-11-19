@@ -61,7 +61,7 @@ const FAQS: Faq[] = [
   {
     question: "Do the photos show treatments being done?",
     answer:
-      "No — the photos show the salon itself: the rooms, the chairs, the products and the entrance. They do not show a treatment in progress, and no client is in focus in any photo. [ADD REAL PHOTO — a treatment in progress, once the salon has one it is happy to share.]",
+      "Some do now — the Recent work photos at the top of this page show bridal looks, hair colour, curls and mehndi on real clients. The rest show the salon itself: the rooms, the chairs, the products and the entrance. No client is named in any photo.",
   },
   {
     question: "Which photo shows the entrance?",
@@ -97,6 +97,69 @@ const GROUPS: {
   intro: string;
   photos: { slug: string; caption: string }[];
 }[] = [
+  {
+    heading: "Recent work",
+    intro:
+      "Fourteen photos of the salon's recent work, taken at SanSha A Beauty Lounge — bridal looks, hair colour, curls and mehndi, on real clients. No client is named. If you see a look you like, show it to the salon when you book and it will tell you honestly whether it can do the same for you.",
+    photos: [
+      {
+        slug: "bridal-makeup-nath-sansha-hayatabad",
+        caption: "A bridal look with a nose ring and gold jewellery.",
+      },
+      {
+        slug: "bridal-makeup-hairdo-sansha-hayatabad",
+        caption: "A bridal hairdo, pinned up with gold jewellery.",
+      },
+      {
+        slug: "bridal-makeup-green-lehenga-sansha-hayatabad",
+        caption: "A bride in a light green lehenga, henna on her hands.",
+      },
+      {
+        slug: "bridal-makeup-red-sansha-hayatabad",
+        caption: "A bride in red, seated at the salon.",
+      },
+      {
+        slug: "bridal-makeup-maroon-velvet-sansha-hayatabad",
+        caption: "A bride in a maroon velvet dress.",
+      },
+      {
+        slug: "party-makeup-purple-saree-sansha-hayatabad",
+        caption: "A party look in a purple saree.",
+      },
+      {
+        slug: "party-makeup-purple-saree-door-sansha-hayatabad",
+        caption: "A party look in a purple saree, by a carved door.",
+      },
+      {
+        slug: "bridal-mehndi-hands-sansha-hayatabad",
+        caption: "Floral henna on both hands.",
+      },
+      {
+        slug: "bridal-mehndi-feet-sansha-hayatabad",
+        caption: "Henna on both feet.",
+      },
+      {
+        slug: "hair-colour-red-sansha-hayatabad",
+        caption: "Red hair colour with soft waves.",
+      },
+      {
+        slug: "hair-colour-highlights-sansha-hayatabad",
+        caption: "Highlights, blow-dried smooth.",
+      },
+      {
+        slug: "hair-curls-blowdry-sansha-hayatabad",
+        caption: "Curls, seen from behind.",
+      },
+      {
+        slug: "haircut-short-bob-sansha-hayatabad",
+        caption: "A short bob with a side fringe.",
+      },
+      {
+        slug: "hair-blowdry-smooth-sansha-hayatabad",
+        caption: "A smooth blow-dry with soft waves.",
+      },
+    ],
+  },
   {
     heading: "The entrance",
     intro:
@@ -224,7 +287,7 @@ export default function GalleryPage() {
             Salon Gallery in Hayatabad, Peshawar
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-            Nineteen photos of the real salon — the entrance, the reception, the styling chairs and the treatment rooms — taken at SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar. See the salon before you visit, then call or WhatsApp to book.
+            Thirty-three photos from SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — fourteen of our recent work, and nineteen of the salon itself: the entrance, the reception, the styling chairs and the treatment rooms. See the work and the salon before you visit, then call or WhatsApp to book.
           </p>
       </HeroBackground>
 
@@ -235,16 +298,19 @@ export default function GalleryPage() {
           </p>
           <ul className="mt-3 space-y-2 leading-relaxed text-slate-700">
             <li>
-              <strong>Photos:</strong> 19, all taken at this salon —
-              no stock photos, no photos of another salon.
+              <strong>Photos:</strong> 33, all taken at this salon —
+              14 of our recent work and 19 of the salon itself. No
+              stock photos, no photos of another salon.
             </li>
             <li>
-              <strong>What they show:</strong> the entrance, reception,
+              <strong>What they show:</strong> bridal looks, hair
+              colour, curls and mehndi — plus the entrance, reception,
               styling chairs, wash area and treatment rooms.
             </li>
             <li>
               <strong>What they do not show:</strong> a treatment in
-              progress, or any client in focus.
+              progress. Some photos show clients in focus — no client
+              is named.
             </li>
             <li>
               <strong>Where:</strong> Phase 2, Hayatabad — Shop No.

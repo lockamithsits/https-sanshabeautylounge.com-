@@ -88,6 +88,8 @@ const FAQS: Faq[] = [
 
 const ARCH = SITE_HERO;
 
+const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
+
 export default function BridalMehndiPage() {
   return (
     <div>
@@ -442,6 +444,26 @@ export default function BridalMehndiPage() {
             design to be right — it needs to be the one you asked
             for, done well.
           </p>
+
+          <h2>Recent work</h2>
+          <p>
+            Recent henna at the salon — floral patterns on both hands,
+            and henna on both feet.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <Photo
+              photo={photo("bridal-mehndi-hands-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="Henna on both hands, with floral patterns."
+            />
+            <Photo
+              photo={photo("bridal-mehndi-feet-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="Henna on both feet."
+            />
+          </div>
 
           <h2>Real clients</h2>
           <p>

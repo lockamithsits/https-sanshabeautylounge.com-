@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
-import {OG_IMAGE} from "@/data/photos";
+import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -87,6 +87,8 @@ const FAQS: Faq[] = [
 ];
 
 const PHOTO = SITE_HERO;
+
+const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 
 export default function BridalMakeupPage() {
   return (
@@ -507,6 +509,28 @@ export default function BridalMakeupPage() {
               </tr>
             </tbody>
           </table>
+
+          <h2>Recent work</h2>
+          <p>
+            Two recent bridal looks from the salon — a bride in a light
+            green lehenga with henna on her hands, and a bride in a
+            maroon velvet dress with gold jewellery. If you like a
+            look, show it to the salon when you book.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <Photo
+              photo={photo("bridal-makeup-green-lehenga-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="A bride in a light green lehenga with henna on her hands."
+            />
+            <Photo
+              photo={photo("bridal-makeup-maroon-velvet-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="A bride in a maroon velvet dress with gold jewellery."
+            />
+          </div>
 
           <h2>Real brides</h2>
           <p>

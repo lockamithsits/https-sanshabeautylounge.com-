@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
-import {OG_IMAGE} from "@/data/photos";
+import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -87,6 +87,8 @@ const FAQS: Faq[] = [
 ];
 
 const PHOTO = SITE_HERO;
+
+const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 
 export default function PartyMakeupPage() {
   return (
@@ -484,6 +486,27 @@ export default function PartyMakeupPage() {
             in the same visit — face, hands and feet, all ready for
             the night.
           </p>
+
+          <h2>Recent work</h2>
+          <p>
+            Two recent party looks — both in purple sarees, one by a
+            carved wooden door. If you like a look, show it to the
+            salon when you book.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <Photo
+              photo={photo("party-makeup-purple-saree-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="A party look in a purple saree by a carved wooden door."
+            />
+            <Photo
+              photo={photo("party-makeup-purple-saree-door-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="A party look in a purple saree, head bowed."
+            />
+          </div>
 
           <h2>Real clients</h2>
           <p>

@@ -20,7 +20,8 @@ import type { Photo } from "@/data/photos";
  * see the service before booking. They must never be captioned as
  * "our work", "our client" or "our result" — the captions below
  * describe the SERVICE only. The salon's real photos live in
- * `src/data/photos.ts` and are shown in "Our Collections".
+ * `src/data/photos.ts` and are shown in "Our recent work" on the
+ * home page and in the salon gallery.
  *
  * One of the 21 files the owner sent in batch 1 is a duplicate:
  * pyyosuw5wxcoffmcrtdl.jpg is byte-identical (same md5) to

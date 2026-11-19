@@ -1,23 +1,32 @@
 /**
- * Photo registry — the 19 real salon photos the owner supplied 2026-11-14.
+ * Photo registry — 33 real photos.
  *
- * Every photo was viewed and identified by what is visibly in it.
- * Captions describe ONLY what is visible — never a specific job,
- * service, or "we did this" claim. Photos showing the 2019
- * 1st-anniversary 50%-off banner are photos OF the salon — the 2019
- * offer is NOT current and is never captioned or priced as a live deal.
+ * Batch 1 (2026-11-14): the 19 salon photos the owner supplied —
+ * rooms, reception, signboard, entrance. No client faces in focus.
+ *
+ * Batch 3 (2026-11-19): 14 work photos the owner supplied — bridal
+ * looks, hair colour, curls and mehndi, taken at the salon. These DO
+ * show real clients, faces in focus. Captions describe ONLY what is
+ * visible — never a specific job, service, or "we did this" claim,
+ * and no client is named. Held, NOT in this registry: 4 maroon-velvet
+ * bridal shots with a faint "IDEAL" studio watermark across the
+ * middle — see images-batch3-held/README.md.
  *
  * Processing (see images-manifest.md in ~/workspace/sansha-beauty-lounge):
  * each source was re-encoded (new bytes, EXIF stripped) into
  * AVIF -> WebP -> JPG at widths capped at the native width — never
- * upscaled.
+ * upscaled. Batch 3 AVIF: ffmpeg libaom-av1 crf 30 still-picture.
+ * One batch-3 source (red bridal) was a phone screenshot with black
+ * letterbox bars top/bottom — the bars were cropped before resize;
+ * no content was cropped.
  *
  * og:image: there is ONE og:image (the haircut photo, 330x220 — see
  * OG_IMAGE below). EVERY page uses it as its og:image and
  * twitter:image. No per-page og images exist for this build.
  *
  * heroPages: routes that show this photo (the sitemap lists each photo
- * as an <image:image> entry on those routes; home lists all 19).
+ * as an <image:image> entry on those routes; home lists the 14 work
+ * photos, the gallery lists all 33).
  */
 
 export interface Photo {
@@ -92,7 +101,7 @@ export const PHOTOS: Photo[] = [
     widths: [400, 680],
     alt: "Flower-decorated entrance arch with fairy lights at SanSha A Beauty Lounge at night",
     caption: "The flower-decorated entrance at night.",
-    heroPages: ["/", "/bridal-mehndi-peshawar/"],
+    heroPages: ["/bridal-mehndi-peshawar/"],
   },
   {
     slug: "sansha-beauty-lounge-hair-salon-chairs-peshawar",
@@ -132,7 +141,7 @@ export const PHOTOS: Photo[] = [
     widths: [400, 561],
     alt: "SanSha A Beauty Lounge building exterior in Hayatabad, Peshawar",
     caption: "The salon building in Hayatabad, Phase 2.",
-    heroPages: ["/contact/"],
+    heroPages: ["/", "/contact/"],
   },
   {
     slug: "sansha-beauty-lounge-entrance-arch-night",
@@ -232,6 +241,146 @@ export const PHOTOS: Photo[] = [
     widths: [400, 680],
     alt: "SanSha A Beauty Lounge sign on the salon building",
     caption: "The SanSha sign on the building.",
-    heroPages: ["/contact/"],
+    heroPages: ["/", "/contact/"],
+  },
+  {
+    slug: "bridal-makeup-hairdo-sansha-hayatabad",
+    source: "51165072_280504919284916_8617942687917539328_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Bridal hairdo with gold jewellery at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Hair pinned up with gold jewellery for a wedding.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "bridal-makeup-nath-sansha-hayatabad",
+    source: "64620733_337660263569381_9092257001819340800_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Bridal makeup with nose ring and gold jewellery at SanSha A Beauty Lounge, Peshawar",
+    caption: "Bridal makeup with a nose ring and gold jewellery.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "bridal-makeup-green-lehenga-sansha-hayatabad",
+    source: "134940213_671995230135881_6741789412396808461_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Bride in a light green lehenga with henna at SanSha A Beauty Lounge, Hayatabad",
+    caption: "A bride in a light green lehenga with henna on her hands.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "bridal-makeup-red-sansha-hayatabad",
+    source: "135526358_671992963469441_4910266904128014848_n.jpg",
+    nativeW: 561,
+    nativeH: 988,
+    widths: [400, 561],
+    alt: "Bride in red with gold jewellery at SanSha A Beauty Lounge, Peshawar",
+    caption: "A bride in red with gold jewellery, seated at the salon.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "bridal-makeup-maroon-velvet-sansha-hayatabad",
+    source: "481919600_1200127152120177_1696014114613177830_n.jpg",
+    nativeW: 680,
+    nativeH: 680,
+    widths: [400, 680],
+    alt: "Bride in a maroon velvet dress with gold jewellery at SanSha A Beauty Lounge",
+    caption: "A bride in a maroon velvet dress with gold jewellery.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "party-makeup-purple-saree-sansha-hayatabad",
+    source: "487434577_1220682856731273_6979786727521352520_n.jpg",
+    nativeW: 680,
+    nativeH: 680,
+    widths: [400, 680],
+    alt: "Party makeup with a purple saree at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "A party look in a purple saree by a carved wooden door.",
+    heroPages: ["/", "/gallery/", "/party-makeup-peshawar/"],
+  },
+  {
+    slug: "party-makeup-purple-saree-door-sansha-hayatabad",
+    source: "487857537_1220683093397916_31451380440893700_n.jpg",
+    nativeW: 680,
+    nativeH: 680,
+    widths: [400, 680],
+    alt: "Party makeup look in a purple saree at SanSha A Beauty Lounge, Peshawar",
+    caption: "A party look in a purple saree, head bowed.",
+    heroPages: ["/", "/gallery/", "/party-makeup-peshawar/"],
+  },
+  {
+    slug: "bridal-mehndi-hands-sansha-hayatabad",
+    source: "468041953_1464584050876991_2123355253180851819_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Bridal henna on both hands at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Henna on both hands, with floral patterns.",
+    heroPages: ["/", "/gallery/", "/bridal-mehndi-peshawar/"],
+  },
+  {
+    slug: "bridal-mehndi-feet-sansha-hayatabad",
+    source: "468006966_1464583777543685_6111089969507297380_n.jpg",
+    nativeW: 680,
+    nativeH: 510,
+    widths: [400, 680],
+    alt: "Bridal henna on feet at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Henna on both feet.",
+    heroPages: ["/", "/gallery/", "/bridal-mehndi-peshawar/"],
+  },
+  {
+    slug: "hair-colour-red-sansha-hayatabad",
+    source: "49742698_273270646675010_1894088329951969280_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Long red hair colour at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Long hair coloured red, styled with soft waves.",
+    heroPages: ["/", "/gallery/", "/hair-colour-peshawar/"],
+  },
+  {
+    slug: "hair-colour-highlights-sansha-hayatabad",
+    source: "139523051_679287072740030_3617799765126920338_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Hair highlights with a smooth blow-dry at SanSha A Beauty Lounge, Peshawar",
+    caption: "Long hair with highlights, blow-dried smooth.",
+    heroPages: ["/", "/gallery/", "/hair-colour-peshawar/"],
+  },
+  {
+    slug: "hair-curls-blowdry-sansha-hayatabad",
+    source: "49035949_267867327215342_4608613922809839616_n.jpg",
+    nativeW: 508,
+    nativeH: 960,
+    widths: [400, 508],
+    alt: "Long curled hair at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Long hair curled, seen from behind.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "haircut-short-bob-sansha-hayatabad",
+    source: "66496270_348583095810431_7477220535403806720_n.jpg",
+    nativeW: 538,
+    nativeH: 960,
+    widths: [400, 538],
+    alt: "Short bob haircut with a side fringe at SanSha A Beauty Lounge, Peshawar",
+    caption: "A short bob haircut with a side fringe.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "hair-blowdry-smooth-sansha-hayatabad",
+    source: "132564781_668270610508343_8513266350657238459_n.jpg",
+    nativeW: 680,
+    nativeH: 907,
+    widths: [400, 680],
+    alt: "Long hair blow-dried smooth at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Long hair blow-dried with soft waves.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
   },
 ];

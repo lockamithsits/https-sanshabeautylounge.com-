@@ -106,7 +106,7 @@ const SERVICES = [
     label: "Bridal Makeup",
     anchor: "bridal makeup for barat and walima",
     text: "Makeup with hairdo for barat, walima, nikah, mehndi and engagement.",
-    photo: "sansha-beauty-lounge-flower-arch-entrance-night",
+    photo: "bridal-makeup-nath-sansha-hayatabad",
     options: ["Barat", "Walima", "Nikah", "Mehndi", "Engagement"],
   },
   {
@@ -114,7 +114,7 @@ const SERVICES = [
     label: "Party Makeup",
     anchor: "party makeup with hairdo",
     text: "Lighter looks for engagements, dinners and family events.",
-    photo: "sansha-beauty-lounge-floral-entrance-night",
+    photo: "party-makeup-purple-saree-sansha-hayatabad",
     options: ["Engagements", "Dinners", "Family events"],
   },
   {
@@ -122,7 +122,7 @@ const SERVICES = [
     label: "Bridal Mehndi",
     anchor: "bridal mehndi in Hayatabad",
     text: "Henna for the bride and her guests, for the mehndi function.",
-    photo: "sansha-beauty-lounge-entrance-floral-arch-night",
+    photo: "bridal-mehndi-hands-sansha-hayatabad",
     options: ["Bridal mehndi", "Mehndi for guests"],
   },
   {
@@ -130,7 +130,7 @@ const SERVICES = [
     label: "Hair Salon",
     anchor: "haircuts and blow-dry in Hayatabad",
     text: "Haircuts, blow-dry, hair wash and styling for events.",
-    photo: "sansha-beauty-lounge-hair-salon-chairs-peshawar",
+    photo: "hair-curls-blowdry-sansha-hayatabad",
     options: ["Haircuts", "Blow-dry", "Hair wash", "Styling"],
   },
   {
@@ -138,7 +138,7 @@ const SERVICES = [
     label: "Keratin Treatment",
     anchor: "keratin treatment for smooth hair",
     text: "Keratin and protein treatments for smooth, frizz-free hair.",
-    photo: "sansha-beauty-lounge-hair-wash-area",
+    photo: "hair-blowdry-smooth-sansha-hayatabad",
     options: ["Keratin treatment", "Protein treatment"],
   },
   {
@@ -146,7 +146,7 @@ const SERVICES = [
     label: "Hair Colour & Balayage",
     anchor: "hair colour, balayage and dye",
     text: "Hair dye, balayage, streaks and highlights — choose your shade first.",
-    photo: "sansha-beauty-lounge-hair-colour-products",
+    photo: "hair-colour-red-sansha-hayatabad",
     options: ["Hair dye", "Balayage", "Streaks", "Highlights"],
   },
   {
@@ -154,7 +154,7 @@ const SERVICES = [
     label: "Laser Hair Removal",
     anchor: "laser hair removal in Hayatabad",
     text: "Laser hair removal for face, arms, legs and full body.",
-    photo: "sansha-beauty-lounge-laser-hair-removal-room",
+    photo: "face-laser-sansha-hayatabad",
     options: ["Face", "Arms", "Legs", "Full body"],
   },
   {
@@ -162,7 +162,7 @@ const SERVICES = [
     label: "Facials",
     anchor: "facials in Hayatabad",
     text: "Whitening, organic and derma facials with skin polish.",
-    photo: "sansha-beauty-lounge-facial-room-hayatabad",
+    photo: "spa-facial-treatment-sansha-hayatabad",
     options: ["Whitening", "Organic", "Derma facials", "Skin polish"],
   },
   {
@@ -170,7 +170,7 @@ const SERVICES = [
     label: "Waxing & Threading",
     anchor: "waxing and threading",
     text: "Waxing for arms, legs, face and underarms, plus threading.",
-    photo: "sansha-beauty-lounge-facial-treatment-room",
+    photo: "leg-waxing-sansha-hayatabad",
     options: ["Arms", "Legs", "Face", "Underarms", "Threading"],
   },
   {
@@ -185,30 +185,26 @@ const SERVICES = [
 
 const HOME_REVIEWS = REVIEWS;
 
-/** Our Collections: all 19 real photos, each tagged with the service
- * its room or products belong to. The tag follows the photo's own
- * hero-page assignment in the photo registry — entrance, signboard,
- * reception and building photos are "The salon". */
+/** Our recent work: 14 real photos of the salon's work — bridal
+ * looks, hair colour, curls and mehndi — each tagged with the
+ * service it shows. The 19 photos of the salon itself (rooms,
+ * reception, signboard, entrance) stay on the gallery page only;
+ * the home page shows the work, not the rooms. */
 const COLLECTIONS: { slug: string; service: string }[] = [
-  { slug: "sansha-beauty-lounge-entrance-floral-arch-night", service: "Bridal Mehndi" },
-  { slug: "sansha-beauty-lounge-flower-arch-entrance-night", service: "Bridal Makeup" },
-  { slug: "sansha-beauty-lounge-floral-entrance-night", service: "Party Makeup" },
-  { slug: "sansha-beauty-lounge-hair-salon-chairs-peshawar", service: "Hair Salon" },
-  { slug: "sansha-beauty-lounge-hair-styling-chairs", service: "Hair Salon" },
-  { slug: "sansha-beauty-lounge-hair-salon-interior", service: "Hair Salon" },
-  { slug: "sansha-beauty-lounge-hair-wash-area", service: "Keratin Treatment" },
-  { slug: "sansha-beauty-lounge-hair-colour-products", service: "Hair Colour & Balayage" },
-  { slug: "sansha-beauty-lounge-facial-room-hayatabad", service: "Facials" },
-  { slug: "sansha-beauty-lounge-facial-treatment-room", service: "Facials" },
-  { slug: "sansha-beauty-lounge-laser-hair-removal-room", service: "Laser Hair Removal" },
-  { slug: "sansha-beauty-lounge-reception-desk-peshawar", service: "The salon" },
-  { slug: "sansha-beauty-lounge-reception-shelves-hayatabad", service: "The salon" },
-  { slug: "sansha-beauty-lounge-salon-sign-hayatabad-peshawar", service: "The salon" },
-  { slug: "sansha-beauty-lounge-salon-signboard-hayatabad", service: "The salon" },
-  { slug: "sansha-beauty-lounge-logo-sign-hayatabad", service: "The salon" },
-  { slug: "sansha-beauty-lounge-building-exterior-hayatabad", service: "The salon" },
-  { slug: "sansha-beauty-lounge-entrance-arch-night", service: "The salon" },
-  { slug: "sansha-beauty-lounge-salon-entrance-night", service: "The salon" },
+  { slug: "bridal-makeup-nath-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "bridal-makeup-hairdo-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "bridal-makeup-green-lehenga-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "bridal-makeup-red-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "bridal-makeup-maroon-velvet-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "party-makeup-purple-saree-sansha-hayatabad", service: "Party Makeup" },
+  { slug: "party-makeup-purple-saree-door-sansha-hayatabad", service: "Party Makeup" },
+  { slug: "bridal-mehndi-hands-sansha-hayatabad", service: "Bridal Mehndi" },
+  { slug: "bridal-mehndi-feet-sansha-hayatabad", service: "Bridal Mehndi" },
+  { slug: "hair-colour-red-sansha-hayatabad", service: "Hair Colour & Balayage" },
+  { slug: "hair-colour-highlights-sansha-hayatabad", service: "Hair Colour & Balayage" },
+  { slug: "hair-curls-blowdry-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "haircut-short-bob-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "hair-blowdry-smooth-sansha-hayatabad", service: "Hair Salon" },
 ];
 
 export default function HomePage() {
@@ -259,7 +255,7 @@ export default function HomePage() {
           owner's list now has its own page, so every card links.
           The intro says plainly that these are pictures of the
           service, not photos of this salon's work — the salon's real
-          photos are in "Our Collections" further down the page. */}
+          photos of its work are in "Our recent work" further down the page. */}
       <section className="mx-auto max-w-6xl px-4 pt-12">
         <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
           Our services in pictures
@@ -269,9 +265,9 @@ export default function HomePage() {
           below show the service itself — a bridal look, a keratin
           treatment, a facial — so you can choose what you want. They
           are not photos of our salon or our clients; real photos of
-          the salon are in{" "}
-          <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
-            Our Collections
+          our work are in{" "}
+          <Link href="#recent-work" className="font-medium text-brand-700 underline hover:text-brand-900">
+            Our recent work
           </Link>{" "}
           further down this page. Every service on our list has a
           photo below.
@@ -524,10 +520,10 @@ export default function HomePage() {
             </p>
           </div>
           <Photo
-            photo={photo("sansha-beauty-lounge-flower-arch-entrance-night")}
+            photo={photo("bridal-makeup-green-lehenga-sansha-hayatabad")}
             sizes="(max-width: 640px) 100vw, 680px"
             className="w-full rounded-2xl object-cover"
-            caption="Flower arch and fairy lights at the entrance of SanSha A Beauty Lounge at night."
+            caption="A bride in a light green lehenga with henna on her hands."
           />
         </div>
       </section>
@@ -544,28 +540,28 @@ export default function HomePage() {
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <Photo
-            photo={photo("sansha-beauty-lounge-hair-salon-chairs-peshawar")}
+            photo={photo("hair-curls-blowdry-sansha-hayatabad")}
             sizes="(max-width: 640px) 100vw, 680px"
             className="w-full rounded-2xl object-cover"
-            caption="Hair styling chairs and mirrors inside SanSha A Beauty Lounge, Peshawar."
+            caption="Long hair curled, seen from behind."
           />
           <Photo
-            photo={photo("sansha-beauty-lounge-hair-styling-chairs")}
+            photo={photo("haircut-short-bob-sansha-hayatabad")}
             sizes="(max-width: 640px) 100vw, 680px"
             className="w-full rounded-2xl object-cover"
-            caption="Hair styling chairs inside the salon."
+            caption="A short bob haircut with a side fringe."
           />
           <Photo
-            photo={photo("sansha-beauty-lounge-hair-wash-area")}
+            photo={photo("hair-blowdry-smooth-sansha-hayatabad")}
             sizes="(max-width: 640px) 100vw, 680px"
             className="w-full rounded-2xl object-cover"
-            caption="Hair wash basins and chairs at SanSha A Beauty Lounge."
+            caption="Long hair blow-dried with soft waves."
           />
           <Photo
-            photo={photo("sansha-beauty-lounge-hair-colour-products")}
+            photo={photo("hair-colour-red-sansha-hayatabad")}
             sizes="(max-width: 640px) 100vw, 680px"
             className="w-full rounded-2xl object-cover"
-            caption="Professional hair colour and treatment products on a shelf."
+            caption="Long hair coloured red, styled with soft waves."
           />
         </div>
         <p className="mt-6 leading-relaxed text-slate-700">
@@ -650,22 +646,22 @@ export default function HomePage() {
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <Photo
-              photo={photo("sansha-beauty-lounge-facial-room-hayatabad")}
+              photo={photo("spa-facial-treatment-sansha-hayatabad")}
               sizes="(max-width: 640px) 100vw, 400px"
               className="w-full rounded-2xl object-cover"
-              caption="Facial treatment room with a treatment bed."
+              caption="A facial with a steamer."
             />
             <Photo
-              photo={photo("sansha-beauty-lounge-facial-treatment-room")}
+              photo={photo("facial-mask-sansha-hayatabad")}
               sizes="(max-width: 640px) 100vw, 400px"
               className="w-full rounded-2xl object-cover"
-              caption="Facial treatment bed and sink in a private room."
+              caption="A face mask during a facial."
             />
             <Photo
-              photo={photo("sansha-beauty-lounge-laser-hair-removal-room")}
+              photo={photo("face-laser-sansha-hayatabad")}
               sizes="(max-width: 640px) 100vw, 400px"
               className="w-full rounded-2xl object-cover"
-              caption="Laser hair removal treatment room with laser machine."
+              caption="A laser device on the upper lip."
             />
           </div>
           <p className="mt-6 leading-relaxed text-slate-700">
@@ -801,22 +797,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Our Collections — all 19 real photos of the salon, each tagged
-          with the service its room or products belong to (the tag
-          follows the photo's own hero-page assignment in the photo
-          registry; entrance and signboard photos are tagged
-          "The salon"). No photo shows a treatment in progress. */}
-      <section className="bg-white">
+      {/* Our recent work — 14 real photos of the salon's work,
+          each tagged with the service it shows. The photos of the
+          salon itself (rooms, reception, signboard, entrance) are
+          on the gallery page only. */}
+      <section id="recent-work" className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
-            Our collections
+            Our recent work
           </h2>
           <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
-            Real photos of the salon — the rooms where the work happens,
-            the products on the shelves, the signboard and the entrance
-            at night.{" "}
+            Real photos of our work — bridal looks, hair colour, curls
+            and mehndi — taken at SanSha A Beauty Lounge in Phase 2,
+            Hayatabad, Peshawar.{" "}
             <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
-              See all 19 photos in the salon gallery
+              See all 33 photos in the salon gallery
             </Link>
             .
           </p>

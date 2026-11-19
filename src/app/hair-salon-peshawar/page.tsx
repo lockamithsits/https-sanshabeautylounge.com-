@@ -268,6 +268,25 @@ export default function HairSalonPage() {
             with your makeup. Tell the salon about your event when you
             book, so it can plan the finish around the look you want.
           </p>
+          <h2>Recent work</h2>
+          <p>
+            Two recent finishes — long hair curled, and a short bob
+            with a side fringe.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <Photo
+              photo={photo("hair-curls-blowdry-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="Long hair curled, seen from behind."
+            />
+            <Photo
+              photo={photo("haircut-short-bob-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="A short bob haircut with a side fringe."
+            />
+          </div>
           <p>
             Styling for an event is different from an everyday cut: the
             finish has to hold through a long evening of photos,

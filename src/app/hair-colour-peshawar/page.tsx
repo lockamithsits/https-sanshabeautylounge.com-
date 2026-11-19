@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
-import {OG_IMAGE} from "@/data/photos";
+import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -87,6 +87,8 @@ const FAQS: Faq[] = [
 ];
 
 const PHOTO = SITE_HERO;
+
+const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 
 export default function HairColourPage() {
   return (
@@ -437,6 +439,27 @@ export default function HairColourPage() {
             is where to begin — a cut with a blow-dry gives you a clean
             starting point.
           </p>
+
+          <h2>Recent work</h2>
+          <p>
+            Two recent colours — long red hair with soft waves, and
+            highlights blow-dried smooth. Choose your shade with the
+            salon before you book.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <Photo
+              photo={photo("hair-colour-red-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="Long hair coloured red, styled with soft waves."
+            />
+            <Photo
+              photo={photo("hair-colour-highlights-sansha-hayatabad")}
+              sizes="(max-width: 640px) 50vw, 340px"
+              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              caption="Long hair with highlights, blow-dried smooth."
+            />
+          </div>
 
           <h2>Real clients</h2>
           <p>
