@@ -15,12 +15,12 @@ import type { Faq } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "Beauty Salon in Hayatabad Peshawar | SanSha A Beauty Lounge",
   description:
-    "SanSha A Beauty Lounge in Hayatabad, Peshawar — bridal & party makeup, hair, keratin, facials, waxing and laser. Call 091-5839119 or WhatsApp 0313 9333377.",
+    "SanSha A Beauty Lounge — walk-in beauty salon in Hayatabad, Peshawar, open 24 hours. Bridal & party makeup, hair, keratin, facials. Call 091-5839119.",
   alternates: { canonical: SITE.url },
   openGraph: {
     title: "Beauty Salon in Hayatabad Peshawar | SanSha A Beauty Lounge",
     description:
-      "SanSha A Beauty Lounge in Hayatabad, Peshawar — bridal & party makeup, hair, keratin, facials, waxing and laser. Call 091-5839119 or WhatsApp 0313 9333377.",
+      "SanSha A Beauty Lounge — walk-in beauty salon in Hayatabad, Peshawar, open 24 hours. Bridal & party makeup, hair, keratin, facials. Call 091-5839119.",
     url: SITE.url,
     siteName: SITE.fullName,
     locale: "en",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Beauty Salon in Hayatabad Peshawar | SanSha A Beauty Lounge",
     description:
-      "SanSha A Beauty Lounge in Hayatabad, Peshawar — bridal & party makeup, hair, keratin, facials, waxing and laser. Call 091-5839119 or WhatsApp 0313 9333377.",
+      "SanSha A Beauty Lounge — walk-in beauty salon in Hayatabad, Peshawar, open 24 hours. Bridal & party makeup, hair, keratin, facials. Call 091-5839119.",
     images: [`${SITE.url}${OG_IMAGE.url}`],
   },
 };
@@ -223,10 +223,10 @@ export default function HomePage() {
             {SITE.tagline}
           </p>
           <h1 className="mt-3 text-4xl leading-tight font-bold sm:text-5xl">
-            Beauty Salon in Hayatabad, Peshawar — SanSha A Beauty Lounge
+            Beauty Salon in Hayatabad, Peshawar — Open 24 Hours
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-            SanSha A Beauty Lounge is a beauty salon in Phase 2, Hayatabad, Peshawar, offering bridal and party makeup, haircuts, keratin, facials, waxing, laser hair removal and mani-pedi. Walk in at any hour — the salon is open 24 hours, 7 days a week — or call 091-5839119 or WhatsApp 0313 9333377 to book your slot.
+            SanSha A Beauty Lounge is a walk-in beauty salon in Phase 2, Hayatabad, Peshawar, open 24 hours, 7 days a week. Bridal and party makeup, haircuts, keratin, facials, waxing, laser hair removal, mehndi and mani-pedi — all under one roof at Shop No. 4, Block A, Deans Hights. Call 091-5839119 or WhatsApp 0313 9333377 to book.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
@@ -242,13 +242,17 @@ export default function HomePage() {
               WhatsApp {SITE.whatsappDisplay}
             </a>
           </div>
+          <p className="mt-4 text-sm font-semibold text-amber-200">
+            Walk-in salon — no appointment needed for most services.
+            Bridal makeup is best booked ahead.
+          </p>
           <p className="mt-4 text-sm text-slate-300">
             {SITE.streetAddress}, {SITE.addressLocality},{" "}
             {SITE.addressRegion} {SITE.postalCode}, {SITE.country}
           </p>
       </HeroBackground>
 
-      {/* Our services in pictures — 40 owner-supplied service
+      {/* Our services in pictures — 38 owner-supplied service
           illustrations, directly below the hero. Each image card:
           image + accurate service name + a short description of the
           service + a link to the service page. Every service on the
