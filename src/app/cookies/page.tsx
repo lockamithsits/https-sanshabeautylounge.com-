@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE } from "@/data/siteConfig";
-import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import {OG_IMAGE} from "@/data/photos";
+import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import HeroBackground from "@/components/HeroBackground";
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-const HERO = PHOTOS.find((p) => p.slug === "sansha-beauty-lounge-entrance-floral-arch-night")!;
+const HERO = SITE_HERO;
 
 export default function CookiesPage() {
   return (

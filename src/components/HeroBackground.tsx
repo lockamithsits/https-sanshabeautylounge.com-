@@ -21,6 +21,11 @@ import type { Photo as PhotoType } from "@/data/photos";
  * hero image, swap the file the same way the Face Laser card was
  * swapped (2026-11-16) — no markup change needed.
  *
+ * Since 2026-11-18 every page's hero uses the same photo — the
+ * fresh short haircut (SITE_HERO in src/data/serviceGallery.ts),
+ * the owner's pick. The caption below still carries the honest
+ * "illustration" labelling, so the framing is not lost.
+ *
  * The hero caption (the honest "illustration" labelling) is kept as
  * a small line under the CTAs, so the framing is not lost when the
  * foreground photo goes away.

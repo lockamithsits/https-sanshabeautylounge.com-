@@ -562,6 +562,18 @@ export const SERVICE_GALLERY: GalleryItem[] = [
 ];
 
 /**
+ * The site-wide hero photo — the owner's pick (2026-11-18): the
+ * fresh short haircut. Every page's hero background uses this one
+ * photo (see each page's HERO/PHOTO/ARCH const). It is a 330x220
+ * gallery illustration (15 KB): sharp on phones, soft on large
+ * desktop behind the hero overlay. If the owner sends a larger
+ * copy, re-process it at native width — this const needs no change.
+ */
+export const SITE_HERO = SERVICE_GALLERY.find(
+  (g) => g.slug === "haircut-short-style-sansha-hayatabad",
+)!;
+
+/**
  * Text-only gallery cards — confirmed services with no image supplied.
  * Shown in the same "Our services in pictures" grid, styled like the
  * image cards but without a photo. No wrong image is used for them.

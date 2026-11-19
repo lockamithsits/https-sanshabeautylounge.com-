@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE } from "@/data/photos";
-import { SERVICE_GALLERY } from "@/data/serviceGallery";
+import {SITE_HERO} from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -81,16 +81,14 @@ const FAQS: Faq[] = [
   },
 ];
 
-const HERO = SERVICE_GALLERY.find(
-  (g) => g.slug === "body-scrub-spa-sansha-hayatabad",
-)!;
+const HERO = SITE_HERO;
 
 export default function BodySpaPage() {
   return (
     <div>
       <HeroBackground
         photo={HERO}
-        caption={`${HERO.caption} This is an illustration of the service — not a photo taken at the salon.`}
+        caption={`${HERO.caption} Photo is an illustration, not a photo taken at the salon.`}
       >
           <Breadcrumbs
             items={[

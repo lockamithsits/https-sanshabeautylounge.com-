@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -85,7 +86,7 @@ const FAQS: Faq[] = [
 ];
 
 const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
-const ARCH = photo("sansha-beauty-lounge-entrance-floral-arch-night");
+const ARCH = SITE_HERO;
 
 /** Gallery groups: each photo with its own caption, written for this
  * page — describing only what the photo shows, never a treatment it
@@ -214,7 +215,7 @@ export default function GalleryPage() {
     <div>
       <HeroBackground
         photo={ARCH}
-        caption="The flower arch at the entrance, lit up at night."
+        caption={ARCH.caption}
       >
           <Breadcrumbs
             items={[{ name: "Home", path: "/" }, { name: "Gallery" }]}

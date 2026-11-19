@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE } from "@/data/photos";
-import { SERVICE_GALLERY } from "@/data/serviceGallery";
+import {SITE_HERO} from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -80,16 +80,14 @@ const FAQS: Faq[] = [
   },
 ];
 
-const HERO = SERVICE_GALLERY.find(
-  (g) => g.slug === "eyebrow-tinting-sansha-hayatabad",
-)!;
+const HERO = SITE_HERO;
 
 export default function TintingPage() {
   return (
     <div>
       <HeroBackground
         photo={HERO}
-        caption={`${HERO.caption} The photo is an illustration of the service, not a photo of the salon itself.`}
+        caption={`${HERO.caption} Photo is an illustration, not a photo taken at the salon.`}
       >
         <Breadcrumbs
           items={[

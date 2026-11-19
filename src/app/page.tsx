@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
 import { REVIEWS } from "@/data/reviews";
-import { SERVICE_GALLERY, SERVICE_TEXT_CARDS } from "@/data/serviceGallery";
+import {SERVICE_GALLERY, SERVICE_TEXT_CARDS, SITE_HERO} from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQ";
 import CallCTA from "@/components/CallCTA";
@@ -79,7 +79,7 @@ const FAQS: Faq[] = [
 const photo = (slug: string) =>
   PHOTOS.find((p) => p.slug === slug) ??
   SERVICE_GALLERY.find((g) => g.slug === slug)!;
-const HERO = photo("sansha-beauty-lounge-entrance-floral-arch-night");
+const HERO = SITE_HERO;
 
 /**
  * Service cards (Queens-reference pattern: one image + category +

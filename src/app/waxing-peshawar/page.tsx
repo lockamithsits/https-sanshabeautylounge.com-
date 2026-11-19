@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
-import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import {OG_IMAGE} from "@/data/photos";
+import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -85,9 +86,7 @@ const FAQS: Faq[] = [
   },
 ];
 
-const PHOTO = PHOTOS.find(
-  (p) => p.slug === "sansha-beauty-lounge-facial-treatment-room",
-)!;
+const PHOTO = SITE_HERO;
 
 export default function WaxingPage() {
   return (

@@ -34,7 +34,7 @@
  *     reviews page; staff names appear ONLY inside verbatim review
  *     quotes (<blockquote>).
  * 12. Images: every <img> has width/height + alt, src/srcset resolve,
- *     no upscaled renders; og:image (the single og canvas) + twitter:image
+ *     no upscaled renders; og:image (the single og image) + twitter:image
  *     on every page and resolving; sitemap image entries resolve.
  *
  * Usage: pnpm qa   (after `pnpm build`)
@@ -50,7 +50,7 @@ const STRATEGY = path.resolve(
   "../sansha-beauty-lounge/STRATEGY.md",
 );
 const DOMAIN = "https://sanshabeautylounge.com";
-const OG_FILE = "og-sansha-beauty-lounge-hayatabad-peshawar.jpg";
+const OG_FILE = "haircut-short-style-sansha-hayatabad-330.jpg";
 
 let failures = 0;
 let passes = 0;
@@ -739,7 +739,7 @@ section("11. Schema, claims, staff names");
 }
 
 // ---------- 12. Images (photos + og canvas) ----------
-section("12. Images (photos + og canvas)");
+section("12. Images (photos + og image)");
 {
   const regText = read(path.join(ROOT, "src", "data", "photos.ts"));
   // Gallery illustrations (src/data/serviceGallery.ts) are a second
@@ -787,7 +787,7 @@ section("12. Images (photos + og canvas)");
       }
       if (og[1] !== tw[1]) ogProblems.push(`${route}: og:image != twitter:image`);
       if (!og[1].endsWith(`/images/${OG_FILE}`)) {
-        ogProblems.push(`${route}: og:image should be the single og canvas ${OG_FILE}, got ${og[1]}`);
+        ogProblems.push(`${route}: og:image should be the single og image ${OG_FILE}, got ${og[1]}`);
       }
     }
     let m: RegExpExecArray | null;
@@ -822,7 +822,7 @@ section("12. Images (photos + og canvas)");
   }
   if (imgProblems.length === 0) pass(`all ${imgTotal} <img> tags: width/height + alt set, src/srcset resolve, no upscaled renders`);
   else fail(`${imgProblems.length} image problems:\n    - ${imgProblems.slice(0, 12).join("\n    - ")}${imgProblems.length > 12 ? `\n    …and ${imgProblems.length - 12} more` : ""}`);
-  if (ogProblems.length === 0) pass(`og:image + twitter:image on every page = the single og canvas (${OG_FILE}), resolving to the built file`);
+  if (ogProblems.length === 0) pass(`og:image + twitter:image on every page = the single og image (${OG_FILE}), resolving to the built file`);
   else fail(`${ogProblems.length} og:image problems:\n    - ${ogProblems.slice(0, 12).join("\n    - ")}${ogProblems.length > 12 ? `\n    …and ${ogProblems.length - 12} more` : ""}`);
 
   const smProblems: string[] = [];

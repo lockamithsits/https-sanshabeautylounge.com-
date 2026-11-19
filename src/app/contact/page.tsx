@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/data/siteConfig";
 import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -88,7 +89,7 @@ const photo = (slug: string) => PHOTOS.find((p) => p.slug === slug)!;
 const EXTERIOR = photo("sansha-beauty-lounge-building-exterior-hayatabad");
 const SIGN = photo("sansha-beauty-lounge-logo-sign-hayatabad");
 
-const HERO = PHOTOS.find((p) => p.slug === "sansha-beauty-lounge-entrance-floral-arch-night")!;
+const HERO = SITE_HERO;
 
 export default function ContactPage() {
   return (

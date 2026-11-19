@@ -12,10 +12,9 @@
  * AVIF -> WebP -> JPG at widths capped at the native width — never
  * upscaled.
  *
- * og:image: there is ONE og canvas (og-sansha-beauty-lounge-hayatabad-
- * peshawar.jpg, 1200x630, hero photo at native size on a near-black
- * canvas, never stretched). EVERY page uses it as its og:image — see
- * OG_IMAGE below. No per-photo og canvases exist for this build.
+ * og:image: there is ONE og:image (the haircut photo, 330x220 — see
+ * OG_IMAGE below). EVERY page uses it as its og:image and
+ * twitter:image. No per-page og images exist for this build.
  *
  * heroPages: routes that show this photo (the sitemap lists each photo
  * as an <image:image> entry on those routes; home lists all 19).
@@ -36,12 +35,12 @@ export interface Photo {
   heroPages: string[];
 }
 
-/** The single og:image canvas (1200x630), used by every page. */
+/** The og:image for every page — the owner's pick (2026-11-18). */
 export const OG_IMAGE = {
-  url: "/images/og-sansha-beauty-lounge-hayatabad-peshawar.jpg",
-  width: 1200,
-  height: 630,
-  alt: "SanSha A Beauty Lounge entrance with a flower-decorated arch at night, Hayatabad, Peshawar",
+  url: "/images/haircut-short-style-sansha-hayatabad-330.jpg",
+  width: 330,
+  height: 220,
+  alt: "Woman with a fresh short haircut, styled with a side fringe",
 } as const;
 
 export const PHOTOS: Photo[] = [

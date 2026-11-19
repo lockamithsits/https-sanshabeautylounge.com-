@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { REVIEWS } from "@/data/reviews";
 import { SITE } from "@/data/siteConfig";
-import { OG_IMAGE, PHOTOS } from "@/data/photos";
+import {OG_IMAGE} from "@/data/photos";
+import { SITE_HERO } from "@/data/serviceGallery";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQ";
@@ -86,9 +87,7 @@ const FAQS: Faq[] = [
   },
 ];
 
-const RECEPTION = PHOTOS.find(
-  (p) => p.slug === "sansha-beauty-lounge-reception-desk-peshawar",
-)!;
+const RECEPTION = SITE_HERO;
 
 const GROUPS: {
   key: "hair" | "makeup" | "waxing" | "facial" | "visit";

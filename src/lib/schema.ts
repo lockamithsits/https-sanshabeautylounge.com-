@@ -33,7 +33,7 @@ export function organizationJsonLd() {
     email: SITE.email,
     description: `SanSha A Beauty Lounge — beauty salon in Phase 2, Hayatabad, Peshawar. Bridal and party makeup, haircuts, blow-dry, hair colour and balayage, keratin and protein treatments, facials, waxing and threading, manicure and pedicure, and laser hair removal.`,
     logo: `${SITE.url}/images/logo-light.jpg`,
-    image: `${SITE.url}/images/og-sansha-beauty-lounge-hayatabad-peshawar.jpg`,
+    image: `${SITE.url}/images/haircut-short-style-sansha-hayatabad-330.jpg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.streetAddress,
