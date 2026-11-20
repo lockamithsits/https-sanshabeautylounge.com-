@@ -93,11 +93,13 @@ const ARCH = SITE_HERO;
  * does not show. Captions differ from the registry captions used on
  * the home page, so the two pages do not share long passages. */
 const GROUPS: {
+  id: string;
   heading: string;
   intro: string;
   photos: { slug: string; caption: string }[];
 }[] = [
   {
+    id: "recent-work",
     heading: "Recent work",
     intro:
       "Fourteen photos of the salon's recent work, taken at SanSha A Beauty Lounge — bridal looks, hair colour, curls and mehndi, on real clients. No client is named. If you see a look you like, show it to the salon when you book and it will tell you honestly whether it can do the same for you.",
@@ -161,6 +163,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "inside-the-salon",
     heading: "Inside the salon",
     intro:
       "Fourteen new photos from inside the salon — the styling floor, the laser room, the facial, waxing and pedicure rooms, and the product shelves. They were taken on an ordinary day, with the rooms as they are between appointments. The bride in the pink lehenga is a client inside the salon; like the Recent work photos, she is not named.",
@@ -224,6 +227,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "the-entrance",
     heading: "The entrance",
     intro:
       "The salon's entrance is dressed with a flower arch and fairy lights, and at night it is the brightest thing on the street. These photos were taken after dark, when the arch is lit — it is the same arch on the home page, and it is how most clients first find the salon. The board by the door says the salon is open, and it is: 24 hours, 7 days a week.",
@@ -251,6 +255,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "reception-and-waiting",
     heading: "Reception and waiting",
     intro:
       "Inside the door is the reception, where clients wait and where the salon keeps its products. The desk is where you check in and where you pay, and the shelves behind it hold the colour and treatment products the salon uses. It is a small, plain space — no grand lobby, just a desk, chairs, and shelves.",
@@ -266,6 +271,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "styling-chairs-and-hair",
     heading: "Styling chairs and hair",
     intro:
       "The main floor is where hair happens: styling chairs in front of mirrors, a wash area with basins, and a shelf of colour and treatment products. This is where haircuts, blow-dries, colour and keratin treatments are done. The chairs are the working heart of the salon, and the photos below show them as they are on an ordinary day.",
@@ -293,6 +299,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "treatment-rooms",
     heading: "Treatment rooms",
     intro:
       "Facials and laser hair removal are done in private rooms, away from the main floor. The facial rooms have a treatment bed and a sink, and the laser room holds the laser machine. These are quiet rooms — the door closes, and the appointment is yours alone. The photos show the rooms empty, as they are between appointments.",
@@ -312,6 +319,7 @@ const GROUPS: {
     ],
   },
   {
+    id: "outside-the-salon",
     heading: "Outside the salon",
     intro:
       "From the street, the salon is easy to spot: the signboard carries the name, and the building sits in Phase 2, Hayatabad. The signboard photos below show what to look for when you come — the name on the wall, the welcome banner, and the building itself. If you are coming for the first time, the signboard is the landmark to watch for.",
@@ -346,7 +354,7 @@ export default function GalleryPage() {
           <Breadcrumbs
             items={[{ name: "Home", path: "/" }, { name: "Gallery" }]}
           />
-          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+          <h1 className="lux-h1 mt-3">
             Salon Gallery in Hayatabad, Peshawar
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
@@ -355,7 +363,7 @@ export default function GalleryPage() {
       </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+        <div className="lux-card border-amber-200 bg-amber-50 p-6">
           <p className="text-lg font-bold text-brand-900">
             Visit at a glance
           </p>
@@ -386,6 +394,22 @@ export default function GalleryPage() {
           </ul>
         </div>
 
+        <nav aria-label="Gallery groups" className="mt-8">
+          <p className="lux-eyebrow">Jump to a group</p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {GROUPS.map((g) => (
+              <li key={g.id}>
+                <a
+                  href={`#${g.id}`}
+                  className="inline-flex min-h-11 items-center rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold text-brand-900 transition-colors hover:border-accent-500"
+                >
+                  {g.heading}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <div className="page-content">
           <h2>What you will see in these photos</h2>
           <p>
@@ -413,8 +437,8 @@ export default function GalleryPage() {
         </div>
 
         {GROUPS.map((g) => (
-          <div key={g.heading} className="mt-12">
-            <h2 className="text-2xl font-bold text-brand-900 sm:text-3xl">
+          <div key={g.heading} id={g.id} className="mt-12 scroll-mt-40">
+            <h2 className="lux-h2">
               {g.heading}
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
@@ -426,7 +450,7 @@ export default function GalleryPage() {
                   key={p.slug}
                   photo={photo(p.slug)}
                   sizes="(max-width: 640px) 100vw, 400px"
-                  className="w-full rounded-2xl object-cover"
+                  className="aspect-[4/3] w-full rounded-2xl object-cover"
                   caption={p.caption}
                 />
               ))}

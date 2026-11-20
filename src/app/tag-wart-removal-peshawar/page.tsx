@@ -95,7 +95,8 @@ export default function TagWartRemovalPage() {
             { name: "Tag & Wart Removal" },
           ]}
         />
-        <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+        <p className="lux-eyebrow-on-dark mt-4">Tag &amp; Wart Removal</p>
+        <h1 className="lux-h1 mt-3">
           Tag &amp; Wart Removal in Hayatabad, Peshawar — Done at the
           Salon
         </h1>
@@ -108,13 +109,13 @@ export default function TagWartRemovalPage() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
             href={SITE.phoneHref}
-            className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+            className="btn-lux w-full sm:w-auto"
           >
             Call {SITE.phoneDisplay}
           </a>
           <a
             href={SITE.whatsappHref}
-            className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+            className="btn-whatsapp w-full sm:w-auto"
           >
             WhatsApp {SITE.whatsappDisplay}
           </a>
@@ -122,7 +123,7 @@ export default function TagWartRemovalPage() {
       </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+        <div className="lux-card border-amber-200 bg-amber-50 p-6">
           <p className="text-lg font-bold text-brand-900">Quick facts</p>
           <ul className="mt-3 space-y-2 leading-relaxed text-slate-700">
             <li>
