@@ -58,13 +58,15 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label="SanSha A Beauty Lounge — home">
           {/* Dark logo variant (supplied, black background) on the dark header.
-              56px (was 40px) — the owner said the logo looked too small. */}
+              80px (was 40px, then 56px) — the owner asked twice for a bigger
+              logo. Source file stays the full 814x821 (HD): at 80px display
+              it downscales 10x, so it stays razor-sharp incl. retina. */}
           <img
             src="/images/logo-dark.jpg"
             alt="SanSha A Beauty Lounge logo"
-            width={56}
-            height={56}
-            className="h-14 w-14 shrink-0 rounded-lg object-cover"
+            width={80}
+            height={80}
+            className="h-20 w-20 shrink-0 rounded-lg object-cover"
           />
           <span className="leading-tight">
             <span className="block text-base font-bold sm:text-lg">SanSha A Beauty Lounge</span>
