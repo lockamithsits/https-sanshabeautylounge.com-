@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE } from "@/data/siteConfig";
 import { SERVICE_NAV_LINKS } from "@/data/services";
 import { HeaderSocialButtons } from "@/components/SocialLinks";
@@ -14,16 +15,34 @@ const TOP_LINKS = [
   { href: "/contact/", label: "Contact" },
 ];
 
+/** Compare a nav href with the current path, ignoring a trailing slash. */
+function isCurrent(href: string, pathname: string): boolean {
+  const norm = (p: string) => (p === "/" ? "/" : p.replace(/\/$/, ""));
+  return norm(href) === norm(pathname);
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   /** Desktop Services dropdown. */
   const [servicesOpen, setServicesOpen] = useState(false);
   /** Mobile Services accordion. */
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  /** Shrink-on-scroll: the logo row compacts once the page scrolls. */
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   const servicesRef = useRef<HTMLLIElement>(null);
   const servicesButtonRef = useRef<HTMLButtonElement>(null);
 
   const closeServices = () => setServicesOpen(false);
+
+  // Shrink the header on scroll: logo 80px -> 56px, tighter row padding.
+  // The at-top size stays 80px — the owner asked twice for a bigger logo.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close the desktop dropdown on Escape (and return focus to the
   // Services button) and on any click outside the dropdown.
@@ -53,20 +72,45 @@ export default function Header() {
     setMobileServicesOpen(false);
   };
 
+  /** Current page is one of the service pages — highlight Services. */
+  const onServicePage = SERVICE_NAV_LINKS.some((link) =>
+    isCurrent(link.href, pathname),
+  );
+
+  const desktopLink = (href: string) =>
+    `flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white ${
+      isCurrent(href, pathname)
+        ? "bg-white/10 text-white shadow-[inset_0_-2px_0_0_#cdb169]"
+        : "text-white/90"
+    }`;
+
+  const mobileLink = (href: string) =>
+    `flex min-h-11 items-center rounded-md px-3 py-2 text-base font-medium text-white transition-colors hover:bg-white/10 ${
+      isCurrent(href, pathname) ? "bg-white/10 shadow-[inset_0_-2px_0_0_#cdb169]" : "bg-white/5"
+    }`;
+
   return (
     <header className="sticky top-0 z-40 bg-brand-950 text-white shadow-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 transition-all duration-300 ${
+          scrolled ? "py-2" : "py-3"
+        }`}
+      >
         <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label="SanSha A Beauty Lounge — home">
           {/* Dark logo variant (supplied, black background) on the dark header.
-              80px (was 40px, then 56px) — the owner asked twice for a bigger
-              logo. Source file stays the full 814x821 (HD): at 80px display
+              80px at the top (was 40px, then 56px) — the owner asked twice
+              for a bigger logo; it shrinks to 56px only once the page
+              scrolls, so the sticky header eats less of the screen.
+              Source file stays the full 814x821 (HD): at 80px display
               it downscales 10x, so it stays razor-sharp incl. retina. */}
           <img
             src="/images/logo-dark.jpg"
             alt="SanSha A Beauty Lounge logo"
             width={80}
             height={80}
-            className="h-20 w-20 shrink-0 rounded-lg object-cover"
+            className={`shrink-0 rounded-lg object-cover transition-all duration-300 ${
+              scrolled ? "h-14 w-14" : "h-20 w-20"
+            }`}
           />
           <span className="leading-tight">
             <span className="block text-base font-bold sm:text-lg">SanSha A Beauty Lounge</span>
@@ -75,13 +119,17 @@ export default function Header() {
         </Link>
         <div className="flex items-center gap-2">
           {/* Socials in the top bar on desktop. On phones they live
-              in the row below so the header stays compact. */}
+              inside the menu, so the closed header stays compact. */}
           <HeaderSocialButtons className="hidden md:flex" />
+          {/* One elegant Book action — call only (no form, no new
+              integration). WhatsApp stays one tap away in the menu,
+              the sticky bar, the footer and every CallCTA. */}
           <a
             href={SITE.phoneHref}
-            className="hidden min-h-11 items-center rounded-lg bg-accent-500 px-4 py-2.5 text-sm font-bold text-brand-950 hover:bg-accent-400 sm:flex"
+            aria-label={`Book an appointment — call ${SITE.phoneDisplay}`}
+            className="btn-lux hidden px-5 text-sm sm:flex"
           >
-            Call {SITE.phoneDisplay}
+            Book
           </a>
           <button
             type="button"
@@ -94,18 +142,13 @@ export default function Header() {
           </button>
         </div>
       </div>
-      {/* Mobile social row — all three profiles visible in the header
-          on phones, without opening the menu. */}
-      <div className="flex items-center gap-3 border-t border-white/10 px-4 py-2 md:hidden">
-        <span className="text-xs font-semibold text-white/80">Follow us</span>
-        <HeaderSocialButtons />
-      </div>
       <nav aria-label="Main navigation" className="hidden border-t border-white/10 md:block">
         <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-1 px-4">
           <li>
             <Link
               href="/"
-              className="flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white"
+              aria-current={isCurrent("/", pathname) ? "page" : undefined}
+              className={desktopLink("/")}
             >
               Home
             </Link>
@@ -125,7 +168,11 @@ export default function Header() {
               onClick={() => setServicesOpen((v) => !v)}
               aria-haspopup="true"
               aria-expanded={servicesOpen}
-              className="flex min-h-11 items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-amber-300"
+              className={`flex min-h-11 items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-amber-300 ${
+                onServicePage
+                  ? "bg-white/10 text-white shadow-[inset_0_-2px_0_0_#cdb169]"
+                  : "text-white/90"
+              }`}
             >
               Services
               <span aria-hidden="true" className={`inline-block transition-transform ${servicesOpen ? "rotate-180" : ""}`}>
@@ -140,7 +187,8 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={closeServices}
-                        className="flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white"
+                        aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
+                        className={desktopLink(link.href)}
                       >
                         {link.label}
                       </Link>
@@ -154,7 +202,8 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white"
+                aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
+                className={desktopLink(link.href)}
               >
                 {link.label}
               </Link>
@@ -169,7 +218,8 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={closeMobileMenu}
-                className="flex min-h-11 items-center rounded-md bg-white/5 px-3 py-2 text-base font-medium text-white hover:bg-white/10"
+                aria-current={isCurrent("/", pathname) ? "page" : undefined}
+                className={mobileLink("/")}
               >
                 Home
               </Link>
@@ -180,7 +230,9 @@ export default function Header() {
                 type="button"
                 onClick={() => setMobileServicesOpen((v) => !v)}
                 aria-expanded={mobileServicesOpen}
-                className="flex min-h-11 w-full items-center justify-between rounded-md bg-white/5 px-3 py-2 text-base font-medium text-white hover:bg-white/10"
+                className={`flex min-h-11 w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/10 ${
+                  onServicePage ? "bg-white/10 shadow-[inset_0_-2px_0_0_#cdb169]" : "bg-white/5"
+                }`}
               >
                 Services
                 <span aria-hidden="true" className={`inline-block transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}>
@@ -194,7 +246,8 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={closeMobileMenu}
-                        className="flex min-h-11 items-center rounded-md bg-white/5 px-3 py-2 text-base font-medium text-white hover:bg-white/10"
+                        aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
+                        className={mobileLink(link.href)}
                       >
                         {link.label}
                       </Link>
@@ -208,7 +261,8 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={closeMobileMenu}
-                  className="flex min-h-11 items-center rounded-md bg-white/5 px-3 py-2 text-base font-medium text-white hover:bg-white/10"
+                  aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
+                  className={mobileLink(link.href)}
                 >
                   {link.label}
                 </Link>
@@ -217,16 +271,22 @@ export default function Header() {
             <li className="flex gap-2 pt-2">
               <a
                 href={SITE.phoneHref}
-                className="flex min-h-11 flex-1 items-center justify-center rounded-lg bg-accent-500 px-4 py-2.5 text-base font-bold text-brand-950"
+                className="btn-lux flex-1 px-4"
               >
                 Call {SITE.phoneDisplay}
               </a>
               <a
                 href={SITE.whatsappHref}
-                className="flex min-h-11 flex-1 items-center justify-center rounded-lg bg-[#25d366] px-4 py-2.5 text-base font-bold text-white"
+                className="btn-whatsapp flex-1 px-4 text-sm"
               >
                 WhatsApp
               </a>
+            </li>
+            {/* Socials live inside the menu now — the closed header
+                on phones is just the logo row, ~41px shorter. */}
+            <li className="flex items-center gap-3 border-t border-white/10 px-1 pt-3">
+              <span className="text-xs font-semibold text-white/80">Follow us</span>
+              <HeaderSocialButtons />
             </li>
           </ul>
         </nav>
