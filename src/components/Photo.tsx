@@ -41,6 +41,7 @@ export default function Photo({
           as="image"
           type="image/avif"
           href={`/images/${photo.slug}-${photo.nativeW}.avif`}
+          fetchPriority="high"
         />
       )}
       <picture>
