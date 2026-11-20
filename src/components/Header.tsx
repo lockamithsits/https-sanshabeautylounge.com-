@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SITE } from "@/data/siteConfig";
@@ -72,6 +73,26 @@ export default function Header() {
     setMobileServicesOpen(false);
   };
 
+  /**
+   * Same-page nav click: Next.js does not navigate — or scroll — when a
+   * link points at the page you are already on, so tapping "Home" while
+   * on the home page did nothing. Scroll back to the top instead, so the
+   * page comes back fresh, and run the usual close-up afterwards.
+   * Respects reduced-motion (instant jump instead of smooth scroll).
+   */
+  const handleNavClick =
+    (href: string, after?: () => void) =>
+    (e: ReactMouseEvent<HTMLAnchorElement>) => {
+      if (isCurrent(href, pathname)) {
+        e.preventDefault();
+        const reduced = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+      }
+      after?.();
+    };
+
   /** Current page is one of the service pages — highlight Services. */
   const onServicePage = SERVICE_NAV_LINKS.some((link) =>
     isCurrent(link.href, pathname),
@@ -96,7 +117,7 @@ export default function Header() {
           scrolled ? "py-2" : "py-3"
         }`}
       >
-        <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label="SanSha A Beauty Lounge — home">
+        <Link href="/" onClick={handleNavClick("/")} className="flex min-h-11 items-center gap-2.5" aria-label="SanSha A Beauty Lounge — home">
           {/* Dark logo variant (supplied, black background) on the dark header.
               80px at the top (was 40px, then 56px) — the owner asked twice
               for a bigger logo; it shrinks to 56px only once the page
@@ -118,8 +139,8 @@ export default function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-2">
-          {/* Socials in the top bar on desktop. On phones they live
-              inside the menu, so the closed header stays compact. */}
+          {/* Socials in the top bar on desktop; on phones they sit in
+              the row below (outside the menu). */}
           <HeaderSocialButtons className="hidden md:flex" />
           {/* One elegant Book action — call only (no form, no new
               integration). WhatsApp stays one tap away in the menu,
@@ -142,11 +163,19 @@ export default function Header() {
           </button>
         </div>
       </div>
+      {/* Socials outside the menu on phones — always visible in a row
+          below the logo (owner order 2026-11-20). Desktop shows them
+          in the logo row above. */}
+      <div className="flex items-center gap-3 border-t border-white/10 px-4 py-2 md:hidden">
+        <span className="text-xs font-semibold text-white/80">Follow us</span>
+        <HeaderSocialButtons />
+      </div>
       <nav aria-label="Main navigation" className="hidden border-t border-white/10 md:block">
         <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-1 px-4">
           <li>
             <Link
               href="/"
+              onClick={handleNavClick("/")}
               aria-current={isCurrent("/", pathname) ? "page" : undefined}
               className={desktopLink("/")}
             >
@@ -186,7 +215,7 @@ export default function Header() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        onClick={closeServices}
+                        onClick={handleNavClick(link.href, closeServices)}
                         aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
                         className={desktopLink(link.href)}
                       >
@@ -202,6 +231,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                onClick={handleNavClick(link.href)}
                 aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
                 className={desktopLink(link.href)}
               >
@@ -217,7 +247,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                onClick={closeMobileMenu}
+                onClick={handleNavClick("/", closeMobileMenu)}
                 aria-current={isCurrent("/", pathname) ? "page" : undefined}
                 className={mobileLink("/")}
               >
@@ -245,7 +275,7 @@ export default function Header() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        onClick={closeMobileMenu}
+                        onClick={handleNavClick(link.href, closeMobileMenu)}
                         aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
                         className={mobileLink(link.href)}
                       >
@@ -260,7 +290,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={closeMobileMenu}
+                  onClick={handleNavClick(link.href, closeMobileMenu)}
                   aria-current={isCurrent(link.href, pathname) ? "page" : undefined}
                   className={mobileLink(link.href)}
                 >
@@ -281,12 +311,6 @@ export default function Header() {
               >
                 WhatsApp
               </a>
-            </li>
-            {/* Socials live inside the menu now — the closed header
-                on phones is just the logo row, ~41px shorter. */}
-            <li className="flex items-center gap-3 border-t border-white/10 px-1 pt-3">
-              <span className="text-xs font-semibold text-white/80">Follow us</span>
-              <HeaderSocialButtons />
             </li>
           </ul>
         </nav>

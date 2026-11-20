@@ -257,49 +257,6 @@ export default function HomePage() {
           </p>
       </HeroBackground>
 
-      {/* Trust strip — facts only */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-4 text-center text-sm font-semibold text-brand-900">
-          <span>{SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews)</span>
-          <span>Walk-in salon</span>
-          <span>Call or WhatsApp to book</span>
-          <span>Phase 2, Hayatabad</span>
-          <span>{SITE.hours}</span>
-        </div>
-      </section>
-
-      {/* Quick facts */}
-      <section className="mx-auto max-w-6xl px-4 pt-12">
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
-          <p className="text-lg font-bold text-brand-900">Quick facts</p>
-          <ul className="mt-3 grid gap-2 leading-relaxed text-ink sm:grid-cols-2">
-            <li>
-              <strong>What:</strong> a beauty salon in Phase 2, Hayatabad
-              — bridal and party makeup, hair, keratin, facials, waxing,
-              laser and mani-pedi.
-            </li>
-            <li>
-              <strong>Where:</strong> Shop No. 4, Block A, Deans Hights,
-              Phase 2, Hayatabad, Peshawar 25124.
-            </li>
-            <li>
-              <strong>Hours:</strong> open 24 hours, 7 days a week.
-            </li>
-            <li>
-              <strong>Booking:</strong> walk in, or call 091-5839119 /
-              WhatsApp 0313 9333377.
-            </li>
-            <li>
-              <strong>Rating:</strong> 3.9★ on Google (92 reviews).
-            </li>
-            <li>
-              <strong>Prices:</strong> call or WhatsApp for today&apos;s
-              price — no price list on this site.
-            </li>
-          </ul>
-        </div>
-      </section>
-
       {/* Services — image cards: one photo + category + the specific
           services under it, each card linking to its service page */}
       <section className="mx-auto max-w-6xl px-4 py-12">
@@ -1035,6 +992,51 @@ export default function HomePage() {
           text="Call or WhatsApp us — tell us the service and the day you want to come, and we will confirm your slot."
         />
       </section>
+      {/* Trust strip + Quick facts at the end — owner order (2026-11-20) */}
+      {/* Trust strip — facts only */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-4 text-center text-sm font-semibold text-brand-900">
+          <span>{SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews)</span>
+          <span>Walk-in salon</span>
+          <span>Call or WhatsApp to book</span>
+          <span>Phase 2, Hayatabad</span>
+          <span>{SITE.hours}</span>
+        </div>
+      </section>
+
+      {/* Quick facts */}
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+          <p className="text-lg font-bold text-brand-900">Quick facts</p>
+          <ul className="mt-3 grid gap-2 leading-relaxed text-ink sm:grid-cols-2">
+            <li>
+              <strong>What:</strong> a beauty salon in Phase 2, Hayatabad
+              — bridal and party makeup, hair, keratin, facials, waxing,
+              laser and mani-pedi.
+            </li>
+            <li>
+              <strong>Where:</strong> Shop No. 4, Block A, Deans Hights,
+              Phase 2, Hayatabad, Peshawar 25124.
+            </li>
+            <li>
+              <strong>Hours:</strong> open 24 hours, 7 days a week.
+            </li>
+            <li>
+              <strong>Booking:</strong> walk in, or call 091-5839119 /
+              WhatsApp 0313 9333377.
+            </li>
+            <li>
+              <strong>Rating:</strong> 3.9★ on Google (92 reviews).
+            </li>
+            <li>
+              <strong>Prices:</strong> call or WhatsApp for today&apos;s
+              price — no price list on this site.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
 
       <JsonLd data={breadcrumbJsonLd([{ name: "Home" }])} />
       <JsonLd data={faqJsonLd(FAQS)} />
