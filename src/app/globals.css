@@ -3,31 +3,116 @@
 @theme {
   /* System font stacks only — zero webfont payload, fastest first
      paint. Display serif (H1/H2 only) + clean sans body, per the
-     home UI/UX spec. A Google display face can be swapped in later;
-     the system serif keeps this build hermetic. */
+     home UI/UX spec. Georgia stays the display face — NO webfont,
+     ever (redesign Batch A, 2026-11-20). */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-display: Georgia, "Times New Roman", "Nimbus Roman", serif;
 
-  /* SanSha brand — near-black, gold, leaf green, warm white, soft rose */
+  /* SanSha brand — near-black, gold, warm white, soft rose.
+     Header stays dark (brand-950): the gold-on-black logo only
+     works on dark, so the header is never lightened. */
   --color-brand-950: #0d0d0d;
   --color-brand-900: #1a1a1a;
   --color-brand-800: #2b2b2b;
   --color-brand-700: #3d3d3d;
 
-  /* Gold CTA accent */
+  /* Gold CTA accent — the ONE gold. */
   --color-accent-400: #c9a85c;
   --color-accent-500: #b08d3e;
   --color-accent-600: #96762f;
   --color-accent-700: #7a5f26;
 
-  /* Leaf green (secondary accent) */
-  --color-leaf-500: #7cb342;
-  --color-leaf-600: #689f38;
+  /* Champagne — the former bright Tailwind ambers, remapped to the
+     muted-gold family so there is one gold, not two (Batch A).
+     Every amber-* use was grepped before remapping; each new value
+     reads in every context it appears in.
+     amber-50  #fffbeb -> #f8f1de  info-box backgrounds (x21, on cream)
+     amber-200 #fde68a -> #e7d6a4  info-box borders (x21, on cream) +
+                                   taglines (x3, on dark) — one tone
+                                   must read in both places
+     amber-300 #fcd34d -> #cdb169  eyebrows + footer links + focus
+                                   outlines (x8, all on dark) */
+  --color-amber-50: #f8f1de;
+  --color-amber-200: #e7d6a4;
+  --color-amber-300: #cdb169;
+
+  /* Warm neutrals — the former cool Tailwind slates, remapped to
+     warm stone equivalents (Batch A). Every slate-* use was grepped
+     before remapping; each new value reads in every context it
+     appears in (light bg AND dark bg where noted).
+     slate-50  #f8fafc -> #f6f1e7  RelatedLinks box bg (x1, light)
+     slate-200 #e2e8f0 -> #e7e5e4  card borders (light) + hero intro
+                                   text (dark)
+     slate-300 #cbd5e1 -> #d6d3d1  table borders (light) + hero
+                                   address/caption text (dark)
+     slate-400 #94a3b8 -> #a8a29a  footer legal text (x1, dark)
+     slate-500 #64748b -> #78716c  "— via Google" spans (light)
+     slate-600 #475569 -> #57534e  captions (light)
+     slate-700 #334155 -> #2b2b2b  ALL body copy (x97, light) —
+                                   = brand-800, the body-text token
+     slate-900 #0f172a -> #1a1a1a  table heads + body default +
+                                   .page-content strong (light) —
+                                   = brand-900 */
+  --color-slate-50: #f6f1e7;
+  --color-slate-200: #e7e5e4;
+  --color-slate-300: #d6d3d1;
+  --color-slate-400: #a8a29a;
+  --color-slate-500: #78716c;
+  --color-slate-600: #57534e;
+  --color-slate-700: #2b2b2b;
+  --color-slate-900: #1a1a1a;
+
+  /* Body-text token — warm brown, alias of brand-800. Later batches
+     adopt `text-ink` in the class sweep instead of `text-slate-700`. */
+  --color-ink: #2b2b2b;
+
+  /* WhatsApp green — tokenised (was hardcoded #25d366 in 24 places).
+     Components still use the literal in this batch; later batches
+     adopt `bg-whatsapp` / `hover:bg-whatsapp-dark`. */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+
+  /* Leaf green REMOVED (Batch A): leaf-500 #7cb342 / leaf-600
+     #689f38 were defined but never used anywhere in src/. WhatsApp
+     green is the palette's only green; a second decorative green
+     would dilute the one-gold collapse. If a later batch wants a
+     nature accent for "Inside the salon", reintroduce it then as a
+     muted olive derived from the logo leaf — do not resurrect
+     these two values silently. */
 
   /* Warm white + soft rose surfaces */
   --color-cream-50: #faf7f2;
   --color-rose-50: #f6e8e8;
+
+  /* Elevation scale — one radius + one shadow per treatment, so
+     later batches adopt single classes instead of restyling 69
+     rounded-2xl / 20 shadow-sm sites by hand.
+     card:    the default card/photo/box treatment
+     feature: hero / feature treatment (larger radius, deeper shadow)
+     button:  buttons (keeps today's rounded-lg 12px) */
+  --radius-card: 1rem;
+  --radius-feature: 1.5rem;
+  --radius-button: 0.75rem;
+  --shadow-card: 0 1px 2px 0 rgb(43 43 43 / 0.06);
+  --shadow-lift: 0 10px 28px -8px rgb(43 43 43 / 0.18);
+  --shadow-feature: 0 24px 48px -16px rgb(13 13 13 / 0.25);
+
+  /* Motion — one restrained reveal, opt-in only. A reveal needs a
+     trigger (later batch: IntersectionObserver or load-only use);
+     do not put animate-fade-up on anything yet. */
+  --animate-fade-up: fade-up 0.6s ease both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @layer base {
@@ -53,19 +138,30 @@
     cursor: pointer;
   }
 
-  /* Display serif for H1/H2 only — body stays clean sans. */
+  /* Display serif for H1/H2 only — body stays clean sans.
+     Tighter tracking + balanced wrapping apply here because no
+     page sets a tracking/text-wrap utility on headings. Leading
+     is NOT set here: every H1 carries leading-tight, which wins
+     over base — the tighter H1 leading lives in .lux-h1 (below)
+     for later batches to adopt. */
   h1,
   h2 {
     font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    letter-spacing: -0.015em;
   }
 
   /* Prose defaults for page content sections. */
   .page-content h2 {
-    @apply mt-10 text-2xl font-bold text-brand-900 first:mt-0 sm:text-3xl;
+    @apply mt-10 text-2xl leading-snug font-bold text-brand-900 first:mt-0 sm:text-3xl;
   }
 
   .page-content h3 {
-    @apply mt-8 text-xl font-semibold text-brand-900;
+    @apply mt-8 text-xl leading-snug font-semibold text-brand-900;
   }
 
   .page-content p {
@@ -86,5 +182,111 @@
 
   .page-content strong {
     @apply font-semibold text-slate-900;
+  }
+
+  /* Reduced motion — mandatory guard (the site had none: zero
+     matches for prefers-reduced-motion before this batch). Kills
+     smooth scrolling and every transition/animation for users who
+     ask for reduced motion. The !important here is the standard
+     pattern: it must beat component/utility transition durations. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0s !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---- Type hierarchy (Georgia only, no webfont) ----
+     Opt-in classes for later batches — nothing below is applied to
+     any page yet, so this layer changes no rendered page today. */
+
+  /* Eyebrow / kicker above a serif heading. On light backgrounds. */
+  .lux-eyebrow {
+    @apply text-sm font-semibold tracking-[0.18em] text-accent-600 uppercase;
+  }
+
+  /* Same eyebrow on dark (hero, dark CTA bands, footer). */
+  .lux-eyebrow-on-dark {
+    @apply text-sm font-semibold tracking-[0.18em] text-amber-300 uppercase;
+  }
+
+  /* Editorial H1: tighter leading than today's leading-tight. */
+  .lux-h1 {
+    @apply font-display text-4xl leading-[1.08] font-bold tracking-[-0.015em] text-balance sm:text-5xl;
+  }
+
+  /* Serif H2, for use under a .lux-eyebrow. */
+  .lux-h2 {
+    @apply font-display text-3xl leading-tight font-bold tracking-[-0.01em] text-balance text-brand-900 sm:text-4xl;
+  }
+
+  /* Lede / intro paragraph under an H1 or H2. Uses the body-text
+     token directly (same warm brown as the slate-700 remap). */
+  .lede {
+    @apply text-lg leading-relaxed text-ink;
+  }
+
+  /* ---- Elevation scale ---- */
+
+  /* Default card: white, warm border, card radius + shadow. */
+  .lux-card {
+    @apply rounded-card border border-slate-200 bg-white shadow-card;
+  }
+
+  /* Feature / hero treatment: larger radius, deeper shadow. */
+  .lux-feature {
+    @apply rounded-feature shadow-feature;
+  }
+
+  /* ---- Buttons (single-class adoption for later batches) ---- */
+
+  /* Primary gold Call button — today's button classes, tokenised. */
+  .btn-lux {
+    @apply inline-flex min-h-12 items-center justify-center rounded-button bg-accent-500 px-6 text-base font-bold text-brand-950 transition-colors hover:bg-accent-400;
+  }
+
+  /* WhatsApp button — today's green button, tokenised. */
+  .btn-whatsapp {
+    @apply inline-flex min-h-12 items-center justify-center rounded-button bg-whatsapp px-6 text-base font-bold text-white transition-colors hover:bg-whatsapp-dark;
+  }
+
+  /* ---- Motion (restrained, opt-in) ---- */
+
+  /* Card hover lift: 2px rise + lift shadow. */
+  .lux-lift {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .lux-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Image zoom on hover — wrap a <figure>/photo in this. */
+  .lux-img-zoom {
+    overflow: hidden;
+  }
+
+  .lux-img-zoom img {
+    transition: transform 0.5s ease;
+  }
+
+  .lux-img-zoom:hover img,
+  .lux-img-zoom:focus-within img {
+    transform: scale(1.04);
   }
 }
