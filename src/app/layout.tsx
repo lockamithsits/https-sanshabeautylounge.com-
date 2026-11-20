@@ -3,6 +3,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import PhotoLightbox from "@/components/PhotoLightbox";
 import JsonLd from "@/components/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/schema";
 import { SITE } from "@/data/siteConfig";
@@ -40,16 +41,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect so the tag manager loads sooner once it starts. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* GTM-TNQJ5FLL — owner-supplied container, installed manually.
             NO GA4 measurement ID supplied — nothing hardcoded; GA4 config +
-            tags are GTM-console work, NOT in code. */}
+            tags are GTM-console work, NOT in code.
+            strategy="afterInteractive" (was beforeInteractive): GTM no
+            longer blocks first paint / hydration — it loads right after
+            instead. Tracking still fires; PageSpeed render-blocking
+            drops. */}
         <Script
           id="gtm-script"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtm.js?id=${SITE.gtmId}`}
           async
         />
-        <Script id="gtm-init" strategy="beforeInteractive">
+        <Script id="gtm-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());`}
         </Script>
         {/* Google Search Console verification — owner-supplied 2026-11-14. */}
@@ -74,6 +81,8 @@ export default function RootLayout({
         <main className="min-h-[60vh] pb-24 md:pb-0">{children}</main>
         <Footer />
         <StickyCTA />
+        {/* Tap-to-zoom lightbox for every lazy photo on every page. */}
+        <PhotoLightbox />
       </body>
     </html>
   );
