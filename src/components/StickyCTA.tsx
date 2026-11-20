@@ -2,22 +2,23 @@ import { SITE } from "@/data/siteConfig";
 
 /**
  * Fixed mobile call bar — phones only (hidden on sm+ where the header
- * call button is visible). Single 48px "Call" button. The layout adds
- * bottom padding on mobile so this bar never covers page content.
+ * Book button is visible). Dark bar to match the header/footer; Call
+ * is the primary action, WhatsApp the quieter secondary. The layout
+ * adds bottom padding on mobile so this bar never covers page content.
  */
 export default function StickyCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 py-2 backdrop-blur sm:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-brand-950/95 px-3 py-2 backdrop-blur sm:hidden">
       <div className="flex gap-2">
         <a
           href={SITE.phoneHref}
-          className="flex min-h-12 flex-1 items-center justify-center rounded-lg bg-accent-500 px-4 text-base font-bold text-brand-950"
+          className="btn-lux flex-1 px-4"
         >
           Call {SITE.phoneDisplay}
         </a>
         <a
           href={SITE.whatsappHref}
-          className="flex min-h-12 flex-1 items-center justify-center rounded-lg bg-[#25d366] px-4 text-base font-bold text-white"
+          className="btn-whatsapp flex-1 px-3 text-sm"
         >
           WhatsApp
         </a>
