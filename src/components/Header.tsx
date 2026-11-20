@@ -57,13 +57,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-brand-950 text-white shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label="SanSha A Beauty Lounge — home">
-          {/* Dark logo variant (supplied, black background) on the dark header. */}
+          {/* Dark logo variant (supplied, black background) on the dark header.
+              56px (was 40px) — the owner said the logo looked too small. */}
           <img
             src="/images/logo-dark.jpg"
             alt="SanSha A Beauty Lounge logo"
-            width={40}
-            height={40}
-            className="h-10 w-10 shrink-0 rounded-lg object-cover"
+            width={56}
+            height={56}
+            className="h-14 w-14 shrink-0 rounded-lg object-cover"
           />
           <span className="leading-tight">
             <span className="block text-base font-bold sm:text-lg">SanSha A Beauty Lounge</span>

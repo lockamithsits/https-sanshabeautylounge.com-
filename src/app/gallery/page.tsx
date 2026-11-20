@@ -161,6 +161,69 @@ const GROUPS: {
     ],
   },
   {
+    heading: "Inside the salon",
+    intro:
+      "Fourteen new photos from inside the salon — the styling floor, the laser room, the facial, waxing and pedicure rooms, and the product shelves. They were taken on an ordinary day, with the rooms as they are between appointments. The bride in the pink lehenga is a client inside the salon; like the Recent work photos, she is not named.",
+    photos: [
+      {
+        slug: "salon-hair-styling-floor-sansha-hayatabad",
+        caption: "Four chairs and mirrors across the salon floor.",
+      },
+      {
+        slug: "salon-hair-chairs-mirror-sansha-hayatabad",
+        caption: "Chairs lined up in front of the big mirror.",
+      },
+      {
+        slug: "salon-hair-floor-wide-sansha-hayatabad",
+        caption: "The hair floor from the entrance side.",
+      },
+      {
+        slug: "salon-hair-products-shelf-sansha-hayatabad",
+        caption: "Colour and treatment products on the wooden shelf.",
+      },
+      {
+        slug: "salon-laser-treatment-room-sansha-hayatabad",
+        caption: "The laser room — bed, machine and towels.",
+      },
+      {
+        slug: "salon-hair-chairs-close-sansha-hayatabad",
+        caption: "One styling chair at its mirror.",
+      },
+      {
+        slug: "salon-hair-styling-station-sansha-hayatabad",
+        caption: "Styling stations with a product trolley.",
+      },
+      {
+        slug: "salon-bridal-lehenga-sansha-hayatabad",
+        caption: "A bride in a pink lehenga, inside the salon.",
+      },
+      {
+        slug: "salon-facial-room-bed-sansha-hayatabad",
+        caption: "A facial room, bed made up and ready.",
+      },
+      {
+        slug: "salon-waxing-room-bed-sansha-hayatabad",
+        caption: "The waxing room with its bed and warmer.",
+      },
+      {
+        slug: "salon-pedicure-room-chairs-sansha-hayatabad",
+        caption: "Pedicure chairs with foot basins.",
+      },
+      {
+        slug: "salon-facial-room-sink-sansha-hayatabad",
+        caption: "A facial room with a sink and towels.",
+      },
+      {
+        slug: "salon-facial-room-towels-sansha-hayatabad",
+        caption: "A facial bed with folded towels.",
+      },
+      {
+        slug: "salon-hair-colour-products-sansha-hayatabad",
+        caption: "Colour products on the white shelf.",
+      },
+    ],
+  },
+  {
     heading: "The entrance",
     intro:
       "The salon's entrance is dressed with a flower arch and fairy lights, and at night it is the brightest thing on the street. These photos were taken after dark, when the arch is lit — it is the same arch on the home page, and it is how most clients first find the salon. The board by the door says the salon is open, and it is: 24 hours, 7 days a week.",
@@ -287,7 +350,7 @@ export default function GalleryPage() {
             Salon Gallery in Hayatabad, Peshawar
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-            Thirty-three photos from SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — fourteen of our recent work, and nineteen of the salon itself: the entrance, the reception, the styling chairs and the treatment rooms. See the work and the salon before you visit, then call or WhatsApp to book.
+            Forty-seven photos from SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar — fourteen of our recent work, and thirty-three of the salon itself: the entrance, the reception, the styling chairs and the treatment rooms. See the work and the salon before you visit, then call or WhatsApp to book.
           </p>
       </HeroBackground>
 
@@ -298,8 +361,8 @@ export default function GalleryPage() {
           </p>
           <ul className="mt-3 space-y-2 leading-relaxed text-slate-700">
             <li>
-              <strong>Photos:</strong> 33, all taken at this salon —
-              14 of our recent work and 19 of the salon itself. No
+              <strong>Photos:</strong> 47, all taken at this salon —
+              14 of our recent work and 33 of the salon itself. No
               stock photos, no photos of another salon.
             </li>
             <li>
@@ -337,13 +400,15 @@ export default function GalleryPage() {
           </p>
           <p>
             What the photos do not show is a treatment in progress.
-            No client is in focus in any photo, and no photo claims
-            to show a haircut, a facial or a makeup look being done.
-            [ADD REAL PHOTO — a treatment in progress, once the salon
-            has one it is happy to share.] The photos below are
-            grouped by area, so you can find the part of the salon
-            you want to see: the entrance, reception, the styling
-            floor, the treatment rooms, and the outside.
+            Some photos show clients in focus — the Recent work photos
+            and the bride in the new Inside the salon photos — but no
+            photo claims to show a haircut, a facial or a makeup look
+            being done, and no client is named. [ADD REAL PHOTO — a
+            treatment in progress, once the salon has one it is happy
+            to share.] The photos below are grouped by area, so you
+            can find the part of the salon you want to see: the
+            entrance, reception, the styling floor, the treatment
+            rooms, and the outside.
           </p>
         </div>
 

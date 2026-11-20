@@ -1,5 +1,5 @@
 /**
- * Photo registry — 33 real photos.
+ * Photo registry — 47 real photos.
  *
  * Batch 1 (2026-11-14): the 19 salon photos the owner supplied —
  * rooms, reception, signboard, entrance. No client faces in focus.
@@ -11,6 +11,14 @@
  * and no client is named. Held, NOT in this registry: 4 maroon-velvet
  * bridal shots with a faint "IDEAL" studio watermark across the
  * middle — see images-batch3-held/README.md.
+ *
+ * Batch 4 (2026-11-20): 14 salon-interior photos the owner supplied —
+ * styling chairs, laser room, facial/waxing/pedicure rooms, product
+ * shelves, and a bride inside the salon. Every shot carries the
+ * salon's own "SANSHA A BEAUTY LOUNGE" banner across the middle
+ * (own brand + phone — it stays). The small "Dynamic Moments"
+ * photographer credit at the very bottom edge was cropped off (the
+ * bottom 8% — floor/drawer in every shot, no content lost).
  *
  * Processing (see images-manifest.md in ~/workspace/sansha-beauty-lounge):
  * each source was re-encoded (new bytes, EXIF stripped) into
@@ -26,7 +34,7 @@
  *
  * heroPages: routes that show this photo (the sitemap lists each photo
  * as an <image:image> entry on those routes; home lists the 14 work
- * photos, the gallery lists all 33).
+ * photos + the 14 interior photos, the gallery lists all 47).
  */
 
 export interface Photo {
@@ -382,5 +390,145 @@ export const PHOTOS: Photo[] = [
     alt: "Long hair blow-dried smooth at SanSha A Beauty Lounge, Hayatabad, Peshawar",
     caption: "Long hair blow-dried with soft waves.",
     heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-hair-styling-floor-sansha-hayatabad",
+    source: "IMG_0015-2.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Four hair styling chairs and mirrors on the salon floor at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Four styling chairs in front of the mirrors.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-hair-chairs-mirror-sansha-hayatabad",
+    source: "IMG_0012.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Hair styling chairs in front of a large mirror at SanSha A Beauty Lounge, Peshawar",
+    caption: "Styling chairs in front of the big mirror.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-hair-floor-wide-sansha-hayatabad",
+    source: "ffdsdsds.jpg",
+    nativeW: 640,
+    nativeH: 412,
+    widths: [400, 640],
+    alt: "Wide view of the hair salon floor with styling chairs at SanSha A Beauty Lounge, Hayatabad",
+    caption: "The hair floor, seen from the entrance side.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-hair-products-shelf-sansha-hayatabad",
+    source: "IMG_0004.jpg",
+    nativeW: 640,
+    nativeH: 394,
+    widths: [400, 640],
+    alt: "Hair colour and treatment products on a wooden shelf at SanSha A Beauty Lounge, Peshawar",
+    caption: "Colour and treatment products on the salon shelf.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-laser-treatment-room-sansha-hayatabad",
+    source: "xcxcxc-2.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Laser hair and skin treatment room with laser machine at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "The laser room, with the treatment bed and machine.",
+    heroPages: ["/", "/gallery/", "/laser-hair-removal-peshawar/"],
+  },
+  {
+    slug: "salon-hair-chairs-close-sansha-hayatabad",
+    source: "IMG_0013-2.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Hair styling chair and mirror station at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "A styling chair at its mirror station.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-hair-styling-station-sansha-hayatabad",
+    source: "IMG_0014.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Hair styling station with chairs, mirrors and product trolley at SanSha A Beauty Lounge, Peshawar",
+    caption: "Styling stations with chairs and a product trolley.",
+    heroPages: ["/", "/gallery/", "/hair-salon-peshawar/"],
+  },
+  {
+    slug: "salon-bridal-lehenga-sansha-hayatabad",
+    source: "IMG_0240-2.jpg",
+    nativeW: 680,
+    nativeH: 938,
+    widths: [400, 680],
+    alt: "Bride in a pink embroidered lehenga inside SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "A bride in a pink lehenga, inside the salon.",
+    heroPages: ["/", "/gallery/", "/bridal-makeup-peshawar/"],
+  },
+  {
+    slug: "salon-facial-room-bed-sansha-hayatabad",
+    source: "rerere.jpg",
+    nativeW: 427,
+    nativeH: 589,
+    widths: [400, 427],
+    alt: "Facial treatment room with a treatment bed at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "A private facial room with its treatment bed.",
+    heroPages: ["/", "/gallery/", "/facial-peshawar/"],
+  },
+  {
+    slug: "salon-waxing-room-bed-sansha-hayatabad",
+    source: "IMG_0247.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Treatment room with a bed and wax warmer at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "The waxing room, with its treatment bed and warmer.",
+    heroPages: ["/", "/gallery/", "/waxing-peshawar/"],
+  },
+  {
+    slug: "salon-pedicure-room-chairs-sansha-hayatabad",
+    source: "cvcv-2.jpg",
+    nativeW: 680,
+    nativeH: 938,
+    widths: [400, 680],
+    alt: "Pedicure room with chairs and foot basins at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "The pedicure room, with chairs and foot basins.",
+    heroPages: ["/", "/gallery/", "/mani-pedi-peshawar/"],
+  },
+  {
+    slug: "salon-facial-room-sink-sansha-hayatabad",
+    source: "IMG_0252-2.jpg",
+    nativeW: 680,
+    nativeH: 938,
+    widths: [400, 680],
+    alt: "Facial treatment room with a bed, sink and towels at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "A facial room with a bed, sink and fresh towels.",
+    heroPages: ["/", "/gallery/", "/facial-peshawar/"],
+  },
+  {
+    slug: "salon-facial-room-towels-sansha-hayatabad",
+    source: "IMG_0254-2.jpg",
+    nativeW: 680,
+    nativeH: 417,
+    widths: [400, 680],
+    alt: "Facial treatment bed with folded towels in a private room at SanSha A Beauty Lounge, Peshawar",
+    caption: "A facial bed with folded towels, ready for the next client.",
+    heroPages: ["/", "/gallery/", "/facial-peshawar/"],
+  },
+  {
+    slug: "salon-hair-colour-products-sansha-hayatabad",
+    source: "IMG_0010.jpg",
+    nativeW: 680,
+    nativeH: 938,
+    widths: [400, 680],
+    alt: "Hair colour and treatment products on a white shelf at SanSha A Beauty Lounge, Hayatabad, Peshawar",
+    caption: "Hair colour products on the salon shelf.",
+    heroPages: ["/", "/gallery/", "/hair-colour-peshawar/"],
   },
 ];

@@ -187,9 +187,10 @@ const HOME_REVIEWS = REVIEWS;
 
 /** Our recent work: 14 real photos of the salon's work — bridal
  * looks, hair colour, curls and mehndi — each tagged with the
- * service it shows. The 19 photos of the salon itself (rooms,
- * reception, signboard, entrance) stay on the gallery page only;
- * the home page shows the work, not the rooms. */
+ * service it shows. The 19 older photos of the salon itself
+ * (rooms, reception, signboard, entrance) stay on the gallery page
+ * only; the 14 new interior photos have their own section below
+ * (INSIDE_SALON), added 2026-11-20. */
 const COLLECTIONS: { slug: string; service: string }[] = [
   { slug: "bridal-makeup-nath-sansha-hayatabad", service: "Bridal Makeup" },
   { slug: "bridal-makeup-hairdo-sansha-hayatabad", service: "Bridal Makeup" },
@@ -205,6 +206,26 @@ const COLLECTIONS: { slug: string; service: string }[] = [
   { slug: "hair-curls-blowdry-sansha-hayatabad", service: "Hair Salon" },
   { slug: "haircut-short-bob-sansha-hayatabad", service: "Hair Salon" },
   { slug: "hair-blowdry-smooth-sansha-hayatabad", service: "Hair Salon" },
+];
+
+/** Inside the salon: 14 new interior photos the owner supplied
+ * 2026-11-20 — styling chairs, laser room, facial/waxing/pedicure
+ * rooms and product shelves — each tagged with the service it shows. */
+const INSIDE_SALON: { slug: string; service: string }[] = [
+  { slug: "salon-hair-styling-floor-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-hair-chairs-mirror-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-hair-floor-wide-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-hair-products-shelf-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-laser-treatment-room-sansha-hayatabad", service: "Laser Hair Removal" },
+  { slug: "salon-hair-chairs-close-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-hair-styling-station-sansha-hayatabad", service: "Hair Salon" },
+  { slug: "salon-bridal-lehenga-sansha-hayatabad", service: "Bridal Makeup" },
+  { slug: "salon-facial-room-bed-sansha-hayatabad", service: "Facials" },
+  { slug: "salon-waxing-room-bed-sansha-hayatabad", service: "Waxing & Threading" },
+  { slug: "salon-pedicure-room-chairs-sansha-hayatabad", service: "Manicure & Pedicure" },
+  { slug: "salon-facial-room-sink-sansha-hayatabad", service: "Facials" },
+  { slug: "salon-facial-room-towels-sansha-hayatabad", service: "Facials" },
+  { slug: "salon-hair-colour-products-sansha-hayatabad", service: "Hair Colour & Balayage" },
 ];
 
 export default function HomePage() {
@@ -811,7 +832,7 @@ export default function HomePage() {
             and mehndi — taken at SanSha A Beauty Lounge in Phase 2,
             Hayatabad, Peshawar.{" "}
             <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
-              See all 33 photos in the salon gallery
+              See all 47 photos in the salon gallery
             </Link>
             .
           </p>
@@ -834,6 +855,44 @@ export default function HomePage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Inside the salon — 14 new interior photos the owner
+          supplied 2026-11-20: the styling floor, the laser room, the
+          facial, waxing and pedicure rooms, and the product shelves. */}
+      <section id="inside-the-salon" className="mx-auto max-w-6xl px-4 py-12">
+        <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
+          Inside the salon
+        </h2>
+        <p className="mt-3 max-w-2xl leading-relaxed text-slate-700">
+          See the salon before you visit — the styling floor, the laser
+          room, the facial, waxing and pedicure rooms, and the shelves
+          of products we use. All fourteen photos were taken inside
+          SanSha A Beauty Lounge in Phase 2, Hayatabad, Peshawar.{" "}
+          <Link href="/gallery/" className="font-medium text-brand-700 underline hover:text-brand-900">
+            See all 47 photos in the salon gallery
+          </Link>
+          .
+        </p>
+        <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          {INSIDE_SALON.map(({ slug, service }) => {
+            const p = photo(slug);
+            return (
+              <figure key={slug}>
+                <Photo
+                  photo={p}
+                  sizes="(max-width: 640px) 50vw, 320px"
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+                <figcaption className="mt-2 text-xs leading-relaxed text-slate-600">
+                  <span className="font-semibold text-brand-900">{service}</span>
+                  {" — "}
+                  {p.caption}
+                </figcaption>
+              </figure>
+            );
+          })}
         </div>
       </section>
 
