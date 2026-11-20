@@ -101,7 +101,7 @@ export default function ContactPage() {
         <Breadcrumbs
           items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
         />
-        <h1 className="mt-4 max-w-3xl text-4xl leading-tight font-bold sm:text-5xl">
+        <h1 className="mt-4 max-w-3xl lux-h1">
           Contact {SITE.fullName}
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-200">
@@ -110,7 +110,7 @@ export default function ContactPage() {
       </HeroBackground>
 
       <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 p-6">
+        <div className="mx-auto max-w-3xl lux-card border-amber-200 bg-amber-50 p-6">
           <p className="text-lg font-bold text-brand-900">
             Visit at a glance
           </p>
@@ -139,20 +139,22 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-12 grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="text-2xl font-bold text-brand-900">
+          <div className="space-y-6">
+            <section className="lux-card p-6">
+            <p className="lux-eyebrow">Booking</p>
+            <h2 className="lux-h2 mt-2">
               Call or WhatsApp
             </h2>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <a
                 href={SITE.phoneHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-accent-500 px-6 text-base font-bold text-brand-950 hover:bg-accent-400"
+                className="btn-lux w-full sm:w-auto"
               >
                 Call {SITE.phoneDisplay}
               </a>
               <a
                 href={SITE.whatsappHref}
-                className="flex min-h-12 items-center justify-center rounded-lg bg-[#25d366] px-6 text-base font-bold text-white hover:brightness-110"
+                className="btn-whatsapp w-full sm:w-auto"
               >
                 WhatsApp {SITE.whatsappDisplay}
               </a>
@@ -163,8 +165,7 @@ export default function ContactPage() {
               event date and function — barat, walima, nikah, mehndi or
               engagement.
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               What to say when you call or WhatsApp
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
@@ -190,29 +191,7 @@ export default function ContactPage() {
               say so in the first message, so the salon can plan the
               day. [CONFIRM — group bookings.]
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
-              How to find us
-            </h2>
-            <p className="mt-3 leading-relaxed text-slate-700">
-              The salon sits in Phase 2, Hayatabad — Shop No. 4,
-              Block A, Deans Hights, Peshawar 25124. The map on this
-              page shows the spot, and the salon&apos;s Google profile
-              carries directions from anywhere in Peshawar. If the
-              map looks unclear, message the salon on WhatsApp and
-              ask for directions before you set out — a two-line
-              message is quicker than circling the block.
-            </p>
-            <p className="mt-3 leading-relaxed text-slate-700">
-              The map here is a general location search for the
-              salon&apos;s name. [CONFIRM — the exact pin from the
-              salon&apos;s Google profile, and the map coordinates
-              for this page.] Once the salon&apos;s Google profile is
-              claimed, this page will carry the profile&apos;s own
-              map pin instead.
-            </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               What happens when you arrive
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
@@ -235,8 +214,7 @@ export default function ContactPage() {
               blow-dry — ask for one price for the whole visit
               before anything starts.
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               Walk in or book ahead?
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
@@ -250,8 +228,30 @@ export default function ContactPage() {
               taken, and whether there are ladies-only hours or a
               Friday prayer break.]
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            </section>
+            <section className="lux-card p-6">
+            <p className="lux-eyebrow">Finding us</p>
+            <h2 className="lux-h2 mt-2">
+              How to find us
+            </h2>
+            <p className="mt-3 leading-relaxed text-slate-700">
+              The salon sits in Phase 2, Hayatabad — Shop No. 4,
+              Block A, Deans Hights, Peshawar 25124. The map on this
+              page shows the spot, and the salon&apos;s Google profile
+              carries directions from anywhere in Peshawar. If the
+              map looks unclear, message the salon on WhatsApp and
+              ask for directions before you set out — a two-line
+              message is quicker than circling the block.
+            </p>
+            <p className="mt-3 leading-relaxed text-slate-700">
+              The map here is a general location search for the
+              salon&apos;s name. [CONFIRM — the exact pin from the
+              salon&apos;s Google profile, and the map coordinates
+              for this page.] Once the salon&apos;s Google profile is
+              claimed, this page will carry the profile&apos;s own
+              map pin instead.
+            </p>
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               Parking and getting here
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
@@ -262,30 +262,7 @@ export default function ContactPage() {
               foot from anywhere in Hayatabad; the salon is in
               Phase 2, and the map on this page shows the way.
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
-              Email
-            </h2>
-            <p className="mt-3 leading-relaxed text-slate-700">
-              <a
-                href={SITE.emailHref}
-                className="font-medium text-brand-700 underline hover:text-brand-900"
-              >
-                {SITE.email}
-              </a>
-            </p>
-            <p className="mt-3 leading-relaxed text-slate-700">
-              For how we handle your details, see our{" "}
-              <a
-                href="/privacy-policy/"
-                className="font-medium text-brand-700 underline hover:text-brand-900"
-              >
-                privacy policy
-              </a>
-              .
-            </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               Address
             </h2>
             <address className="mt-3 text-lg leading-relaxed not-italic text-slate-700">
@@ -300,8 +277,10 @@ export default function ContactPage() {
                 Find us on Google Maps
               </a>
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            </section>
+            <section className="lux-card p-6">
+            <p className="lux-eyebrow">Hours</p>
+            <h2 className="lux-h2 mt-2">
               Opening hours
             </h2>
             <table className="mt-3 w-full max-w-md border-collapse text-left">
@@ -326,8 +305,31 @@ export default function ContactPage() {
               The salon is open 24 hours, 7 days a week — walk in any
               time, or call or WhatsApp to book.
             </p>
-
-            <h2 className="mt-10 text-2xl font-bold text-brand-900">
+            </section>
+            <section className="lux-card p-6">
+            <p className="lux-eyebrow">Follow us</p>
+            <h2 className="lux-h2 mt-2">
+              Email
+            </h2>
+            <p className="mt-3 leading-relaxed text-slate-700">
+              <a
+                href={SITE.emailHref}
+                className="font-medium text-brand-700 underline hover:text-brand-900"
+              >
+                {SITE.email}
+              </a>
+            </p>
+            <p className="mt-3 leading-relaxed text-slate-700">
+              For how we handle your details, see our{" "}
+              <a
+                href="/privacy-policy/"
+                className="font-medium text-brand-700 underline hover:text-brand-900"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+            <h2 className="mt-8 text-2xl font-bold text-brand-900">
               Follow us
             </h2>
             <p className="mt-3 flex flex-wrap items-center gap-x-1 leading-relaxed text-slate-700">
@@ -355,8 +357,8 @@ export default function ContactPage() {
                 TikTok ({SITE.tiktokFollowers})
               </a>
             </p>
+            </section>
           </div>
-
           <div>
             <iframe
               title="Map — SanSha A Beauty Lounge, Phase 2, Hayatabad, Peshawar"

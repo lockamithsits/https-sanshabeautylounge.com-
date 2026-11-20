@@ -98,37 +98,37 @@ const GROUPS: {
     key: "hair",
     heading: "What do clients say about hair at SanSha?",
     intro:
-      "Hair is the service clients write about most — keratin and protein treatments, haircuts, and dye. What comes through in these reviews is not a single look but the way the appointment felt: unhurried, explained as it went, and finished to what the client asked for. One client came back after a keratin treatment elsewhere had left her hair wrong, and writes that it was corrected at no charge. Another writes about a haircut she calls beautiful and elegant, and a third about a dye done exactly as she wanted. Read them as they are — clients naming the person who did their hair, in their own words.",
+      "Hair is what clients write about most — keratin and protein treatments, haircuts, and dye. The appointments felt unhurried, explained as they went, and finished to what the client asked for. One client came back after a keratin treatment elsewhere had left her hair wrong, and writes that it was corrected at no charge.",
   },
   {
     key: "makeup",
     heading: "What do clients say about makeup?",
     intro:
-      "The makeup reviews below are short, and they are both about the same thing: the look came out the way the client asked. One client writes that the makeup was done exactly as she asked, and that the people doing it were soft-spoken and easy to be around. The other writes that she is very well satisfied and extremely happy with her look. Makeup for a function is a long sitting, and what clients remember afterwards is whether the person doing it listened — these two say yes, plainly, in their own words.",
+      "The two makeup reviews are short, and both say the same thing: the look came out the way the client asked — done exactly as asked, by people who were soft-spoken and easy to be around. The other client writes that she is very well satisfied and extremely happy with her look.",
   },
   {
     key: "waxing",
     heading: "What do clients say about waxing?",
     intro:
-      "Waxing is the service with the most reviews on this page, and the pattern in them is steady: clients write about being comfortable, about each step being explained, and about coming back. One client is on her eighth waxing session with the same person and writes that she is so satisfied. Another writes that the session was comfortable with no pain or rashes, and that the salon itself is very clean. A third writes about a waxing and a protein treatment in the same visit. These are the reviews where clients most often name the person who did the work — inside the quote, as they wrote it.",
+      "Waxing has the most reviews on this page, and the pattern is steady: clients write about being comfortable, about each step being explained, and about coming back. One client is on her eighth waxing session with the same person. Another writes that the session was comfortable with no pain or rashes, and that the salon itself is very clean.",
   },
   {
     key: "facial",
     heading: "What do clients say about facials?",
     intro:
-      "There is one facial review in this selection, and it is written by a client about his wife's facial and plucking — the work was excellent, neat and professional, he writes, and the person doing it was cooperative and paid great attention to detail. It is a short review, but it says what matters for a facial: the skin was handled with care, and the client left satisfied. More facial reviews are on the full Google profile, and the facial page itself explains what a visit looks like.",
+      "There is one facial review here, written by a client about his wife's facial and plucking — the work was excellent, neat and professional, he writes, and the person doing it was cooperative and paid great attention to detail.",
   },
   {
     key: "visit",
     heading: "What do clients say about visiting the salon?",
     intro:
-      "Some reviews are not about one service but about the visit as a whole — the welcome, the way the salon understood what was wanted, and whether everything was done properly. The review below is one of those: a client writes that the service was neat, comfortable and satisfying, and that the person doing it understood what she wanted and made sure everything was done perfectly. It is the kind of review that tells you more about the salon than any single service page can.",
+      "Some reviews are about the visit as a whole — the welcome, the way the salon understood what was wanted, and whether everything was done properly. The review below is one of those: a client writes that the service was neat, comfortable and satisfying, and that everything was done perfectly.",
   },
 ];
 
 function ReviewCard({ r }: { r: (typeof REVIEWS)[number] }) {
   return (
-    <blockquote className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <blockquote className="lux-card p-5">
       <p className="text-sm font-semibold text-accent-600">
         {r.service} · {r.when}
       </p>
@@ -151,11 +151,14 @@ export default function ReviewsPage() {
           <Breadcrumbs
             items={[{ name: "Home", path: "/" }, { name: "Reviews" }]}
           />
-          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+          <h1 className="lux-h1 mt-3">
             Beauty Salon Reviews in Peshawar
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
             {SITE.ratingValue}★ on Google ({SITE.reviewCount} reviews). The reviews below are a selection of verbatim Google reviews from our clients — their own words, exactly as they wrote them, spelling mistakes included. Read them here, or see the full set on the salon&apos;s Google profile.
+          </p>
+          <p aria-hidden="true" className="mt-4 text-2xl tracking-[0.25em] text-amber-300">
+            ★★★★<span className="text-slate-400">☆</span>
           </p>
           <p className="mt-4 text-sm text-slate-300">
             <a
@@ -168,7 +171,7 @@ export default function ReviewsPage() {
       </HeroBackground>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+        <div className="lux-card border-amber-200 bg-amber-50 p-6">
           <p className="text-lg font-bold text-brand-900">
             Reviews at a glance
           </p>
@@ -237,7 +240,7 @@ export default function ReviewsPage() {
 
         {GROUPS.map((g) => (
           <div key={g.key} className="mt-12">
-            <h2 className="text-2xl font-bold text-brand-900 sm:text-3xl">
+            <h2 className="lux-h2">
               {g.heading}
             </h2>
             <p className="mt-3 leading-relaxed text-slate-700">
